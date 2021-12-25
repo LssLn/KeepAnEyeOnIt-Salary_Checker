@@ -1,5 +1,5 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
-<section>Keep an Eye on It is a Java project built to better manage your month expenses.<br>
+<section>Don't want to drain your salary as quick as you use to do?<br>Keep an Eye on It is a Java project developed to better manage your monthly expenses.<br>
 It has 3 Folders:
 <ul>
 	<li>Classes</li>
@@ -13,8 +13,8 @@ It has 3 Folders:
 	<li>Salary<br>
 	Has an add and remove method, which is: monthly and positive for add, negative for each purchase or expense.</li>
 	<!-- <li></li> -->
-	<li><em>FileReaderAndWriter<em><br>
-	Ig gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.</li>
+	<li><em>FileReaderAndWriter</em><br>
+	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.</li>
 </ul>
 
 <h2>EXCEPTIONS</h2>
