@@ -17,7 +17,7 @@
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.</li>
 </ul>
 
-<h2>EXCEPTIONS</h2>
+<h2>EXCEPTION</h2>
 <ul>
 	<li>GenericException
 	GenericException description<br>
