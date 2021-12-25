@@ -28,7 +28,7 @@ It has 3 Folders:
 <h2>MAIN</h2>
 <ul>
 	<li>SalaryChecker_Test
-	Has an arraylist for every year, and a map for every year (12 months, <Integer> key (1) <String> value (January))<br>
+	Has an <b>ArrayList</b> for every year, and an <b>HashMap</b> for every year (12 months, <Integer> key (1) <String> value (January))<br>
 	</li>
 </ul>
 </section>
