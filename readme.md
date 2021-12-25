@@ -1,9 +1,9 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
 <section>Don't want to drain your salary as quick as you use to do?<br>Keep an Eye on It is a Java project developed to better manage your monthly expenses.<br>
-It has 3 Folders:
+<br>
 <ul>
 	<li>Classes</li>
-	<li>Exeptions</li>
+	<li>Exceptions</li>
 	<li>Main</li>
 </ul>
 
