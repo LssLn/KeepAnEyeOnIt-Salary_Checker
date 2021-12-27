@@ -10,6 +10,8 @@
 <br>
 <h2>CLASS</h2>
 <ul>
+	<li>Outcome<br>
+	Each expense has an amount (Double type) and a description.</li>
 	<li>Salary<br>
 	Has an add and remove method, which is: monthly and positive for add, negative for each purchase or expense.<br>
 	List all the methods
