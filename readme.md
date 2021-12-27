@@ -13,8 +13,7 @@
 	<li>Outcome<br>
 	Each expense has an amount (Double type) and a description.</li>
 	<li>Salary<br>
-	Has an add and remove method, which is: monthly and positive for add, negative for each purchase or expense.<br>
-	List all the methods
+	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).
 	<br>|<br>
 	<em>Future_Feature</em>:	
 		<ul>
