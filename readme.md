@@ -11,7 +11,15 @@
 <h2>CLASS</h2>
 <ul>
 	<li>Salary<br>
-	Has an add and remove method, which is: monthly and positive for add, negative for each purchase or expense.</li>
+	Has an add and remove method, which is: monthly and positive for add, negative for each purchase or expense.<br>
+	List all the methods
+	<br>|<br>
+	<em>Future_Feature</em>:	
+		<ul>
+		<li>add automatic conversion from PDF (paycheck) to setting Salary values.</li>
+		<li>Modify the HashMap to key Integer, value Outcome where OutCome is a class with inside Double prize,Description, Date. Integer is solely the id used to identify that outcome.
+		</ul>	
+	</li>
 	<!-- <li></li> -->
 	<li><em>FileReaderAndWriter</em><br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.</li>
