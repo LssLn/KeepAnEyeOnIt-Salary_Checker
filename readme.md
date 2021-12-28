@@ -11,14 +11,14 @@
 <h2>CLASS</h2>
 <ul>
 	<li>Outcome<br>
-	Each expense has an amount (Double type) and a description.</li>
+	Each expense has an amount and a description.</li>
 	<li>Salary<br>
 	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).
 	<br>|<br>
 	<em>Future_Feature</em>:	
 		<ul>
 		<li>add automatic conversion from PDF (paycheck) to setting Salary values.</li>
-		<li>Modify the HashMap to key Integer, value Outcome where OutCome is a class with inside Double prize,Description, Date. Integer is solely the id used to identify that outcome.
+		<strike><li>Modify the HashMap to key Integer, value Outcome where OutCome is a class with inside Double prize,Description, Date. Integer is solely the id used to identify that outcome.</li></strike>
 		</ul>	
 	</li>
 	<!-- <li></li> -->
