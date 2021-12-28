@@ -41,7 +41,7 @@
 	Has a method to convert String month names to Integers (which returns -1 if the month name is not valid), and a menù method to show all the options.<br>
 		The above methods are both static, as they are called inside the main.<br>
 	<br>The menù contains several options:
-		<ol type = “2”>
+		<ol start="1">
 			<li>Add Salary<br>
 			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11).</li>
 			<li>Add Expense<br>
