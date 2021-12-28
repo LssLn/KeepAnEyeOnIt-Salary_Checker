@@ -37,7 +37,10 @@
 <h2>MAIN</h2>
 <ul>
 	<li>SalaryChecker_Test
-	Has an <b>ArrayList</b> for every year, and an <b>HashMap</b> for every year (12 months, <Integer> key (1) <String> value (January))<br>
+	Has an <b>HashMap</b> for every year (12 months, <Integer> key (1 aka January, 2 February and so on...), <Salary> value))<br>
+	Has a method to convert String month names to Integers, and a menù method to show all the options.<br>
+		The above methods are both static, as they are called inside the main.<br>
+	
 	</li>
 </ul>
 </section>
