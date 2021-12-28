@@ -17,20 +17,17 @@
 	<br>|<br>|<br>
 	<em>Future_Feature</em>:	
 		<ul>
-		<li>add automatic conversion from PDF (paycheck) to setting Salary values.</li>
-		<strike><li>Modify the HashMap to key Integer, value Outcome; where OutCome is a class with inside Double prize, Description, Date. Integer is solely the id used to identify that outcome.</li></strike><br>
-		<li>Insert controls: 
-			<ul>
-				<strike><li>Months check: all the months string are converted toUpperCase, and if an entered month is not valid, the console asks for it again.<br>
-					--> Solved: month.toUpperCase is used after I/O, and a do/while is used to be sure the MonthToInt method is taken care of in case it returns -1 (invalid string parameter)</li></strike>
-				<li>Only a Salary can exist with the same month and year.</li>
-				<li>Expenses must be added only to existing months.</li>
-				<li></li>
-
-			</ul></li>
+			<li>add automatic conversion from PDF (paycheck) to setting Salary values.</li>
+			<strike><li>Modify the HashMap to key Integer, value Outcome; where OutCome is a class with inside Double prize, Description, Date. Integer is solely the id used to identify that outcome.</li></strike><br>
+			<li>Insert controls: 
+				<ul>
+					<strike><li>Months check: all the months string are converted toUpperCase, and if an entered month is not valid, the console asks for it again.--> Solved: month.toUpperCase is used after I/O, and a do/while is used to be sure the MonthToInt method is taken care of in case it returns -1 (invalid string parameter)</li></strike>
+					<li>Only a Salary can exist with the same month and year.</li>
+					<li>Expenses must be added only to existing months.<br> Mabe add an Integer array for months that exist and check if the expenses has a month "existing" (expenses month is not contained in Integer array)</li>
+				</ul>
+			</li>
 		</ul>	
 	</li>
-	<!-- <li></li> -->
 	<li><em>FileReaderAndWriter</em><br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.</li>
 </ul>
