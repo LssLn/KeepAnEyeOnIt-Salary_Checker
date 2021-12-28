@@ -14,11 +14,20 @@
 	Each expense has an amount and a description.</li>
 	<li>Salary<br>
 	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).
-	<br>|<br>
+	<br>|<br>|<br>
 	<em>Future_Feature</em>:	
 		<ul>
 		<li>add automatic conversion from PDF (paycheck) to setting Salary values.</li>
-		<strike><li>Modify the HashMap to key Integer, value Outcome where OutCome is a class with inside Double prize,Description, Date. Integer is solely the id used to identify that outcome.</li></strike>
+		<strike><li>Modify the HashMap to key Integer, value Outcome; where OutCome is a class with inside Double prize, Description, Date. Integer is solely the id used to identify that outcome.</li></strike><br>
+		<li>Insert controls: 
+			<ul>
+				<strike><li>Months check: all the months string are converted toUpperCase, and if an entered month is not valid, the console asks for it again.<br>
+					--> Solved: month.toUpperCase is used after I/O, and a do/while is used to be sure the MonthToInt method is taken care of in case it returns -1 (invalid string parameter)</li></strike>
+				<li>Only a Salary can exist with the same month and year. --> Solved: </li>
+				<li></li>
+				<li></li>
+
+			</ul></li>
 		</ul>	
 	</li>
 	<!-- <li></li> -->
