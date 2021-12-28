@@ -1,5 +1,5 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
-![Logo](./images/logo.png)
+<img src="https://i.imgur.com/xkLdpZI.png"/>
 <section>Don't want to drain your salary as quick as you use to do?<br>Keep an Eye on It is a Java project developed to better manage your monthly expenses.<br>
 <br>
 <ul>
