@@ -1,6 +1,6 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
 <p align="center">
-<img src="https://i.imgur.com/xkLdpZI.png"/>
+<img src="https://i.imgur.com/xkLdpZI.png">
 </p>
 <section>Don't want to drain your salary as quick as you use to do?<br>Keep an Eye on It is a Java project developed to better manage your monthly expenses.<br>
 <br>
@@ -8,6 +8,7 @@
 	<li>Classes</li>
 	<li>Exceptions</li>
 	<li>Main</li>
+	<li>ShowCase</li>
 </ul>
 
 <br>
@@ -67,4 +68,33 @@
 		</ol>
 	</li>
 </ul>
+		
+<h2>SHOWCASE</h2>
+		<ol>
+			<li>Add Salary
+				<p align="center">
+					<img src="https://i.imgur.com/fMQwb6s.png">
+				</p>
+			</li>
+			
+			<li>Add Expense
+				<p align="center">
+					<img src="https://i.imgur.com/sPX0DYc.png">
+				</p>
+			</li>
+			
+			<li>Print
+				<p align="center">
+					<img src="https://i.imgur.com/SLdMbQL.png">
+				</p>
+			</li>
+			
+			<li>Write
+				<p align="center">
+					<img src="https://i.imgur.com/1dsmeBR.png">
+				</p>
+			</li>
+		</ol>
+	
 </section>
+	
