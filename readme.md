@@ -55,46 +55,28 @@
 	<br>The menù contains several options:
 		<ol start="1">
 			<li><b>Add Salary</b><br>
-			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11).</li>
+			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
+			<p align="center">
+					<img src="https://i.imgur.com/fMQwb6s.png">
+				</p></li>
 			<li>Add Expense<br>
 			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.</li>
-			<li>Print all the months for the year</li>
+			<li>Print all the months for the year:
+			<p align="center">
+					<img src="https://i.imgur.com/SLdMbQL.png">
+				</p></li>
 			<li>Menù<br>
 			Prints all the possibilities</li>
 			<strike><li>Read from file<br>
 				Read a txt file importing all the previously saved elements.</li></strike>
 			<li>Write file<br>
-			Writes all the data in a txt file, in order to retrieve those.</li>
-		</ol>
-	</li>
-</ul>
-		
-<h2>SHOWCASE</h2>
-		<ol>
-			<li>Add Salary
-				<p align="center">
-					<img src="https://i.imgur.com/fMQwb6s.png">
-				</p>
-			</li>
-			
-			<li>Add Expense
-				<p align="center">
-					<img src="https://i.imgur.com/sPX0DYc.png">
-				</p>
-			</li>
-			
-			<li>Print
-				<p align="center">
-					<img src="https://i.imgur.com/SLdMbQL.png">
-				</p>
-			</li>
-			
-			<li>Write
+			Writes all the data in a txt file, in order to retrieve those.
 				<p align="center">
 					<img src="https://i.imgur.com/1dsmeBR.png">
 				</p>
 			</li>
 		</ol>
-	
+	</li>
+</ul>
 </section>
 	
