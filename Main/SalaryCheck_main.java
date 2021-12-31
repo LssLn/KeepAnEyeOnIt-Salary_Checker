@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import SalaryChecker.Class.FileHandler;
 import SalaryChecker.Class.Salary;
 
 public class SalaryCheck_main {
@@ -126,12 +127,21 @@ public class SalaryCheck_main {
 					Collection<Salary> salaries = Salary_2021.values();
 					for(Salary s: salaries) { 	s.printSalary(); 	}
 					break;
+				case 4: 
+					menu();
+					break;
+				case 5:
+					System.out.println("Service \"Read From file\" is currently under development.\nRead the readme.md to know more!");
+					break;
+				case 6:
+					System.out.println("Writes in file");
+					FileHandler fw=new FileHandler();
+					fw.writingHashMap(Salary_2021);
+					System.out.println("\n-- Data saved into: {"+fw.getMyFile()+"}");
 				case 7:
 					menu();
 					break;
 			}
 		}while(scelta!=0);
-	
 	}
-
 }
