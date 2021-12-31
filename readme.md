@@ -52,6 +52,7 @@
 	Has an <b>HashMap</b> for every year (12 months, <Integer> key (1 aka January, 2 February and so on...), <Salary> value))<br>
 	Has a method (monthToInt) used to convert String month names to Integers (which returns -1 if the month name is not valid), and a menù method to show all the options.<br>
 		The above methods are both static, as they are called inside the main.<br>
+		<h3>MENU'</h3>
 	<br>The menù contains several options:
 		<ol start="1">
 			<li><b>Add Salary</b><br>
@@ -60,7 +61,10 @@
 					<img src="https://i.imgur.com/fMQwb6s.png">
 				</p></li>
 			<li>Add Expense<br>
-			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.</li>
+			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.
+			<p align="center">
+					<img src="https://i.imgur.com/sPX0DYc.png">
+				</p></li>
 			<li>Print all the months for the year:
 			<p align="center">
 					<img src="https://i.imgur.com/SLdMbQL.png">
