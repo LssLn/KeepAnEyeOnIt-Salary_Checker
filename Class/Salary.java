@@ -84,6 +84,14 @@ public class Salary {
 			System.out.println(ANSI_RED+"\t Expense: "+" "+i+" | "+outcome_returned.getOutcome()+" | "+ANSI_WHITE+outcome_returned.getDescription()+".");	
 		}
 	}
+	
+	/*
+	 * Implemented for the FileHandler, it's used to iterate any outcome for any Salary.
+	 * returns the outcomes HashMap
+	 */
+	public HashMap<Integer, Outcome> getOutcomes(){
+		return outcomes;
+	}
 
 	@Override
 	public String toString() {
