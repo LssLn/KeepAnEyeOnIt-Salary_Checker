@@ -29,8 +29,10 @@
 			</li>
 		</ul>	
 	</li>
-	<li><em>FileReaderAndWriter</em><br>
-	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.</li>
+	<strike><li><em>FileReaderAndWriter</em><br>
+	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
+	<br>It creates a new file, writes the parameters (line for line) into the file
+		</li></strike>
 </ul>
 
 <h2>EXCEPTION</h2>
@@ -56,8 +58,8 @@
 			<li>Print all the months for the year</li>
 			<li>Menù<br>
 			Prints all the possibilities</li>
-			<li>Read from file<br>
-			Read a txt file importing all the previously saved elements.</li>
+			<strike><li>Read from file<br>
+				Read a txt file importing all the previously saved elements.</li></strike>
 			<li>Write file<br>
 			Writes all the data in a txt file, in order to retrieve those.</li>
 		</ol>
