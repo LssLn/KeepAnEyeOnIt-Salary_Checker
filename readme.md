@@ -1,5 +1,7 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
+<p align="center">
 <img src="https://i.imgur.com/xkLdpZI.png"/>
+</p>
 <section>Don't want to drain your salary as quick as you use to do?<br>Keep an Eye on It is a Java project developed to better manage your monthly expenses.<br>
 <br>
 <ul>
@@ -51,7 +53,7 @@
 		The above methods are both static, as they are called inside the main.<br>
 	<br>The menù contains several options:
 		<ol start="1">
-			<li>Add Salary<br>
+			<li><b>Add Salary</b><br>
 			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11).</li>
 			<li>Add Expense<br>
 			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.</li>
