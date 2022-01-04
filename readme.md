@@ -26,7 +26,7 @@
 			<li>Insert controls: 
 				<ul>
 					<strike><li>Months check: all the input month strings are converted to UpperCase, and if an entered month is not valid, the console asks for it again.--> Solved: month.toUpperCase is used after I/O, and a do/while is used to be sure the MonthToInt method is taken care of in case it returns -1 (invalid string parameter)</li></strike>
-					<strike><li>Only a Salary can exist with the same month and year.</li><br>--> Solved: An element with the same slot into the HashMap will replace the old one, deleting the old expenses too. The "Save data (menù's 6th option) exists in order to avoid data loss due to unintentionally overwriting.<strike>
+					<strike><li>Only a Salary can exist with the same month and year.</li><br>--> Solved: An element with the same slot into the HashMap will replace the old one, deleting the old expenses too. The "Save data (menù's 6th option) exists in order to avoid data loss due to unintentionally overwriting.</strike>
 					<li>Expenses must be added only to existing months.<br> Mabe add an Integer array for months that exist and check if the expenses has a month "existing" (expenses month is not contained in Integer array)</li>
 				</ul>
 			</li>
@@ -67,7 +67,9 @@
 			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			<p align="center">
 					<img src="https://i.imgur.com/fMQwb6s.png">
-				</p></li>
+				</p>
+			If the inserted month already exists (AKA: the place into the HashMap is already taken), it will be resetted with the new parameters.
+			<br>In other words, if a month needs to be erased,  the add functionality can be used in order to reinitialize it.</li>
 			<li>Add Expense<br>
 			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.
 			<p align="center">
