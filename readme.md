@@ -32,10 +32,17 @@
 			</li>
 		</ul>	
 	</li>
-	<strike><li><em>FileReaderAndWriter</em><br>
+	<li><em>FileReaderAndWriter</em><br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
-	<br>It creates a new file, writes the parameters (line for line) into the file
-		</li></strike>
+	<br>It has 2 methods:
+		<ul>
+			<li><h4>writingHashMap</h4>
+			Given an HashMap, the method iterates through it and saves all its data in a txt file, created in order to save the data and making therefore possible for the readingFile method to load the already existing data.
+			<br>Everytime it's called, it overwrites the txt file deleting the old content.</li>
+			<li>readingFile
+			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the HashMap which contains its entries (the month-income and its related expenses).</li>
+		</ul>
+		</li>
 </ul>
 
 <h2>EXCEPTION</h2>
