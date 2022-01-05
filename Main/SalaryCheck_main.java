@@ -55,7 +55,9 @@ public class SalaryCheck_main {
 		System.out.println("\n-----------------------------\n1]Add Salary");
 		System.out.println("2]Add expense");
 		System.out.println("3]Print");
-		System.out.println("4]Menu\n-----------------------------\n");
+		System.out.println("4]Menu");
+		System.out.println("5]Load from txt file (overwrites actual data)");
+		System.out.println("6]Save data into txt\n-----------------------------\n");
 	}
 	
 	public static void main(String[] args) {
@@ -70,6 +72,7 @@ public class SalaryCheck_main {
 		menu();
 
 		int scelta=0;
+		FileHandler fw=new FileHandler(); //used for menu read and write, option 6 and 7
 		do {
 			System.out.print("\nScelta >> ");
 			Scanner scanner_scelta = new Scanner(System.in);
@@ -113,7 +116,7 @@ public class SalaryCheck_main {
 						Scanner scanner_outcome_3 = new Scanner(System.in);
 				 		String month= scanner_outcome_3.nextLine();
 				 		month=month.toUpperCase();
-;				 		ret_value=MonthToInt(month);
+				 		ret_value=MonthToInt(month);
 				 		//System.out.println("\n @@@ month is "+month+", ret_value is "+ret_value);
 				 		if(ret_value != -1) {
 				 			Salary salary = Salary_2021.get(ret_value-1); 
@@ -131,16 +134,18 @@ public class SalaryCheck_main {
 					menu();
 					break;
 				case 5:
-					System.out.println("Service \"Read From file\" is currently under development.\nRead the readme.md to know more!");
+					System.out.println("Loading file {"+fw.getMyFile()+"} ...");
+					FileHandler fr=new FileHandler();
+					System.out.println("calling readingFile()");
+					Salary_2021=fr.readingFile();
+					Collection<Salary> salarieses = Salary_2021.values();
+					for(Salary s: salarieses) { 	s.printSalary(); 	}
+					System.out.println("\n-- Data loaded.");
 					break;
 				case 6:
 					System.out.println("Writes in file");
-					FileHandler fw=new FileHandler();
 					fw.writingHashMap(Salary_2021);
 					System.out.println("\n-- Data saved into: {"+fw.getMyFile()+"}");
-				case 7:
-					menu();
-					break;
 			}
 		}while(scelta!=0);
 	}
