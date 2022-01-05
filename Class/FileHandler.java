@@ -31,7 +31,7 @@ import java.util.Set;
 public class FileHandler {
 	
 	
-	private String myFile="C:\\Users\\RedBite\\Documents\\workspace-spring-tool-suite-4-4.12.0.RELEASE\\Esercizio 26 SalaryChecker\\src\\SalaryChecker\\write.txt";
+	private String myFile="...\\write.txt";
 
 	
 	public String getMyFile() {
