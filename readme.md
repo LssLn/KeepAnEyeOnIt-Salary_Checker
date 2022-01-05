@@ -31,7 +31,7 @@
 			</li>
 		</ul>	
 	</li>
-	<li><em>FileReaderAndWriter</em><br>
+	<li>FileReaderAndWriter<br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
 	<br>It has 2 methods:
 		<ul>
