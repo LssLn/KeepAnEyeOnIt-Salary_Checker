@@ -80,8 +80,8 @@
 				</p></li>
 			<li>Menù<br>
 			Prints all the possibilities</li>
-			<strike><li>Read from file<br>
-				Read a txt file importing all the previously saved elements.</li></strike>
+			<li>Read from file<br>
+				Read a txt file importing all the previously saved elements.</li>
 			<li>Write file<br>
 			Writes all the data in a txt file, in order to retrieve those.
 				<p align="center">
