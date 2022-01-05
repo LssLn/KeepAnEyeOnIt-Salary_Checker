@@ -109,20 +109,29 @@ public class Salary {
 		final String ANSI_WHITE="\u001b[37m";
 		final String ANSI_GREEN="\u001b[32m";
 		final String ANSI_RED="\u001b[31m";
+		final String ANSI_YELLOW="\u001b[33m";
+
 
 		Double nblocksI=(income/50);
-		//System.out.println(nblocksI);
+		System.out.print("  ");
 		for(int i=0;i<nblocksI;i++) {
 			System.out.print(ANSI_GREEN+"•");
 		}
 		System.out.println(ANSI_WHITE);
 		
 		Double nblocksO=(outcome/50);
-		//System.out.println(nblocksO);
+		System.out.print("  ");
 		for(int i=0;i<nblocksO;i++) {
 			System.out.print(ANSI_RED+"•");
 		}
 		System.out.print(ANSI_WHITE);
+		
+		Double nblocksL=(income-outcome)/50;
+		for(int i=0;i<nblocksL;i++) {
+			System.out.print(ANSI_YELLOW+"•");
+		}
+		System.out.print(ANSI_WHITE);
+
 	}
 	
 }
