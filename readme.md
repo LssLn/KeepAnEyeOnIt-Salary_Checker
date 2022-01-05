@@ -42,6 +42,9 @@
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the HashMap which contains its entries (the month-income and its related expenses).</li>
 		</ul>
 		</li>
+	<strike><li>monthsUtil<br>
+		This class has the "MonthToInt" method used by the main and the fileHandler class.
+	</li></strike>
 </ul>
 
 <h2>EXCEPTION</h2>
