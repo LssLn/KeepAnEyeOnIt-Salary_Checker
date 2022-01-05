@@ -7,8 +7,7 @@
 <ul>
 	<li>Classes</li>
 	<li>Exceptions</li>
-	<li>Main</li>
-	<li>ShowCase</li>
+	<li>Main & ShowCase</li>
 </ul>
 
 <br>
