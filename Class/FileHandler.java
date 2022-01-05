@@ -84,19 +84,14 @@ public class FileHandler {
 			File file = new File(myFile);
 			Scanner scanner = new Scanner(file);
 			String fileContent = "";
-			System.out.println("before while");
 			while(scanner.hasNext()){ //reads the whole file
-				System.out.println("while is running");
 				try {
 					String month = scanner.next(); 
-					System.out.println("month::"+month);
 					month=month.toUpperCase();
 					ret_value=MonthToInt(month);
 					
 					Double income=Double.parseDouble(scanner.next());
-					System.out.println(" - - "+income);
 					Double outcome=Double.parseDouble(scanner.next());
-					System.out.println(" - - "+outcome);
 					
 					if(ret_value != -1) {
 			 			Salary salary = new Salary(income,month);
@@ -105,18 +100,12 @@ public class FileHandler {
 			 			//it's critical to subtract -1 from ret value now because it may broke the do while
 			 			
 			 			Integer n_s_outcomes = Integer.parseInt(scanner.next());
-						System.out.println(" - - "+n_s_outcomes);
 	                    for(int i=0;i<n_s_outcomes;i++) {
-	                    	System.out.println("-:: sub element "+i+1);
 	                    	try {
-	                    		Double s_outcome = Double.parseDouble(scanner.next());
-		                    	System.out.println("-:: :: expense "+s_outcome);
-		                    	
+	                    		Double s_outcome = Double.parseDouble(scanner.next());		                    	
 		                        String description = scanner.nextLine();
-		                        System.out.println(" - "+description);
 
 		                        salary.setSingle_outcome(s_outcome, description);
-
 	                    	} catch (NumberFormatException e) {
 	                    	    e.printStackTrace();
 	                    	}
@@ -124,7 +113,7 @@ public class FileHandler {
 	                    }
 					}
 				}catch(InputMismatchException ex){
-                  //scanner.nextLine(); //skips the line if there is an error.
+                  			//scanner.nextLine(); //skips the line if there is an error.
 					ex.printStackTrace();
 				}
 //				catch(NoSuchElementException ex) {
