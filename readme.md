@@ -2,7 +2,7 @@
 <p align="center">
 <img src="https://i.imgur.com/xkLdpZI.png">
 </p>
-<section>Don't want to drain your salary as quick as you use to do?<br>Keep an Eye on It is a Java project developed to better manage your monthly expenses.<br>
+<section>Don't want to drain your salary as quick as you use to do?<br><b>Keep an Eye on It: Salary Checker</b> is a Java project developed to better manage your monthly expenses.<br>
 <br>
 <ul>
 	<li>Classes</li>
