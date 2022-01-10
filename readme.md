@@ -86,7 +86,7 @@
 			<li>Read from file<br>
 				Read a txt file importing all the previously saved elements.</li>
 			<li>Write file<br>
-			Writes all the data in a txt file, in order to retrieve those.
+			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
 				<p align="center">
 					<img src="https://i.imgur.com/1dsmeBR.png">
 				</p>
