@@ -13,7 +13,7 @@ public class Salary {
 	final String ANSI_RED="\u001b[31m";
 	final String ANSI_YELLOW="\u001b[33m";
 	final String ANSI_WHITE="\u001b[37m";
-
+	final String ANSI_MGNT="\u001b[36m";
 	
 	private Double income;
 	//it's the amount of all the single expenses
@@ -81,7 +81,7 @@ public class Salary {
 		//System.out.println("\nReading all the expenses:\n");
 		for(Integer i: setkeys_outcomes) {
 			Outcome outcome_returned = outcomes.get(i);
-			System.out.println(ANSI_WHITE+"\t Expense: "+" "+i+" | "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+" | "+ANSI_WHITE+outcome_returned.getDescription()+".");	
+			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"    "+ANSI_WHITE+outcome_returned.getDescription()+".");	
 		}
 	}
 	
@@ -99,7 +99,12 @@ public class Salary {
 	}
 	
 	public void printSalary() {
-		System.out.println(ANSI_WHITE+ "\nSalary - "+month+" [ "+ANSI_GREEN+"income= " + income + ANSI_RED+" || total_outcome= " + total_outcome + ANSI_YELLOW+" || left= " +(income-total_outcome)+ANSI_WHITE+"]");
+		System.out.println(ANSI_WHITE+ "\n"+ANSI_MGNT+"• " +
+				ANSI_WHITE+"Salary - "+month+" [ "+
+				ANSI_GREEN+  "  In  " + income + 
+				ANSI_RED+"   ||   Out   " + total_outcome + 
+				ANSI_MGNT+"  ||   Left  " +(income-total_outcome)+
+				ANSI_WHITE+"   ]");
 		incomeGraphics(income,total_outcome);
 		System.out.println();
 		printOutcomesHashMap();
@@ -110,6 +115,7 @@ public class Salary {
 		final String ANSI_GREEN="\u001b[32m";
 		final String ANSI_RED="\u001b[31m";
 		final String ANSI_YELLOW="\u001b[33m";
+		final String ANSI_MGNT="\u001b[36m";
 		
 		Integer num_divider=10;
 
@@ -118,21 +124,19 @@ public class Salary {
 		for(int i=0;i<nblocksI;i++) {
 			System.out.print(ANSI_GREEN+"#");
 		}
-		System.out.println(ANSI_WHITE);
 		
-		Double nblocksO=(outcome/num_divider);
-		System.out.print("  ");
-		for(int i=0;i<nblocksO;i++) {
-			System.out.print(ANSI_RED+"#"); //•
-		}
-		System.out.print(ANSI_WHITE);
-		
+		System.out.print("\n  ");
 		Double nblocksL=(income-outcome)/num_divider;
 		for(int i=0;i<nblocksL;i++) {
-			System.out.print(ANSI_WHITE+"#");
+			System.out.print(ANSI_MGNT+"#");
 		}
+		
+		Double nblocksO=(outcome/num_divider);
+		System.out.print("\n  ");
+		for(int i=0;i<nblocksO;i++) {
+			System.out.print(ANSI_RED+"#"); //•
+		}		
 		System.out.print(ANSI_WHITE);
-
 	}
 	
 }
