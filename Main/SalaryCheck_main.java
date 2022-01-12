@@ -52,8 +52,14 @@ public class SalaryCheck_main {
 	}
 	
 	public static void menu() {
-		final String ANSI_YELLOW="\u001b[33m";
-		final String ANSI_WHITE="\u001b[37m";
+//		final String ANSI_YELLOW="\u001b[33m";
+//		final String ANSI_WHITE="\u001b[37m";
+	
+		final String ANSI_GREEN="\033[92m";
+		final String ANSI_RED="\033[31m";
+		final String ANSI_YELLOW="\033[33m";
+		final String ANSI_WHITE="\033[37m";
+		final String ANSI_MGNT="\033[36m";		
 		
 		System.out.println("\n"+ANSI_YELLOW+"----------------------------------------------------------\n|  1]"+ANSI_WHITE+"  Add Salary");
 		System.out.println(ANSI_YELLOW+"|  2]"+ANSI_WHITE+"  Add expense");
@@ -64,9 +70,16 @@ public class SalaryCheck_main {
 	}
 	
 	public static void main(String[] args) {
-		final String ANSI_GREEN="\u001b[32m";
-		final String ANSI_RED="\u001b[31m";		
-		final String ANSI_WHITE="\u001b[37m";
+//		final String ANSI_GREEN="\u001b[32m";
+//		final String ANSI_RED="\u001b[31m";		
+//		final String ANSI_WHITE="\u001b[37m";
+		
+		final String ANSI_GREEN="\033[92m";
+		final String ANSI_RED="\033[31m";
+		final String ANSI_YELLOW="\033[33m";
+		final String ANSI_WHITE="\033[37m";
+		final String ANSI_MGNT="\033[36m";
+		
 
 		System.out.println(" ****** "+ANSI_GREEN+"SALARY CHECKER"+ANSI_WHITE+" ******");
 				
