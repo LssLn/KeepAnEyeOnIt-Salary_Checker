@@ -31,7 +31,7 @@ import java.util.Set;
 public class FileHandler {
 	
 	
-	private String myFile="...\\write.txt";
+	private String myFile="C:\\Users\\RedBite\\Documents\\workspace-spring-tool-suite-4-4.12.0.RELEASE\\Esercizio 26 SalaryChecker\\src\\SalaryChecker\\write.txt";
 
 	
 	public String getMyFile() {
@@ -79,7 +79,6 @@ public class FileHandler {
 	public HashMap<Integer,Salary> readingFile() {
 		HashMap<Integer,Salary> Salary_2021 = new HashMap<>(12);
 		int ret_value=0;
-		System.out.println("before try");
 		try {
 			File file = new File(myFile);
 			Scanner scanner = new Scanner(file);
@@ -87,11 +86,14 @@ public class FileHandler {
 			while(scanner.hasNext()){ //reads the whole file
 				try {
 					String month = scanner.next(); 
+					System.out.println("month::"+month+" loaded");
 					month=month.toUpperCase();
 					ret_value=MonthToInt(month);
 					
 					Double income=Double.parseDouble(scanner.next());
+//					System.out.println(" - - "+income);
 					Double outcome=Double.parseDouble(scanner.next());
+//					System.out.println(" - - "+outcome);
 					
 					if(ret_value != -1) {
 			 			Salary salary = new Salary(income,month);
@@ -100,12 +102,18 @@ public class FileHandler {
 			 			//it's critical to subtract -1 from ret value now because it may broke the do while
 			 			
 			 			Integer n_s_outcomes = Integer.parseInt(scanner.next());
+//						System.out.println(" - - "+n_s_outcomes);
 	                    for(int i=0;i<n_s_outcomes;i++) {
+//	                    	System.out.println("-:: sub element "+i+1);
 	                    	try {
-	                    		Double s_outcome = Double.parseDouble(scanner.next());		                    	
+	                    		Double s_outcome = Double.parseDouble(scanner.next());
+//		                    	System.out.println("-:: :: expense "+s_outcome);
+		                    	
 		                        String description = scanner.nextLine();
+//		                        System.out.println(" - "+description);
 
 		                        salary.setSingle_outcome(s_outcome, description);
+
 	                    	} catch (NumberFormatException e) {
 	                    	    e.printStackTrace();
 	                    	}
@@ -113,7 +121,7 @@ public class FileHandler {
 	                    }
 					}
 				}catch(InputMismatchException ex){
-                  			//scanner.nextLine(); //skips the line if there is an error.
+                  //scanner.nextLine(); //skips the line if there is an error.
 					ex.printStackTrace();
 				}
 //				catch(NoSuchElementException ex) {
@@ -121,6 +129,7 @@ public class FileHandler {
 //							+ "customized following the fix provided by hasNext instead of hasNextLine"
 //							+ "https://stackoverflow.com/a/58853018/8422732");
 //				}
+				
 			}	
 			//reading file while ended
             return Salary_2021;
@@ -128,16 +137,6 @@ public class FileHandler {
 		}catch (Exception e) {
             e.printStackTrace();
         }
-//        finally {
-//            // Always close the BufferedReader
-//            if (br != null) {
-//                try {
-//                    br.close();
-//                }
-//                catch (Exception e) {
-//                };
-//            }
-//        }
 		
 		return Salary_2021;
 	}
