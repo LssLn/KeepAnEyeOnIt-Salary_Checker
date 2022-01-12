@@ -9,11 +9,17 @@ import java.util.Set;
  * negative for each purchase or expense.
  */
 public class Salary {
-	final String ANSI_GREEN="\u001b[32m";
-	final String ANSI_RED="\u001b[31m";
-	final String ANSI_YELLOW="\u001b[33m";
-	final String ANSI_WHITE="\u001b[37m";
-	final String ANSI_MGNT="\u001b[36m";
+//	final String ANSI_GREEN="\u001b[32m";
+//	final String ANSI_RED="\u001b[31m";
+//	final String ANSI_YELLOW="\u001b[33m";
+//	final String ANSI_WHITE="\u001b[37m";
+//	final String ANSI_MGNT="\u001b[36m";
+	
+	final String ANSI_GREEN="\033[92m";
+	final String ANSI_RED="\033[31m";
+	final String ANSI_YELLOW="\033[33m";
+	final String ANSI_WHITE="\033[37m";
+	final String ANSI_MGNT="\033[36m";
 	
 	private Double income;
 	//it's the amount of all the single expenses
@@ -111,11 +117,17 @@ public class Salary {
 	}
 	
 	public static void incomeGraphics(Double income, Double outcome) {
-		final String ANSI_WHITE="\u001b[37m";
-		final String ANSI_GREEN="\u001b[32m";
-		final String ANSI_RED="\u001b[31m";
-		final String ANSI_YELLOW="\u001b[33m";
-		final String ANSI_MGNT="\u001b[36m";
+//		final String ANSI_WHITE="\u001b[37m";
+//		final String ANSI_GREEN="\u001b[32m";
+//		final String ANSI_RED="\u001b[31m";
+//		final String ANSI_YELLOW="\u001b[33m";
+//		final String ANSI_MGNT="\u001b[36m";
+
+		final String ANSI_GREEN="\033[92m";
+		final String ANSI_RED="\033[31m";
+		final String ANSI_YELLOW="\033[33m";
+		final String ANSI_WHITE="\033[37m";
+		final String ANSI_MGNT="\033[36m";
 		
 		Integer num_divider=10;
 
