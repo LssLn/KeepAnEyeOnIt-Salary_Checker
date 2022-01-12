@@ -81,7 +81,7 @@ public class Salary {
 		//System.out.println("\nReading all the expenses:\n");
 		for(Integer i: setkeys_outcomes) {
 			Outcome outcome_returned = outcomes.get(i);
-			System.out.println(ANSI_RED+"\t Expense: "+" "+i+" | "+outcome_returned.getOutcome()+" | "+ANSI_WHITE+outcome_returned.getDescription()+".");	
+			System.out.println(ANSI_WHITE+"\t Expense: "+" "+i+" | "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+" | "+ANSI_WHITE+outcome_returned.getDescription()+".");	
 		}
 	}
 	
@@ -92,7 +92,7 @@ public class Salary {
 	public HashMap<Integer, Outcome> getOutcomes(){
 		return outcomes;
 	}
-
+	//UNUSED
 	@Override
 	public String toString() {
 		return "Salary - "+month+"[ income= " + income + "	 total_outcome= " + total_outcome + " ]";
@@ -110,25 +110,26 @@ public class Salary {
 		final String ANSI_GREEN="\u001b[32m";
 		final String ANSI_RED="\u001b[31m";
 		final String ANSI_YELLOW="\u001b[33m";
+		
+		Integer num_divider=10;
 
-
-		Double nblocksI=(income/50);
+		Double nblocksI=(income/num_divider);
 		System.out.print("  ");
 		for(int i=0;i<nblocksI;i++) {
-			System.out.print(ANSI_GREEN+"•");
+			System.out.print(ANSI_GREEN+"#");
 		}
 		System.out.println(ANSI_WHITE);
 		
-		Double nblocksO=(outcome/50);
+		Double nblocksO=(outcome/num_divider);
 		System.out.print("  ");
 		for(int i=0;i<nblocksO;i++) {
-			System.out.print(ANSI_RED+"•");
+			System.out.print(ANSI_RED+"#"); //•
 		}
 		System.out.print(ANSI_WHITE);
 		
-		Double nblocksL=(income-outcome)/50;
+		Double nblocksL=(income-outcome)/num_divider;
 		for(int i=0;i<nblocksL;i++) {
-			System.out.print(ANSI_YELLOW+"•");
+			System.out.print(ANSI_WHITE+"#");
 		}
 		System.out.print(ANSI_WHITE);
 
