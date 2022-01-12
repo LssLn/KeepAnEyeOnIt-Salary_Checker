@@ -42,8 +42,9 @@
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the HashMap which contains its entries (the month-income and its related expenses).</li>
 		</ul>
 		</li>
-	<strike><li>monthsUtil<br>
-		This class has the "MonthToInt" method used by the main and the fileHandler class.
+	<strike><li>Utils<br>
+		This class has the "MonthToInt" method used by the main and the fileHandler class.<br>
+		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
 	</li></strike>
 </ul>
 
