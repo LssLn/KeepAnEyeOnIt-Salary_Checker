@@ -52,12 +52,15 @@ public class SalaryCheck_main {
 	}
 	
 	public static void menu() {
-		System.out.println("\n-----------------------------\n1]Add Salary");
-		System.out.println("2]Add expense");
-		System.out.println("3]Print");
-		System.out.println("4]Menu");
-		System.out.println("5]Load from txt file (overwrites actual data)");
-		System.out.println("6]Save data into txt\n-----------------------------\n");
+		final String ANSI_YELLOW="\u001b[33m";
+		final String ANSI_WHITE="\u001b[37m";
+		
+		System.out.println("\n"+ANSI_YELLOW+"----------------------------------------------------------\n|  1]"+ANSI_WHITE+"  Add Salary");
+		System.out.println(ANSI_YELLOW+"|  2]"+ANSI_WHITE+"  Add expense");
+		System.out.println(ANSI_YELLOW+"|  3]"+ANSI_WHITE+"  Print");
+		System.out.println(ANSI_YELLOW+"|  4]"+ANSI_WHITE+"  Menu");
+		System.out.println(ANSI_YELLOW+"|  5]"+ANSI_WHITE+"  Load from txt file (overwrites actual data)");
+		System.out.println(ANSI_YELLOW+"|  6]"+ANSI_WHITE+"  Save data into txt\n"+ANSI_YELLOW+"----------------------------------------------------------\n"+ANSI_WHITE);
 	}
 	
 	public static void main(String[] args) {
@@ -80,9 +83,16 @@ public class SalaryCheck_main {
 			switch(scelta) {
 				case 1:
 					System.out.println("\nAdd Salary: ");
-					System.out.print(">>>>>>>> Income:    ");
-					Scanner scanner_income_1 = new Scanner(System.in);
-			 		Double income= scanner_income_1.nextDouble();
+					Double income;
+					do {
+						System.out.print(">>>>>>>> Income:    ");
+						Scanner scanner_income_1 = new Scanner(System.in);
+				 		income= scanner_income_1.nextDouble();
+				 		if(income<0) {//launch exception !!
+				 			System.out.println("!!! Input income is not valid.");
+				 		}
+					}while(income<0);
+					
 			 		int ret_value=0;
 			 		do {
 			 			System.out.print(">>>>>>>> Month:    ");
@@ -102,9 +112,16 @@ public class SalaryCheck_main {
 					break;
 				case 2:
 					System.out.println("\nAdd Expense");
-			 		System.out.print("\n>>>>>>>>> Expense:    ");
-					Scanner scanner_outcome_1=new Scanner(System.in);
-					Double expense = scanner_outcome_1.nextDouble();
+					Double expense;
+					do {
+						System.out.print("\n>>>>>>>>> Expense:    ");
+						Scanner scanner_outcome_1=new Scanner(System.in);
+						expense = scanner_outcome_1.nextDouble();
+						if(expense<0) {
+				 			System.out.println("!!! Input expense is not valid.");
+						}
+					}while(expense<=0);
+			 		
 					System.out.print(">>>>>>>>> Description:    ");
 					Scanner scanner_outcome_2=new Scanner(System.in);
 					String description = scanner_outcome_2.nextLine();
@@ -136,7 +153,6 @@ public class SalaryCheck_main {
 				case 5:
 					System.out.println("Loading file {"+fw.getMyFile()+"} ...");
 					FileHandler fr=new FileHandler();
-					System.out.println("calling readingFile()");
 					Salary_2021=fr.readingFile();
 					Collection<Salary> salarieses = Salary_2021.values();
 					for(Salary s: salarieses) { 	s.printSalary(); 	}
