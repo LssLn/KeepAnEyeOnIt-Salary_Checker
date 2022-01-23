@@ -27,7 +27,6 @@
 					<strike><li>Months check: all the input month strings are converted to UpperCase, and if an entered month is not valid, the console asks for it again.--> Solved: month.toUpperCase is used after I/O, and a do/while is used to be sure the MonthToInt method is taken care of in case it returns -1 (invalid string parameter)</li></strike>
 					<strike><li>Only a Salary can exist with the same month and year.</li><br>--> Solved: An element with the same slot into the HashMap will replace the old one, deleting the old expenses too. The "Save data (menù's 6th option) exists in order to avoid data loss due to unintentionally overwriting.</strike>
 					<li>Expenses must be added only to existing months.<br> Mabe add an Integer array for months that exist and check if the expenses has a month "existing" (expenses month is not contained in Integer array)</li>
-					<li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li>
 				</ul>
 			</li>
 		</ul>	
@@ -41,6 +40,7 @@
 			<br>Everytime it's called, it overwrites the txt file deleting the old content.</li>
 			<li>readingFile
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the HashMap which contains its entries (the month-income and its related expenses).</li>
+			<li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li>
 		</ul>
 		</li>
 	<strike><li>Utils<br>
