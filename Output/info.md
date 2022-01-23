@@ -1,0 +1,1 @@
+This is the folder where the file write.txt will be written into by the FileHandler class.
