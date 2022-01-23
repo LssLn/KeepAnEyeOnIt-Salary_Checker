@@ -43,13 +43,12 @@
 		</ul>
 		<h3>Future updates:</h3>
 		<ul>
-		<li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li>	
+		<strike><li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li></strike>
+		<strike><li>Utils<br>
+		This class has the "MonthToInt" method used by the main and the fileHandler class.<br>		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
+	</li></strike>	
 		</ul>
 		</li>
-	<strike><li>Utils<br>
-		This class has the "MonthToInt" method used by the main and the fileHandler class.<br>
-		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
-	</li></strike>
 </ul>
 
 <h2>EXCEPTION</h2>
