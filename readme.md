@@ -69,7 +69,7 @@
 		<h3>MENU'</h3>
 	<br>The menù contains several options:
 				<p align="center">
-					<img src="https://i.imgur.com/I0PcW77.png">
+					<img src="">
 				</p>
 		<ol start="1">
 			<li><b>Add Salary</b><br>
