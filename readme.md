@@ -40,7 +40,10 @@
 			<br>Everytime it's called, it overwrites the txt file deleting the old content.</li>
 			<li>readingFile
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the HashMap which contains its entries (the month-income and its related expenses).</li>
-			<li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li>
+		</ul>
+		<h3>Future updates:</h3>
+		<ul>
+		<li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li>	
 		</ul>
 		</li>
 	<strike><li>Utils<br>
