@@ -69,6 +69,19 @@ public class SalaryCheck_main {
 		System.out.println(ANSI_YELLOW+"|  6]"+ANSI_WHITE+"  Save data into txt\n"+ANSI_YELLOW+"----------------------------------------------------------\n"+ANSI_WHITE);
 	}
 	
+	public static void intro() {
+		final String ANSI_GREEN="\033[92m";
+		final String ANSI_WHITE="\033[37m";
+
+		System.out.println(ANSI_GREEN);
+		System.out.println(" *  *     *     *****    *****  ***** ");
+		System.out.println(" * *     * *    *        *      *   * ");
+		System.out.println(" **     *****   ***** -- *****  *     ");
+		System.out.println(" * *   *     *  *            *  *   * ");
+		System.out.println(" *  * *       * *****    *****  ***** ");
+		System.out.println(ANSI_WHITE);
+	}
+	
 	public static void main(String[] args) {
 //		final String ANSI_GREEN="\u001b[32m";
 //		final String ANSI_RED="\u001b[31m";		
@@ -80,13 +93,12 @@ public class SalaryCheck_main {
 		final String ANSI_WHITE="\033[37m";
 		final String ANSI_MGNT="\033[36m";
 		
-
-		System.out.println(" ****** "+ANSI_GREEN+"SALARY CHECKER"+ANSI_WHITE+" ******");
+		intro();
+		System.out.println(ANSI_GREEN+" KEEP AN EYE ON IT: SALARY CHECKER"+ANSI_WHITE+" v 1.1");
 				
 		HashMap<Integer,Salary> Salary_2021 = new HashMap<>(12);
 
 		menu();
-
 		int scelta=0;
 		FileHandler fw=new FileHandler(); //used for menu read and write, option 6 and 7
 		do {
