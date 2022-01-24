@@ -69,31 +69,31 @@
 		<h3>MENU'</h3>
 	<br>The menù contains several options:
 				<p align="center">
-					<img src="">
+					<img src="https://i.imgur.com/KorLUsN.png">
 				</p>
 		<ol start="1">
 			<li><b>Add Salary</b><br>
 			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			<p align="center">
-					<img src="https://i.imgur.com/JowFq39.png">
+					<img src="https://i.imgur.com/jkdc7VL.png">
 				</p>
 			If the inserted month already exists (AKA: the place into the HashMap is already taken), it will be resetted with the new parameters.
 			<br>In other words, if a month needs to be erased,  the add functionality can be used in order to reinitialize it.</li>
 			<li>Add Expense<br>
 			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.
 			<p align="center">
-					<img src="https://i.imgur.com/GHc2zgV.png">
+					<img src="https://i.imgur.com/VQrM62u.png">
 				</p></li>
 			<li>Print all the months for the year:
 			<p align="center">
-					<img src="https://i.imgur.com/HkS1emV.png">
+					<img src="https://i.imgur.com/KorLUsN.png">
 				</p></li>
 			<li>Menù<br>
 			Prints all the possibilities</li>
 			<li>Read from file<br>
 				Read a txt file importing all the previously saved elements.
 				<p align="center">
-					<img src="https://i.imgur.com/cMR1uI1.png">
+					<img src="https://i.imgur.com/luOYqAY.png">
 				</p>
 			</li>
 			<li>Write file<br>
