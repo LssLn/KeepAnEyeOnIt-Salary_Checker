@@ -86,7 +86,7 @@
 				</p></li>
 			<li>Print all the months for the year:
 			<p align="center">
-					<img src="https://i.imgur.com/KorLUsN.png">
+					<img src="https://i.imgur.com/giF6Zvc.png">
 				</p></li>
 			<li>Menù<br>
 			Prints all the possibilities</li>
@@ -99,7 +99,7 @@
 			<li>Write file<br>
 			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
 				<p align="center">
-					<img src="https://i.imgur.com/QtCdbA1.png">
+					<img src="https://i.imgur.com/B2S4jnF.png">
 				</p>
 			</li>
 		</ol>
