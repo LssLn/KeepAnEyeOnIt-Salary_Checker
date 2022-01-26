@@ -71,7 +71,7 @@
 				<p align="center">
 					<img src="https://i.imgur.com/KorLUsN.png">
 				</p>
-		<ol start="1">
+		<ul>
 			<li><b>Add Salary</b><br>
 			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			<p align="center">
@@ -102,7 +102,7 @@
 					<img src="https://i.imgur.com/B2S4jnF.png">
 				</p>
 			</li>
-		</ol>
+		</ul>
 	</li>
 </ul>
 </section>
