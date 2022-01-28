@@ -17,10 +17,18 @@
 	<li>Outcome<br>
 	Each expense has an amount and a description.</li>
 	<li>Salary<br>
-	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>Ith has these methods:
+	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>It has these methods worth mentioning:
 		<ul>
-			<li><h4>Graphics</h4><br></li>
+			<li><h4>printOutcomeHashMap</h4>Prints the outcomes stored in the Salary Hashmap.</li>
+			<li><h4>setSingleOutcome</h4></li>
+			<li><h4>incomeGraphics</h4>Used to better display the infos for Salary.</li>
+			<li><h4>printSalary</h4></li>
 		</ul>
+	</li>
+	<li>Year<br>
+		<li><h4>Add/Remove Month</h4></li>
+		<li><h4>getMonths</h4>Returns the HashMap<Integer,Salary> which represents the year's months.</li>
+		<li><h4>compareTo</h4>Year implements Comparable<Year>, compareTo is used to set the year String as parameter to order the ArrayList in the main.</li>
 	</li>
 	<li>FileReaderAndWriter<br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
@@ -29,7 +37,7 @@
 			<li><h4>writingFile</h4>
 			Given a YEARS ArrayList, the method iterates through it and saves all its data in a txt file, created in order to save the data and making therefore possible for the readingFile method to load the already existing data.
 			<br>Everytime it's called, it overwrites the txt file deleting the old content.</li>
-			<li>readingFile
+			<li><h4>readingFile</h4>
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the YEARS ArrayList.</li>
 		</ul>
 	</li>
@@ -37,9 +45,9 @@
 		This class has static methods and attributes used without any instance for this class by all the others Classes. 
 		<ul>
 			<li>ANSI_COLOR_CODES</li>
-			<li><h4>MonthToInt</h4> <br>Given a string, returns an integer from 0 to 11, or -1.</li>
-			<li><h4>Intro</h4><br>KAE-SC logo, displayed on the boot-up.</li>
-			<li><h4>Menu</h4><br>the main's possible choices.</li>
+			<li><h4>MonthToInt</h4>Given a string, returns an integer from 0 to 11, or -1.</li>
+			<li><h4>Intro</h4>KAE-SC logo, displayed on the boot-up.</li>
+			<li><h4>Menu</h4>the main's possible choices.</li>
 		</ul>
 		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
 	</li>
