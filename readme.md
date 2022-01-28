@@ -26,9 +26,11 @@
 		</ul>
 	</li>
 	<li>Year<br>
-		<li><h4>Add/Remove Month</h4></li>
+		<ul>
+			<li><h4>Add/Remove Month</h4></li>
 		<li><h4>getMonths</h4>Returns the HashMap<Integer,Salary> which represents the year's months.</li>
 		<li><h4>compareTo</h4>Year implements Comparable<Year>, compareTo is used to set the year String as parameter to order the ArrayList in the main.</li>
+		</ul>
 	</li>
 	<li>FileReaderAndWriter<br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
