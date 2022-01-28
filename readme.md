@@ -65,7 +65,7 @@
 <h2>MAIN</h2>
 <ul>
 	<li>SalaryChecker_Test
-	Has an <b>HashMap</b> for every year (12 months, <Integer> key (1 aka January, 2 February and so on...), <Salary> value))<br>
+	Has an <b>ArrayList</b> for every year (12 months, <Integer> key (1 aka January, 2 February and so on...), <Salary> value))<br>
 	Has a method (monthToInt) used to convert String month names to Integers (which returns -1 if the month name is not valid), and a menù method to show all the options.<br>
 		The above methods are both static, as they are called inside the main.<br>
 		<h3>MENU'</h3>
@@ -75,7 +75,7 @@
 				</p>
 		<ul>
 			<li><b>Add Salary</b><br>
-			Given a month name (e.g. November), through the MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
+			Given a month name (e.g. November), an amount and an Year, through the Utils.MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			<p align="center">
 					<img src="https://i.imgur.com/jkdc7VL.png">
 				</p>
@@ -84,13 +84,13 @@
 			<li>Remove Salary (WIP)<br>
 				Given a month name (and a Year), its info are deleted (its expenses too).</li>
 			<li>Add Expense<br>
-			Given an amount, a description and a month, the expense is added (subtracted) to the Salary which has the same month.
+			Given an amount, a description, a month and an year, the expense is added (subtracted) to the Salary which has the same month and year.
 			<p align="center">
 					<img src="https://i.imgur.com/VQrM62u.png">
 				</p></li>
 			<li>Remove Expense <b>(WIP)</b><br>
 				Given a month name (and a Year), followed by an ID (visible in the Print), the specific expense is deleted.</li>
-			<li>Print all the months for the year:
+			<li>Print all the months for each year:
 			<p align="center">
 					<img src="https://i.imgur.com/giF6Zvc.png">
 				</p></li>
