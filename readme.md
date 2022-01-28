@@ -14,10 +14,8 @@
 <br>
 <h2>CLASS</h2>
 <ul>
-	<li>Outcome<br>
-	Each expense has an amount and a description.</li>
-	<li>Salary<br>
-	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>It has these methods worth mentioning:
+	<li><h3>Outcome</h3>Each expense has an amount and a description.</li>
+	<li><h3>Salary</h3>Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>It has these methods worth mentioning:
 		<ul>
 			<li><h4>printOutcomeHashMap</h4>Prints the outcomes stored in the Salary Hashmap.</li>
 			<li><h4>setSingleOutcome</h4></li>
@@ -25,14 +23,14 @@
 			<li><h4>printSalary</h4></li>
 		</ul>
 	</li>
-	<li>Year<br>
+	<li><h3>Year</h3>It has a String year and an HashMap<Integer,Salary> for the year months.
 		<ul>
 			<li><h4>Add/Remove Month</h4></li>
-		<li><h4>getMonths</h4>Returns the HashMap<Integer,Salary> which represents the year's months.</li>
+		<li><h4>getMonths</h4>Returns the HashMap<Integer,Salary> which represents the year months.</li>
 		<li><h4>compareTo</h4>Year implements Comparable<Year>, compareTo is used to set the year String as parameter to order the ArrayList in the main.</li>
 		</ul>
 	</li>
-	<li>FileReaderAndWriter<br>
+	<li><h3>FileReaderAndWriter</h3>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
 	<br>It has 2 methods:
 		<ul>
@@ -43,7 +41,7 @@
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the YEARS ArrayList.</li>
 		</ul>
 	</li>
-	<li>Utils<br>
+	<li><h3>Utils</h3>
 		This class has static methods and attributes used without any instance for this class by all the others Classes. 
 		<ul>
 			<li>ANSI_COLOR_CODES</li>
