@@ -19,7 +19,7 @@
 	<li>Salary<br>
 	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>Ith has these methods:
 		<ul>
-			
+			<li><h4>Graphics</h4><br></li>
 		</ul>
 	</li>
 	<li>FileReaderAndWriter<br>
