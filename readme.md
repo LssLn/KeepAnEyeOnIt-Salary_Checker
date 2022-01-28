@@ -7,7 +7,8 @@
 <ul>
 	<li>Classes</li>
 	<li>Exceptions</li>
-	<li>Main & ShowCase</li>
+	<li>Output</li>
+	<li>Main</li>
 </ul>
 
 <br>
@@ -16,39 +17,32 @@
 	<li>Outcome<br>
 	Each expense has an amount and a description.</li>
 	<li>Salary<br>
-	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).
-	<br>|<br>|<br>
-	<em>Future_Feature</em>:	
+	Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>Ith has these methods:
 		<ul>
-			<li>add automatic conversion from PDF (paycheck) to setting Salary values.</li>
-			<strike><li>Modify the HashMap to key Integer, value Outcome; where OutCome is a class with inside Double prize, Description, Date. Integer is solely the id used to identify that outcome.</li></strike><br>
-			<li>Insert controls: 
-				<ul>
-					<strike><li>Months check: all the input month strings are converted to UpperCase, and if an entered month is not valid, the console asks for it again.--> Solved: month.toUpperCase is used after I/O, and a do/while is used to be sure the MonthToInt method is taken care of in case it returns -1 (invalid string parameter)</li></strike>
-					<strike><li>Only a Salary can exist with the same month and year.</li><br>--> Solved: An element with the same slot into the HashMap will replace the old one, deleting the old expenses too. The "Save data (menù's 6th option) exists in order to avoid data loss due to unintentionally overwriting.</strike>
-					<li>Expenses must be added only to existing months.<br> Mabe add an Integer array for months that exist and check if the expenses has a month "existing" (expenses month is not contained in Integer array)</li>
-				</ul>
-			</li>
-		</ul>	
+			
+		</ul>
 	</li>
 	<li>FileReaderAndWriter<br>
 	It gives persistence to the program by loading all the already saved values and by storing the new ones into files that can be used as the project storage system.
 	<br>It has 2 methods:
 		<ul>
-			<li><h4>writingHashMap</h4>
-			Given an HashMap, the method iterates through it and saves all its data in a txt file, created in order to save the data and making therefore possible for the readingFile method to load the already existing data.
+			<li><h4>writingFile</h4>
+			Given a YEARS ArrayList, the method iterates through it and saves all its data in a txt file, created in order to save the data and making therefore possible for the readingFile method to load the already existing data.
 			<br>Everytime it's called, it overwrites the txt file deleting the old content.</li>
 			<li>readingFile
-			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the HashMap which contains its entries (the month-income and its related expenses).</li>
+			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the YEARS ArrayList.</li>
 		</ul>
-		<h3>Future updates:</h3>
+	</li>
+	<li>Utils<br>
+		This class has static methods and attributes used without any instance for this class by all the others Classes. 
 		<ul>
-		<strike><li><b>The path to write.txt must be relative, not absolute. https://stackoverflow.com/a/1480438/8422732 <b></li></strike>
-		<strike><li>Utils<br>
-		This class has the "MonthToInt" method used by the main and the fileHandler class.<br>		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
-	</li></strike>	
+			<li>ANSI_COLOR_CODES</li>
+			<li><h4>MonthToInt</h4> <br>Given a string, returns an integer from 0 to 11, or -1.</li>
+			<li><h4>Intro</h4><br>KAE-SC logo, displayed on the boot-up.</li>
+			<li><h4>Menu</h4><br>the main's possible choices.</li>
 		</ul>
-		</li>
+		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
+	</li>
 </ul>
 
 <h2>EXCEPTION</h2>
