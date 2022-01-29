@@ -10,20 +10,6 @@ import SalaryChecker.Class.Salary;
 public class SalaryCheck_main {
 
 	
-	
-	public static void intro() {
-		final String ANSI_GREEN="\033[92m";
-		final String ANSI_WHITE="\033[37m";
-
-		System.out.println(ANSI_GREEN);
-		System.out.println(" *  *     *     *****    *****  ***** ");
-		System.out.println(" * *     * *    *        *      *   * ");
-		System.out.println(" **     *****   ***** -- *****  *     ");
-		System.out.println(" * *   *     *  *            *  *   * ");
-		System.out.println(" *  * *       * *****    *****  ***** ");
-		System.out.println(ANSI_WHITE);
-	}
-	
 	public static void main(String[] args) {
 //		final String ANSI_GREEN="\u001b[32m";
 //		final String ANSI_RED="\u001b[31m";		
