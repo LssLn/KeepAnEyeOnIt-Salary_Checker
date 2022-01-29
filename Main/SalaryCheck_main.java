@@ -17,7 +17,6 @@ public class SalaryCheck_main {
 		Utils.intro();
 		ArrayList<Year> YearsList = new ArrayList<>();		
 		Utils.menu();		
-		HashMap<Integer,Salary> Salary_YY = new HashMap<>(12);
 
 		
 		int scelta=0;
