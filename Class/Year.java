@@ -31,5 +31,22 @@ public class Year implements Comparable<Year>{
 		return months.remove(index);
 	}
 
+	/*
+	 * Comparator used to sort YearsList based on String year
+	 */
+	@Override
+	public int compareTo(Year y) {
+		// TODO Auto-generated method stub
+		return getYear().compareTo(y.getYear());
+	}
 	
+	/*
+	public static Comparator<Year> perYear = new Comparator<Year>() {
+		@Override
+		public int compare(Year y1, Year y2) {
+			String s=y1.getYear();
+			return s.compareTo(y2.getYear());
+		}
+	};
+	*/
 }
