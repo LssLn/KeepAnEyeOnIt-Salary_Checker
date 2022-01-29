@@ -9,65 +9,7 @@ import SalaryChecker.Class.Salary;
 
 public class SalaryCheck_main {
 
-	/*
-	 * Given a String month, it returns an integer that indicates which month it is
-	 * Thus helping to access the arraylist (0 is January, 1 February , ...)
-	 * 	So i need to do Integer_returned - 1 to access the correct position in the ArrayList.
-	 * 
-	 * It returns -1 in case an error occured, so in the main i can reask the month until this function returns a value greater than 1.
-	 * 
-	 * It's static because is called from the main which is static too.
-	 */
 	
-	public static Integer MonthToInt(String month) {
-		switch(month) {
-			case "JANUARY":
-				return 1;
-			case "FEBRUARY":
-					return 2;
-			case "MARCH":
-					return 3;
-			case "APRIL":
-					return 4;
-			case "MAY":
-					return 5;
-			case "JUNE":
-					return 6;
-			case "JULY":
-					return 7;
-			case "AUGUST":
-					return 8;
-			case "SEPTEMBER":
-					return 9;
-			case "OCTOBER":
-					return 10;
-			case "NOVEMBER":
-					return 11;
-			case "DECEMBER":
-					return 12;
-			default:
-					System.out.println("!!! This month is not an option. The format is (January, February, March, ...)\n");
-					return -1;
-		}
-	}
-	
-	public static void menu() {
-//		final String ANSI_YELLOW="\u001b[33m";
-//		final String ANSI_WHITE="\u001b[37m";
-	
-		final String ANSI_GREEN="\033[92m";
-		final String ANSI_RED="\033[31m";
-		final String ANSI_YELLOW="\033[33m";
-		final String ANSI_WHITE="\033[37m";
-		final String ANSI_MGNT="\033[36m";		
-		
-		System.out.println("\n"+ANSI_YELLOW+"----------------------------------------------------------\n|  1]"+ANSI_WHITE+"  Add Salary");
-		System.out.println(ANSI_YELLOW+"|  2]"+ANSI_WHITE+"  Add expense");
-		System.out.println(ANSI_YELLOW+"|  3]"+ANSI_WHITE+"  Print");
-		System.out.println(ANSI_YELLOW+"|  4]"+ANSI_WHITE+"  Menu");
-		System.out.println(ANSI_YELLOW+"|  5]"+ANSI_WHITE+"  Load from txt file (overwrites actual data)");
-		System.out.println(ANSI_YELLOW+"|  6]"+ANSI_WHITE+"  Save data into txt\n"+ANSI_YELLOW+"----------------------------------------------------------\n"+ANSI_WHITE);
-	}
 	
 	public static void intro() {
 		final String ANSI_GREEN="\033[92m";
