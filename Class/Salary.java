@@ -4,22 +4,12 @@ import java.util.HashMap;
 import java.util.Set;
 
 /*
- * Has an add and remove method: 
- * monthly and positive for add, 
- * negative for each purchase or expense.
+ * Has an add and remove method: monthly and positive for add, negative for each purchase or expense;
+ * getHashMap returns the expenses hashmap;
+ * print and incomeGraphics are to print the Salary.
  */
 public class Salary {
-//	final String ANSI_GREEN="\u001b[32m";
-//	final String ANSI_RED="\u001b[31m";
-//	final String ANSI_YELLOW="\u001b[33m";
-//	final String ANSI_WHITE="\u001b[37m";
-//	final String ANSI_MGNT="\u001b[36m";
-	
-	final String ANSI_GREEN="\033[92m";
-	final String ANSI_RED="\033[31m";
-	final String ANSI_YELLOW="\033[33m";
-	final String ANSI_WHITE="\033[37m";
-	final String ANSI_MGNT="\033[36m";
+
 	
 	private Double income;
 	//it's the amount of all the single expenses
@@ -30,8 +20,6 @@ public class Salary {
 
 	Integer outcome_id=0;
 
-	
-	
 	//Constructor with income and month
 	//implement an Exception handler for IllegalArgumentException in the main
 	public Salary(Double income, String month) {
@@ -87,7 +75,8 @@ public class Salary {
 		//System.out.println("\nReading all the expenses:\n");
 		for(Integer i: setkeys_outcomes) {
 			Outcome outcome_returned = outcomes.get(i);
-			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"    "+ANSI_WHITE+outcome_returned.getDescription()+".");	
+//			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
+			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" | "+Utils.ANSI_RED+outcome_returned.getOutcome()+Utils.ANSI_WHITE);	
 		}
 	}
 	
@@ -104,51 +93,33 @@ public class Salary {
 		return "Salary - "+month+"[ income= " + income + "	 total_outcome= " + total_outcome + " ]";
 	}
 	
+	
 	public void printSalary() {
-		System.out.println(ANSI_WHITE+ "\n"+ANSI_MGNT+"• " +
-				ANSI_WHITE+"Salary - "+month+" [ "+
-				ANSI_GREEN+  "  In  " + income + 
-				ANSI_RED+"   ||   Out   " + total_outcome + 
-				ANSI_MGNT+"  ||   Left  " +(income-total_outcome)+
-				ANSI_WHITE+"   ]");
+		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_MGNT+"> " +
+				Utils.ANSI_WHITE+month+" [ "+
+				Utils.ANSI_GREEN+  "  In  " + income + 
+				Utils.ANSI_RED+"   ||   Out   " + total_outcome + 
+				Utils.ANSI_MGNT+"  ||   Gain  " +(income-total_outcome)+
+				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,total_outcome);
 		System.out.println();
 		printOutcomesHashMap();
 	}
 	
 	public static void incomeGraphics(Double income, Double outcome) {
-//		final String ANSI_WHITE="\u001b[37m";
-//		final String ANSI_GREEN="\u001b[32m";
-//		final String ANSI_RED="\u001b[31m";
-//		final String ANSI_YELLOW="\u001b[33m";
-//		final String ANSI_MGNT="\u001b[36m";
 
-		final String ANSI_GREEN="\033[92m";
-		final String ANSI_RED="\033[31m";
-		final String ANSI_YELLOW="\033[33m";
-		final String ANSI_WHITE="\033[37m";
-		final String ANSI_MGNT="\033[36m";
-		
-		Integer num_divider=10;
+		Integer num_divider=20;
 
 		Double nblocksI=(income/num_divider);
-		System.out.print("  ");
-		for(int i=0;i<nblocksI;i++) {
-			System.out.print(ANSI_GREEN+"#");
-		}
-		
-		System.out.print("\n  ");
-		Double nblocksL=(income-outcome)/num_divider;
-		for(int i=0;i<nblocksL;i++) {
-			System.out.print(ANSI_MGNT+"#");
-		}
-		
 		Double nblocksO=(outcome/num_divider);
-		System.out.print("\n  ");
+		System.out.print(Utils.ANSI_WHITE+"  ");
+		for(int i=0;i<nblocksI-nblocksO;i++) {
+			System.out.print(Utils.ANSI_GREEN+"+");
+		}
 		for(int i=0;i<nblocksO;i++) {
-			System.out.print(ANSI_RED+"#"); //•
-		}		
-		System.out.print(ANSI_WHITE);
+			System.out.print(Utils.ANSI_RED+"-"); //•
+		}			
+		System.out.print(Utils.ANSI_WHITE);
 	}
 	
 }
