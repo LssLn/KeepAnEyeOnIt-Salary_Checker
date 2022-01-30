@@ -6,7 +6,7 @@
 <br>
 <ul>
 	<li>Classes</li>
-	<li>Exceptions</li>
+	<li>Exception</li>
 	<li>Output</li>
 	<li>Main</li>
 </ul>
