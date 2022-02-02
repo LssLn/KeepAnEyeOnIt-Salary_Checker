@@ -95,7 +95,7 @@ public class Salary {
 	
 	
 	public void printSalary() {
-		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_MGNT+"> " +
+		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_MGNT+"   > " +
 				Utils.ANSI_WHITE+month+" [ "+
 				Utils.ANSI_GREEN+  "  In  " + income + 
 				Utils.ANSI_RED+"   ||   Out   " + total_outcome + 
@@ -112,7 +112,7 @@ public class Salary {
 
 		Double nblocksI=(income/num_divider);
 		Double nblocksO=(outcome/num_divider);
-		System.out.print(Utils.ANSI_WHITE+"  ");
+		System.out.print(Utils.ANSI_WHITE+"   ");
 		for(int i=0;i<nblocksI-nblocksO;i++) {
 			System.out.print(Utils.ANSI_GREEN+"+");
 		}
@@ -120,6 +120,10 @@ public class Salary {
 			System.out.print(Utils.ANSI_RED+"-"); //•
 		}			
 		System.out.print(Utils.ANSI_WHITE);
+	}
+
+	public void removeSingle_outcome(Integer id) {
+		outcomes.remove(id);
 	}
 	
 }
