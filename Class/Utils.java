@@ -23,12 +23,16 @@ public class Utils {
 	}
 
 	public static void menu() {
-		System.out.println("\n"+Utils.ANSI_YELLOW+"  1]"+Utils.ANSI_WHITE+"  Add Salary");
-		System.out.println(Utils.ANSI_YELLOW+"  2]"+Utils.ANSI_WHITE+"  Add expense");
-		System.out.println(Utils.ANSI_YELLOW+"  3]"+Utils.ANSI_WHITE+"  Print");
-		System.out.println(Utils.ANSI_YELLOW+"  4]"+Utils.ANSI_WHITE+"  Menu");
-		System.out.println(Utils.ANSI_YELLOW+"  5]"+Utils.ANSI_WHITE+"  Load from txt file (overwrites actual data)");
-		System.out.println(Utils.ANSI_YELLOW+"  6]"+Utils.ANSI_WHITE+"  Save data into txt\n");
+		System.out.println("\n"+Utils.ANSI_YELLOW+"  1]"+Utils.ANSI_WHITE+"  Add Month Salary");
+		System.out.println(Utils.ANSI_YELLOW+"  2]"+Utils.ANSI_WHITE+"  Add an expense");
+		System.out.println(Utils.ANSI_YELLOW+"  3]"+Utils.ANSI_WHITE+"  Remove an expense");
+		System.out.println(Utils.ANSI_YELLOW+"  4]"+Utils.ANSI_WHITE+"  Print all the Years");
+		System.out.println(Utils.ANSI_YELLOW+"  5]"+Utils.ANSI_WHITE+"  Print an Year");
+		System.out.println(Utils.ANSI_YELLOW+"  6]"+Utils.ANSI_WHITE+"  Load from txt file (overwrites actual data)");
+		System.out.println(Utils.ANSI_YELLOW+"  7]"+Utils.ANSI_WHITE+"  Save data into txt");
+		System.out.println(Utils.ANSI_YELLOW+"  9]"+Utils.ANSI_WHITE+"  Menu\n");
+
+
 	}
 	
 	
