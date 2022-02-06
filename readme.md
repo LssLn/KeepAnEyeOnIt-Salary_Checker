@@ -71,7 +71,7 @@
 		<h3>MENU'</h3>
 	<br>The menù contains several options:
 				<p align="center">
-					<img src="https://i.imgur.com/KorLUsN.png">
+					<img src="https://i.imgur.com/MguoXMb.png">
 				</p>
 		<ul>
 			<li><b>Add Salary</b><br>
@@ -79,16 +79,17 @@
 			<p align="center">
 					<img src="https://i.imgur.com/2sdgeWC.png">
 				</p>
-			If the inserted month already exists (the place into the HashMap is already taken), it will be resetted with the new parameters.
+			If the inserted month already exists (the place into the HashMap is already assigned), it will be resetted with the new parameters.
 			<br>In other words, if a month needs to be erased,  the add functionality can be used in order to reinitialize it.</li>
 			<li>Add Expense<br>
 			Given an amount, a description, a month and an year, the expense is added (subtracted) to the Salary which has the same month and year.
 			<p align="center">
-					<img src="https://i.imgur.com/VQrM62u.png">
+					<img src="https://i.imgur.com/liyaWwW.png">
 				</p></li>
 			<li>Remove Expense <b>(WIP)</b><br>
-				Given a month name (and a Year), followed by an ID (visible in the Print), the specific expense is deleted.</li>
-			<li>Print all the months for all the registered years:
+				Given a month name (and a Year), followed by an ID (visible in the Print), the specific expense is deleted.
+			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.</li>
+			<li>Print all the months for all the registered years
 			<p align="center">
 					<img src="https://i.imgur.com/Aex16sv.png">
 				</p></li>
@@ -96,20 +97,20 @@
 			<p align="center">
 					<img src="https://i.imgur.com/c6zrP7Q.png">
 				</p></li>
-			<li>Menù<br>
-			Prints all the available options</li>
-			<li>Read from file<br>
+			<li>Load data<br>
 				Read a txt file importing all the previously saved elements.
 				<p align="center">
-					<img src="https://i.imgur.com/luOYqAY.png">
+					<img src="https://i.imgur.com/EJctGsW.png">
 				</p>
 			</li>
-			<li>Write file<br>
+			<li>Save data<br>
 			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
 				<p align="center">
-					<img src="https://i.imgur.com/B2S4jnF.png">
+					<img src="https://i.imgur.com/Zq4UeQc.png">
 				</p>
 			</li>
+			<li>Menù<br>
+			Prints all the available options</li>
 		</ul>
 	</li>
 </ul>
