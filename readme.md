@@ -86,7 +86,7 @@
 			<p align="center">
 					<img src="https://i.imgur.com/liyaWwW.png">
 				</p></li>
-			<li>Remove Expense <b>(WIP)</b><br>
+			<li>Remove Expense<br>
 				Given a month name (and a Year), followed by an ID (visible in the Print), the specific expense is deleted.
 			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.</li>
 			<li>Print all the months for all the registered years
