@@ -100,7 +100,7 @@
 			<li>Load data<br>
 				Read a txt file importing all the previously saved elements.
 				<p align="center">
-					<img src="https://i.imgur.com/6wQ4GWZ.png">
+					<img src="https://i.imgur.com/EJctGsW.png">
 				</p>
 			</li>
 			<li>Save data<br>
