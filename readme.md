@@ -91,16 +91,16 @@
 			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.</li>
 			<li>Print all the months for all the registered years
 			<p align="center">
-					<img src="https://i.imgur.com/Aex16sv.png">
+					<img src="https://i.imgur.com/n6dbWLd.png">
 				</p></li>
 			<li>Print all the months for the selected year
 			<p align="center">
-					<img src="https://i.imgur.com/c6zrP7Q.png">
+					<img src="">
 				</p></li>
 			<li>Load data<br>
 				Read a txt file importing all the previously saved elements.
 				<p align="center">
-					<img src="https://i.imgur.com/EJctGsW.png">
+					<img src="https://i.imgur.com/6wQ4GWZ.png">
 				</p>
 			</li>
 			<li>Save data<br>
