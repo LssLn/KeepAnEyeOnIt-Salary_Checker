@@ -1,5 +1,6 @@
 package SalaryChecker.Class;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -76,7 +77,7 @@ public class Salary {
 		for(Integer i: setkeys_outcomes) {
 			Outcome outcome_returned = outcomes.get(i);
 //			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
-			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" | "+Utils.ANSI_RED+outcome_returned.getOutcome()+Utils.ANSI_WHITE);	
+			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat(outcome_returned.getOutcome())+Utils.ANSI_WHITE);	
 		}
 	}
 	
@@ -94,12 +95,13 @@ public class Salary {
 	}
 	
 	
+	
 	public void printSalary() {
-		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_MGNT+"   > " +
+		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_GRASS+"   > " +
 				Utils.ANSI_WHITE+month+" [ "+
-				Utils.ANSI_GREEN+  "  In  " + income + 
-				Utils.ANSI_RED+"   ||   Out   " + total_outcome + 
-				Utils.ANSI_MGNT+"  ||   Gain  " +(income-total_outcome)+
+				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat(income) + 
+				Utils.ANSI_RED+"      -   " + Utils.convertDecimalFormat(total_outcome) + 
+				Utils.ANSI_GRASS+"     ==  " +(Utils.convertDecimalFormat(income-total_outcome))+
 				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,total_outcome);
 		System.out.println();
@@ -112,7 +114,7 @@ public class Salary {
 
 		Double nblocksI=(income/num_divider);
 		Double nblocksO=(outcome/num_divider);
-		System.out.print(Utils.ANSI_WHITE+"   ");
+		System.out.print(Utils.ANSI_WHITE+"      ");
 		for(int i=0;i<nblocksI-nblocksO;i++) {
 			System.out.print(Utils.ANSI_GREEN+"+");
 		}
