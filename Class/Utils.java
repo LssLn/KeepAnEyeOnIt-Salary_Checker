@@ -1,12 +1,14 @@
 package SalaryChecker.Class;
 
+import java.text.DecimalFormat;
+
 public class Utils {
 
-	public static String ANSI_GREEN="\033[92m";
-	public static String ANSI_RED="\033[31m";
-	public static String ANSI_YELLOW="\033[33m";
+	public static String ANSI_GREEN="\033[32m";
+	public static String ANSI_RED="\033[91m";
+	public static String ANSI_YELLOW="\033[93m";
 	public static String ANSI_WHITE="\033[37m";
-	public static String ANSI_MGNT="\033[36m";
+	public static String ANSI_GRASS="\033[92m";
 	/*public static String ANSI_BG_GREEN="\033[42m";
 	public static String ANSI_BG_RED="\033[41m";
 	public static String RESET="\033[0m";*/
@@ -76,7 +78,10 @@ public class Utils {
 		}
 	}
 
-	
+	public static String convertDecimalFormat(Double input) {
+		DecimalFormat numberFormat = new DecimalFormat("#.00");
+		return numberFormat.format(input);
+	}
 	
 	
 }
