@@ -1,6 +1,8 @@
 package SalaryChecker.Class;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Year implements Comparable<Year>{
 	private String year;
@@ -49,4 +51,22 @@ public class Year implements Comparable<Year>{
 		}
 	};
 	*/
+	
+	public double getTotIncome() {
+		double tot_income=0.00;
+		Collection<Salary> salaries = months.values();
+		for(Salary s: salaries) {
+			tot_income=tot_income+s.getIncome();
+		}
+		return tot_income;
+	}
+	
+	public double getTotOutcome() {
+		double tot_outcome=0.00;
+		Collection<Salary> salaries = months.values();
+		for(Salary s: salaries) {
+			tot_outcome=tot_outcome+s.getTotal_outcome();
+		}
+		return tot_outcome;
+	}
 }
