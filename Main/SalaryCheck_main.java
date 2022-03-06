@@ -237,8 +237,26 @@ public class SalaryCheck_main {
 	}
 	
 	public static void printAll(ArrayList<Year> YearsList) {
+		Double years_income = 0.00;
+		Double years_outcome = 0.00;
+		Double years_gain = 0.00;
 		for(Year y_print : YearsList) {
-			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________\n");
+			years_income += y_print.getTotIncome();
+			years_outcome += y_print.getTotOutcome();
+		}
+		years_gain=years_income - years_outcome;
+		String s_years_income = Utils.convertDecimalFormat(years_income);
+		String s_years_outcome = Utils.convertDecimalFormat(years_outcome);
+		String s_years_gain= Utils.convertDecimalFormat(years_gain);
+		
+		System.out.println(" --> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_YELLOW+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
+		
+		for(Year y_print : YearsList) {
+			String year_income = Utils.convertDecimalFormat(y_print.getTotIncome());
+			String year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
+			String gain= Utils.convertDecimalFormat(y_print.getTotIncome()-y_print.getTotOutcome());
+			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
+					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_GRASS+" 	++ "+gain+"\n");
 			Collection<Salary> salaries = y_print.getMonths().values();
 			for(Salary s: salaries) { 	
 				s.printSalary(); 	
