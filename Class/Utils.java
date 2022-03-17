@@ -81,12 +81,16 @@ public class Utils {
 		}
 	}
 
-	public static String convertDecimalFormat(Double input) {
+	public static String convertDecimalFormat2(Double input) {
 		DecimalFormat numberFormat = new DecimalFormat("#.00");
 		return numberFormat.format(input);
 	}
+	public static String convertDecimalFormat1(Double input) {
+		DecimalFormat numberFormat = new DecimalFormat("#.0");
+		return numberFormat.format(input);
+	}
 	
-	public static void addSalary(ArrayList<Year> YearsList) {
+	public static void addSalary(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Add Salary: ");
 		Double income;
 		do {
@@ -112,7 +116,7 @@ public class Utils {
 	 			Salary salary = new Salary(income,month);
 	 			//given the year, the YearsList is cycled
 	 			Boolean year_found=false;
-	 			for(Year curr_y:YearsList) {
+	 			for(Year curr_y:yearsList) {
 	 				if(curr_y.getYear().equals(year_input)) {
 	 					//the year already exists, then it's just an add
 	 					curr_y.addMonth(ret_value-1,salary);
@@ -125,9 +129,9 @@ public class Utils {
 	 				Year year_new = new Year(year_input);
 	 				year_new.addMonth(ret_value-1,salary);
 	 				//Year is added to YearsList
-	 				YearsList.add(year_new);
+	 				yearsList.add(year_new);
 					//List is sorted for CompareTo (in Year class) setted value (String year)
-	 				YearsList.sort(null);
+	 				yearsList.sort(null);
 	 			}
 	 			
 	 			//ret_value - 1 because index start from 0 up to 11, while months from 1 to 12
@@ -137,7 +141,7 @@ public class Utils {
 		
 	}
 	
-	public static void removeSalary(ArrayList<Year> YearsList) {
+	public static void removeSalary(ArrayList<Year> yearsList) {
 		//I check if the year exists, if then Year.remove(ret_value). 
 		//Then we check the array_existing_months (Yet to be implemented)
 		System.out.println("\n  Remove Salary: ");
@@ -157,7 +161,7 @@ public class Utils {
 	 			
 	 			//given the year, the YearsList is cycled
 	 			Boolean year_found=false;
-	 			for(Year curr_y:YearsList) {
+	 			for(Year curr_y:yearsList) {
 	 				if(curr_y.getYear().equals(year_input)) {
 	 					year_found=true;
 	 					//the year exists, then we try to remove the month (Value)
@@ -183,7 +187,7 @@ public class Utils {
 		
 	}
 	
-	public static void addExpense(ArrayList<Year> YearsList) {
+	public static void addExpense(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Add Expense");
 		Double expense;
 		do {
@@ -217,7 +221,7 @@ public class Utils {
 	 			
 	 			//given the year, the YearsList is cycled
 	 			Boolean year_found=false;
-	 			for(Year curr_y:YearsList) {
+	 			for(Year curr_y:yearsList) {
 	 				if(curr_y.getYear().equals(year_input)) {
 	 					year_found=true;
 	 					//the year already exists
@@ -250,7 +254,7 @@ public class Utils {
  		}while(ret_value==-1); //if error, prompt again the value
 	}
 	
-	public static void removeExpense(ArrayList<Year> YearsList) {
+	public static void removeExpense(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Remove an expense:");
 		Integer id;
 		do {
@@ -280,7 +284,7 @@ public class Utils {
 	 			
 	 			//given the year, the YearsList is cycled
 	 			Boolean year_found=false;
-	 			for(Year curr_y:YearsList) {
+	 			for(Year curr_y:yearsList) {
 	 				if(curr_y.getYear().equals(year_input)) {
 	 					year_found=true;
 	 					//the year  exists
@@ -310,23 +314,23 @@ public class Utils {
  		}while(ret_value==-1); //if error, prompt again the value
 	}
 	
-	public static void printAll(ArrayList<Year> YearsList) {
+	public static void printAll(ArrayList<Year> yearsList) {
 		Double years_income = 0.00;
 		Double years_outcome = 0.00;
 		Double years_gain = 0.00;
-		for(Year y_print : YearsList) {
+		for(Year y_print : yearsList) {
 			years_income += y_print.getTotIncome();
 			years_outcome += y_print.getTotOutcome();
 		}
 		years_gain=years_income - years_outcome;
-		String s_years_income = Utils.convertDecimalFormat(years_income);
-		String s_years_outcome = Utils.convertDecimalFormat(years_outcome);
-		String s_years_gain= Utils.convertDecimalFormat(years_gain);
+		String s_years_income = Utils.convertDecimalFormat2(years_income);
+		String s_years_outcome = Utils.convertDecimalFormat2(years_outcome);
+		String s_years_gain= Utils.convertDecimalFormat2(years_gain);
 		
 		System.out.println(" --> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_YELLOW+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
 		
-		for(Year y_print : YearsList) {
-			String year_income = Utils.convertDecimalFormat(y_print.getTotIncome());
+		for(Year y_print : yearsList) {
+			String year_income = Utils.convertDecimalFormat2(y_print.getTotIncome());
 			/*String year_outcome=null;
 			if(Double.compare(y_print.getTotOutcome(),0)==0) {
 				System.out.println("GOTCHA!");
@@ -334,8 +338,8 @@ public class Utils {
 			}else {
 				year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
 			}*/
-			String year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
-			String gain= Utils.convertDecimalFormat(y_print.getTotIncome()-y_print.getTotOutcome());
+			String year_outcome = Utils.convertDecimalFormat2(y_print.getTotOutcome());
+			String gain= Utils.convertDecimalFormat2(y_print.getTotIncome()-y_print.getTotOutcome());
 			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
 					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_GRASS+" 	++ "+gain+"\n");
 			Collection<Salary> salaries = y_print.getMonths().values();
@@ -345,27 +349,27 @@ public class Utils {
 		}
 	}
 	
-	public static ArrayList<Year> loadData(ArrayList<Year> YearsList) {
+	public static ArrayList<Year> loadData(ArrayList<Year> yearsList) {
 		FileHandler fw=new FileHandler();
 		System.out.println("  Loading file {"+fw.getMyFile()+"} ...");
 		FileHandler fr=new FileHandler();
-		YearsList = fr.readingFile();
+		yearsList = fr.readingFile();
 		System.out.println("\n  Data "+Utils.ANSI_GREEN+"loaded."+Utils.ANSI_WHITE);
-		return YearsList;
+		return yearsList;
 	}
 
-	public static void saveData(ArrayList<Year> YearsList) {
+	public static void saveData(ArrayList<Year> yearsList) {
 		FileHandler fw=new FileHandler();
 		System.out.println("  Writing in file {"+fw.getMyFile()+"} ...");
-		fw.writingFile(YearsList);
+		fw.writingFile(yearsList);
 		System.out.println("\n  Data "+Utils.ANSI_GREEN+"saved."+Utils.ANSI_WHITE);
 	}
 	
-	public static void printYear(ArrayList<Year> YearsList) {
+	public static void printYear(ArrayList<Year> yearsList) {
 		Scanner scanner = new Scanner(System.in);
 		String year_sel = scanner.next();
 		Boolean year_exist=false;
-			for(Year curr_y:YearsList) {
+			for(Year curr_y:yearsList) {
 				if(curr_y.getYear().equals(year_sel)) {
 					//the year already exists
 					year_exist=true;
@@ -384,7 +388,45 @@ public class Utils {
 	}
 
 	public static void showStats(ArrayList<Year> yearsList) {
-		
+		for(Year y : yearsList) {
+			Collection<Salary> salaries = y.getMonths().values();
+			for(Salary s: salaries) { 	
+				System.out.print(Utils.ANSI_WHITE+"     	"+s.getMonth()+" "+y.getYear()+ " 		");
+				int gain = (int)((s.getIncome()-s.getTotal_outcome())/50);
+				int out = (int)(s.getTotal_outcome()/50);
+				System.out.print(Utils.ANSI_RED);
+				for(int i=0;i<out;i++) {
+					System.out.print("#");
+				}
+				
+				System.out.print(Utils.ANSI_GRASS);
+				for(int i=0;i<gain;i++) {
+					System.out.print("#");
+				}
+				
+				double gain_tot = s.getIncome()-s.getTotal_outcome();
+				double out_tot = s.getTotal_outcome();
+				
+				double gain_perc = gain_tot/(gain_tot+out_tot) * 100;
+				double out_perc = out_tot/(gain_tot+out_tot) * 100;
+				
+				String gain_perc_str = convertDecimalFormat1(gain_perc);
+				String out_perc_str = convertDecimalFormat1(out_perc);
+				
+				if(out_perc_str.equals(",0")) {
+					out_perc_str = "";
+				}else {
+					out_perc_str.replace(",", ".");
+					out_perc_str = out_perc_str + "%";
+				}
+				gain_perc_str.replace(",", ".");
+				gain_perc_str = gain_perc_str + "%";
+				
+				
+				System.out.println("\n   	   			"+Utils.ANSI_RED+out_perc_str+"	   	   "+Utils.ANSI_GRASS+gain_perc_str);
+				
+			}
+		}
 	}
 	
 }
