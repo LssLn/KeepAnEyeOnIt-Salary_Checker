@@ -9,6 +9,7 @@ import SalaryChecker.Class.FileHandler;
 import SalaryChecker.Class.Salary;
 import SalaryChecker.Class.Utils;
 import SalaryChecker.Class.Year;
+import SalaryChecker.Class.SwitchManagerUtils;
 
 public class SalaryCheck_main {
 
@@ -25,30 +26,30 @@ public class SalaryCheck_main {
 			scelta=scanner_scelta.nextInt();
 			switch(scelta) {
 				case 1:
-					Utils.addSalary(yearsList);
+					SwitchManagerUtils.addSalary(yearsList);
 					break;
 				case 2:
-					Utils.addExpense(yearsList);
+					SwitchManagerUtils.addExpense(yearsList);
 					break;
 				case 3:
-					Utils.removeExpense(yearsList);
-					Utils.saveData(yearsList);
-					yearsList=Utils.loadData(yearsList);
+					SwitchManagerUtils.removeExpense(yearsList);
+					SwitchManagerUtils.saveData(yearsList);
+					yearsList=SwitchManagerUtils.loadData(yearsList);
 					break;
 				case 4:
-					Utils.printAll(yearsList);
+					SwitchManagerUtils.printAll(yearsList);
 					break;
 				case 5:
-					Utils.printYear(yearsList);
+					SwitchManagerUtils.printYear(yearsList);
 					break;
 				case 6:
-					yearsList = Utils.loadData(yearsList);
+					yearsList = SwitchManagerUtils.loadData(yearsList);
 					break;
 				case 7:
-					Utils.saveData(yearsList);
+					SwitchManagerUtils.saveData(yearsList);
 					break;
 				case 8:
-					Utils.showStats(yearsList);
+					SwitchManagerUtils.showStats(yearsList);
 					break;
 				case 9: 
 					Utils.menu();
