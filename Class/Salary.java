@@ -77,7 +77,7 @@ public class Salary {
 		for(Integer i: setkeys_outcomes) {
 			Outcome outcome_returned = outcomes.get(i);
 //			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
-			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat(outcome_returned.getOutcome())+Utils.ANSI_WHITE);	
+			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcome_returned.getOutcome())+Utils.ANSI_WHITE);	
 		}
 	}
 	
@@ -97,11 +97,15 @@ public class Salary {
 	
 	
 	public void printSalary() {
+		String tot_outc_formatted=Utils.convertDecimalFormat2(total_outcome);
+		if(tot_outc_formatted.equals(",00")) {
+			tot_outc_formatted="0";
+		}
 		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_GRASS+"   > " +
 				Utils.ANSI_WHITE+month+" [ "+
-				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat(income) + 
-				Utils.ANSI_RED+"      -   " + Utils.convertDecimalFormat(total_outcome) + 
-				Utils.ANSI_GRASS+"     ==  " +(Utils.convertDecimalFormat(income-total_outcome))+
+				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat2(income) + 
+				Utils.ANSI_RED+"      -   " + tot_outc_formatted + 
+				Utils.ANSI_GRASS+"     ==  " +(Utils.convertDecimalFormat2(income-total_outcome))+
 				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,total_outcome);
 		System.out.println();
