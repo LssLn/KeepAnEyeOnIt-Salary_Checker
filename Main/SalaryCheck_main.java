@@ -15,7 +15,7 @@ public class SalaryCheck_main {
 	public static void main(String[] args) {
 		
 		Utils.intro();
-		ArrayList<Year> YearsList = new ArrayList<>();		
+		ArrayList<Year> yearsList = new ArrayList<>();		
 		Utils.menu();
 		
 		int scelta=0;
@@ -25,30 +25,30 @@ public class SalaryCheck_main {
 			scelta=scanner_scelta.nextInt();
 			switch(scelta) {
 				case 1:
-					Utils.addSalary(YearsList);
+					Utils.addSalary(yearsList);
 					break;
 				case 2:
-					Utils.addExpense(YearsList);
+					Utils.addExpense(yearsList);
 					break;
 				case 3:
-					Utils.removeExpense(YearsList);
-					Utils.saveData(YearsList);
-					YearsList=Utils.loadData(YearsList);
+					Utils.removeExpense(yearsList);
+					Utils.saveData(yearsList);
+					yearsList=Utils.loadData(yearsList);
 					break;
 				case 4:
-					Utils.printAll(YearsList);
+					Utils.printAll(yearsList);
 					break;
 				case 5:
-					Utils.printYear(YearsList);
+					Utils.printYear(yearsList);
 					break;
 				case 6:
-					YearsList = Utils.loadData(YearsList);
+					yearsList = Utils.loadData(yearsList);
 					break;
 				case 7:
-					Utils.saveData(YearsList);
+					Utils.saveData(yearsList);
 					break;
 				case 8:
-					Utils.showStats(YearsList);
+					Utils.showStats(yearsList);
 					break;
 				case 9: 
 					Utils.menu();
