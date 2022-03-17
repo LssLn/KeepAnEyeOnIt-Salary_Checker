@@ -48,8 +48,23 @@
 			<li><h4>MonthToInt</h4>Given a string, returns an integer from 0 to 11, or -1.</li>
 			<li><h4>Intro</h4>KAE-SC logo, displayed on the boot-up.</li>
 			<li><h4>Menu</h4>the main's possible choices.</li>
+			<li><h4>convertDecimalFormat</h4> converts a double value to a string, cutting it to 2 or 1 decimal values</li>
 		</ul>
 		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
+	</li>
+	<li><h3>switch Manager Utils</h3>
+	This class has static methods used by the switch manager, these are the main features.
+		<ul>
+			<li><h4>addSalary</h4></li>
+			<li><h4>removeSalary</h4></li>
+			<li><h4>addExpense</h4></li>
+			<li><h4>removeExpense</h4></li>
+			<li><h4>printAll</h4>displays all the existent years</li>
+			<li><h4>printYear</h4>displays the chosen year</li>
+			<li><h4>loadData</h4>load data from txt file</li>
+			<li><h4>saveData</h4>saves data in txt file</li>
+			<li><h4>showStats</h4>prints all the months, income and expenses, in percentages</li>
+		</ul>
 	</li>
 </ul>
 
