@@ -47,7 +47,9 @@ public class SalaryCheck_main {
 				case 7:
 					Utils.saveData(YearsList);
 					break;
-				
+				case 8:
+					Utils.showStats(YearsList);
+					break;
 				case 9: 
 					Utils.menu();
 					break;
