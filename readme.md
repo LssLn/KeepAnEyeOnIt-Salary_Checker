@@ -5,16 +5,7 @@
 <section>Don't want to drain your salary as quick as you use to do?<br><b>Keep an Eye on It: Salary Checker</b> is a Java project developed to better manage your monthly expenses through the years.<br>
 <br>
 <ul>
-	<li>Classes
-		<ul>	
-			<li>Salary</li>
-			<li>OutCome</li>
-			<li>Year</li>
-			<li>FileHandler</li>
-			<li>Utils</li>
-			<li>SwitchManagerUtils</li>
-		</ul>
-	</li>
+	<li>Classes</li>
 	<li>Exception</li>
 	<li>Output</li>
 	<li>Main</li>
