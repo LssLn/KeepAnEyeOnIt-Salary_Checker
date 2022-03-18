@@ -125,9 +125,7 @@
 				</p>
 			</li>
 			<li>Show stats for each month<br>
-			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.
-				
-			</li>
+			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.		</li>
 			<li>Menù<br>
 			Prints all the available options</li>
 		</ul>
