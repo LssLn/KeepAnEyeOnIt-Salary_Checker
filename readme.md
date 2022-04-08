@@ -86,7 +86,7 @@
 		<h3>MENU'</h3>
 	<br>The menù contains several options:
 				<p align="center">
-					<img src="https://i.imgur.com/MguoXMb.png">
+					<img src="https://i.imgur.com/S7tpSSP.png">
 				</p>
 		<ul>
 			<li><b>Add Salary</b><br>
@@ -106,7 +106,7 @@
 			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.</li>
 			<li>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.
 			<p align="center">
-					<img src="https://i.imgur.com/Aex16sv.png">
+					<img src="https://i.imgur.com/Y5Bc4tx.png">
 				</p></li>
 			<li>Print all the months for the selected year
 			<p align="center">
