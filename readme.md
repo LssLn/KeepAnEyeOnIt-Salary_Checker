@@ -125,12 +125,13 @@
 				</p>
 			</li>
 			<li>Show stats for each month<br>
-			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.		</li>
-			<li>Menù<br>
-			Prints all the available options
+			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.	
 			<p align="center">
 					<img src="https://i.imgur.com/Zq4UeQc.png">
 				</p></li>
+			<li>Menù<br>
+			Prints all the available options
+			</li>
 		</ul>
 	</li>
 </ul>
