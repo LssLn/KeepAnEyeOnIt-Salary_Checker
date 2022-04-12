@@ -30,9 +30,13 @@ public class SalaryCheck_main {
 					break;
 				case 2:
 					SwitchManagerUtils.addExpense(yearsList);
+					System.out.println();
+					SwitchManagerUtils.saveData(yearsList);
+					yearsList=SwitchManagerUtils.loadData(yearsList);
 					break;
 				case 3:
 					SwitchManagerUtils.removeExpense(yearsList);
+					System.out.println();
 					SwitchManagerUtils.saveData(yearsList);
 					yearsList=SwitchManagerUtils.loadData(yearsList);
 					break;
@@ -51,7 +55,10 @@ public class SalaryCheck_main {
 				case 8:
 					SwitchManagerUtils.showStats(yearsList);
 					break;
-				case 9: 
+				case 9:
+					SwitchManagerUtils.printByCategories(yearsList);
+					break;
+				case 100: 
 					Utils.menu();
 					break;
 			}
