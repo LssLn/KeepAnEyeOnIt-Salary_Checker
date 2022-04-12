@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -44,7 +46,7 @@ public class FileHandler {
             	bw.flush();
             	for (Salary s : Months.values()) {
         		    // reads all the Salaries in the hashmap
-                	bw.write(s.getMonth()+ " " +s.getIncome()+" "+s.getTotal_outcome()+"\n");
+                	bw.write(s.getMonth()+" "+s.getIncome()+" "+s.getTotal_outcome()+"\n");
                 	//to write the outcomes too, i added a new method in Salary: getHashMap (returns the HashMap)
                 	
                 	HashMap<Integer, Outcome> outcomes = s.getOutcomes();
@@ -56,15 +58,65 @@ public class FileHandler {
                     bw.flush();
                     
                 	for(Outcome o : outcomes.values()){
-                		bw.write(o.getOutcome()+" "+o.getDescription()+"\n");
+                		
+                		bw.write(o.getOutcome()+" "+o.getCategory()+" "+o.getDescription().trim()+"\n");
                         bw.flush();
                 	}
         		}//ends an year's months
             }//ends years
         }catch(IOException e) {
         	//throw new FileNotFoundException("The file described is nowhere to be found.");
-        	System.out.println("\nFile non trovato: \n"+e.getStackTrace());
+        	System.out.println("\n	File non trovato: \n"+e.getStackTrace());
         }
+	}
+	
+	/*
+	 * The method is called by passing as argument the HashMap which contains all the salary regarding a Year
+	 * It writes a file with filename being the call data time
+	 * */
+	public String backupFile(ArrayList<Year> YearsList) {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss");  
+		LocalDateTime now = LocalDateTime.now();  
+		String time = dtf.format(now);  
+		String dataFile = System.getProperty("user.dir") + "\\src\\SalaryChecker\\Output\\" +time+".txt";
+		try {
+            File file = new File(dataFile);
+    		file.createNewFile();
+
+            FileWriter fw=new FileWriter(file); 
+            BufferedWriter bw=new BufferedWriter(fw);  
+            for(Year y_curr : YearsList) {
+            	bw.write(y_curr.getYear()+"\n");
+            	HashMap<Integer,Salary> Months = new HashMap<>(12);
+            	Months=y_curr.getMonths();
+            	bw.write(Months.size()+"\n");
+            	bw.flush();
+            	for (Salary s : Months.values()) {
+        		    // reads all the Salaries in the hashmap
+                	bw.write(s.getMonth()+" "+s.getIncome()+" "+s.getTotal_outcome()+"\n");
+                	//to write the outcomes too, i added a new method in Salary: getHashMap (returns the HashMap)
+                	
+                	HashMap<Integer, Outcome> outcomes = s.getOutcomes();
+                	int count=0;
+                	for(Outcome o : outcomes.values()){
+                		count++;
+                	}
+                	bw.write(count+"\n");
+                    bw.flush();
+                    
+                	for(Outcome o : outcomes.values()){
+                		
+                		bw.write(o.getOutcome()+" "+o.getCategory()+" "+o.getDescription().trim()+"\n");
+                        bw.flush();
+                	}
+        		}//ends an year's months
+            }//ends years
+        }catch(IOException e) {
+        	//throw new FileNotFoundException("The file described is nowhere to be found.");
+        	System.out.println("\n	File non trovato: \n"+e.getStackTrace());
+        }
+		
+		return dataFile;
 	}
 	
 	
@@ -84,10 +136,10 @@ public class FileHandler {
 					String year_input = scanner.next();
 					Integer y_n_months = Integer.parseInt(scanner.next());
 					Year year = new Year(year_input);
-					System.out.println("Year "+year_input+", loading "+y_n_months+" months ...");
+					System.out.println("	Year "+year_input+", loading "+y_n_months+" months ...");
 					for(int y_cont=0; y_cont<y_n_months;y_cont++) {
 						String month = scanner.next(); 
-						System.out.println(month+Utils.ANSI_GREEN+" loaded"+Utils.ANSI_WHITE);
+						System.out.println("	"+month+Utils.ANSI_GREEN+" loaded"+Utils.ANSI_WHITE);
 						month=month.toUpperCase();
 						ret_value=Utils.MonthToInt(month);
 						
@@ -109,11 +161,11 @@ public class FileHandler {
 		                    	try {
 		                    		Double s_outcome = Double.parseDouble(scanner.next());
 //			                    	System.out.println("-:: :: expense "+s_outcome);
-			                    	
+		                    		String category = scanner.next();
 			                        String description = scanner.nextLine();
 //			                        System.out.println(" - "+description);
-
-			                        salary.setSingle_outcome(s_outcome, description);
+			                        description.trim();
+			                        salary.setSingle_outcome(s_outcome, description,category);
 
 		                    	} catch (NumberFormatException e) {
 		                    	    e.printStackTrace();
