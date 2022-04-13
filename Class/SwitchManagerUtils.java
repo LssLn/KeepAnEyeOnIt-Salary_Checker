@@ -119,6 +119,13 @@ public class SwitchManagerUtils {
 		Scanner scanner_outcome_2=new Scanner(System.in);
 		String description = scanner_outcome_2.nextLine();
 		
+		
+		System.out.print("  >>>>>>>>> Category:    ");
+		Scanner scanner_outcome_5=new Scanner(System.in);
+		String category = scanner_outcome_5.nextLine();
+		
+		
+		
 		//int ret_value_month_to_pick=0;
 		int ret_value=0;
  		do {
@@ -148,7 +155,7 @@ public class SwitchManagerUtils {
 
 	 					if(s!=null) {
 	 						//months exists
-	 						s.setSingle_outcome(expense, description);
+	 						s.setSingle_outcome(expense, description,category);
 		 					
 	 					}else {
 	 						// add exception
@@ -265,6 +272,41 @@ public class SwitchManagerUtils {
 		}
 	}
 	
+	public static void printByCategories(ArrayList<Year> yearsList) {
+		Double years_income = 0.00;
+		Double years_outcome = 0.00;
+		Double years_gain = 0.00;
+		for(Year y_print : yearsList) {
+			years_income += y_print.getTotIncome();
+			years_outcome += y_print.getTotOutcome();
+		}
+		years_gain=years_income - years_outcome;
+		String s_years_income = Utils.convertDecimalFormat2(years_income);
+		String s_years_outcome = Utils.convertDecimalFormat2(years_outcome);
+		String s_years_gain= Utils.convertDecimalFormat2(years_gain);
+		
+		System.out.println(" --> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_YELLOW+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
+		
+		for(Year y_print : yearsList) {
+			String year_income = Utils.convertDecimalFormat2(y_print.getTotIncome());
+			/*String year_outcome=null;
+			if(Double.compare(y_print.getTotOutcome(),0)==0) {
+				System.out.println("GOTCHA!");
+				year_outcome = "0";
+			}else {
+				year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
+			}*/
+			String year_outcome = Utils.convertDecimalFormat2(y_print.getTotOutcome());
+			String gain= Utils.convertDecimalFormat2(y_print.getTotIncome()-y_print.getTotOutcome());
+			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
+					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_GRASS+" 	++ "+gain+"\n");
+			Collection<Salary> salaries = y_print.getMonths().values();
+			for(Salary s: salaries) { 	
+				s.printOutcomesHashMapGroupCat(); 	
+			}
+		}
+	}
+	
 	public static ArrayList<Year> loadData(ArrayList<Year> yearsList) {
 		FileHandler fw=new FileHandler();
 		System.out.println("  Loading file {"+fw.getMyFile()+"} ...");
@@ -278,6 +320,8 @@ public class SwitchManagerUtils {
 		FileHandler fw=new FileHandler();
 		System.out.println("  Writing in file {"+fw.getMyFile()+"} ...");
 		fw.writingFile(yearsList);
+		String bkpFile = fw.backupFile(yearsList);
+		System.out.println("\n  Backup "+Utils.ANSI_GREEN+"created: "+Utils.ANSI_WHITE+bkpFile);
 		System.out.println("\n  Data "+Utils.ANSI_GREEN+"saved."+Utils.ANSI_WHITE);
 	}
 	
@@ -344,4 +388,5 @@ public class SwitchManagerUtils {
 			}
 		}
 	}
+
 }
