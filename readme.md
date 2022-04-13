@@ -120,22 +120,27 @@
 			<p align="center">
 					<img src="https://i.imgur.com/hE2PXzW.png">
 				</p></li>
-			<li>Load data<br>
+			<li>Loads from write.txt file (overwrites actual data)<br>
 				Read a txt file importing all the previously saved elements.
 				<p align="center">
 					<img src="https://i.imgur.com/4uyujaS.png">
 				</p>
 			</li>
-			<li>Save data<br>
-			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
+			<li>Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time<br>
+			Writes all the data in a txt file, in order to retrieve those through the readingFile method.<br>Also creates a backup file each time
 				<p align="center">
 					<img src="https://i.imgur.com/wEVjkU7.png">
 				</p>
 			</li>
-			<li>Show stats for each month<br>
+			<li>Show stats for each month, giving a percentage representation for expenses and gains<br>
 			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.	
 			<p align="center">
 					<img src="https://i.imgur.com/Mz4cc1c.png">
+				</p></li>
+			<li>Expenses grouped by Categories and ordered by amount<br>
+			Displays expenses grouped by categories ordering for amount, for each month, through the printByCategories method.	
+			<p align="center">
+					<img src="https://i.imgur.com/iysaLYL.pngg">
 				</p></li>
 			<li>Menù<br>
 			Prints all the available options
