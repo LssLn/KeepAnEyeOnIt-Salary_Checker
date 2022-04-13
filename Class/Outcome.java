@@ -6,9 +6,12 @@ public class Outcome {
 	 * */
 	private Double outcome;
 	private String description;
-	public Outcome(Double outcome, String description) {
+	private String category;
+	
+	public Outcome(Double outcome, String description,String category) {
 		this.outcome = outcome;
 		this.description = description;
+		this.category=category;
 	}
 	public Double getOutcome() {
 		return outcome;
@@ -25,6 +28,12 @@ public class Outcome {
 	@Override
 	public String toString() {
 		return "Outcome [outcome=" + outcome + ", description=" + description + "]";
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	

@@ -250,7 +250,7 @@ public class SwitchManagerUtils {
 		String s_years_outcome = Utils.convertDecimalFormat2(years_outcome);
 		String s_years_gain= Utils.convertDecimalFormat2(years_gain);
 		
-		System.out.println(" --> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_YELLOW+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
+		System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_CYAN+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
 		
 		for(Year y_print : yearsList) {
 			String year_income = Utils.convertDecimalFormat2(y_print.getTotIncome());
@@ -264,7 +264,7 @@ public class SwitchManagerUtils {
 			String year_outcome = Utils.convertDecimalFormat2(y_print.getTotOutcome());
 			String gain= Utils.convertDecimalFormat2(y_print.getTotIncome()-y_print.getTotOutcome());
 			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
-					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_GRASS+" 	++ "+gain+"\n");
+					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_CYAN+" 	++ "+gain+"\n");
 			Collection<Salary> salaries = y_print.getMonths().values();
 			for(Salary s: salaries) { 	
 				s.printSalary(); 	
@@ -285,7 +285,7 @@ public class SwitchManagerUtils {
 		String s_years_outcome = Utils.convertDecimalFormat2(years_outcome);
 		String s_years_gain= Utils.convertDecimalFormat2(years_gain);
 		
-		System.out.println(" --> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_YELLOW+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
+		System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_CYAN+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
 		
 		for(Year y_print : yearsList) {
 			String year_income = Utils.convertDecimalFormat2(y_print.getTotIncome());
@@ -299,7 +299,7 @@ public class SwitchManagerUtils {
 			String year_outcome = Utils.convertDecimalFormat2(y_print.getTotOutcome());
 			String gain= Utils.convertDecimalFormat2(y_print.getTotIncome()-y_print.getTotOutcome());
 			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
-					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_GRASS+" 	++ "+gain+"\n");
+					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_CYAN+" 	++ "+gain+"\n");
 			Collection<Salary> salaries = y_print.getMonths().values();
 			for(Salary s: salaries) { 	
 				s.printOutcomesHashMapGroupCat(); 	
@@ -326,6 +326,7 @@ public class SwitchManagerUtils {
 	}
 	
 	public static void printYear(ArrayList<Year> yearsList) {
+		System.out.print("  >>>>>>> Year:    ");
 		Scanner scanner = new Scanner(System.in);
 		String year_sel = scanner.next();
 		Boolean year_exist=false;
@@ -333,6 +334,16 @@ public class SwitchManagerUtils {
 				if(curr_y.getYear().equals(year_sel)) {
 					//the year already exists
 					year_exist=true;
+					
+					Double years_income = curr_y.getTotIncome();
+					Double years_outcome = curr_y.getTotOutcome();
+					Double years_gain=years_income - years_outcome;
+					String s_years_income = Utils.convertDecimalFormat2(years_income);
+					String s_years_outcome = Utils.convertDecimalFormat2(years_outcome);
+					String s_years_gain= Utils.convertDecimalFormat2(years_gain);
+					
+					System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_CYAN+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
+					
 					//print this year
 					System.out.print("\n # "+Utils.ANSI_YELLOW+curr_y.getYear()+
 							Utils.ANSI_WHITE+" \\________________________________________________________________________\n");
