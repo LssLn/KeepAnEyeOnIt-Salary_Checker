@@ -42,7 +42,7 @@
 			Given a YEARS ArrayList, the method iterates through it and saves all its data in a txt file, created in order to backup the data and making therefore possible for write.txt to have a backup. The .txt is called after the actual time when the function is called.
 			<br>Everytime it's called, it creates a new file.<br>Future rework: delete the older backups, keep a maximum number of files, where the maximum is represented by X: it can be defined by the user, by default should be a value of 5 or 10.</li>
 			<li><h4>readingFile</h4>
-			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the YEARS ArrayList.</li>
+			Given an already existing txt file written by the previous "writingFile" method, it loads the data retrieved from the txt file into the YEARS ArrayList.</li>
 		</ul>
 	</li>
 	<li><h3>Utils</h3>
@@ -59,15 +59,16 @@
 	<li><h3>switch Manager Utils</h3>
 	This class has static methods used by the switch manager, these are the main features.
 		<ul>
-			<li><h4>addSalary</h4></li>
-			<li><h4>removeSalary</h4></li>
-			<li><h4>addExpense</h4></li>
-			<li><h4>removeExpense</h4></li>
-			<li><h4>printAll</h4>displays all the existent years</li>
-			<li><h4>printYear</h4>displays the chosen year</li>
-			<li><h4>loadData</h4>load data from txt file</li>
-			<li><h4>saveData</h4>saves data in txt file</li>
-			<li><h4>showStats</h4>prints all the months, income and expenses, in percentages</li>
+			<li><h4>addSalary</h4></li> 	Adds a Month Salary 
+			<li><h4>removeSalary</h4></li> 	Removes a Month Salary //Unused
+			<li><h4>addExpense</h4></li> 	Adds an expense to a specific Month
+			<li><h4>removeExpense</h4>	Removes an expense given its ID</li>
+			<li><h4>printAll</h4>		Prints all the data related to all the Years</li>
+			<li><h4>printYear</h4>		Prints all the data related to a specific Year</li>
+			<li><h4>loadData</h4> 		Loads from write.txt file (overwrites actual data)</li>
+			<li><h4>saveData</h4> 		Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time</li>
+			<li><h4>showStats</h4> 		Displays stats for each month, giving a percentage representation for expenses and gains</li>
+			<li><h4>printOutcomesHashMapGroupCat</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
 		</ul>
 	</li>
 </ul>
@@ -83,7 +84,7 @@
 </ul>
 <h2>MAIN</h2>
 <ul>
-	<li>SalaryChecker_Test
+	<li>SalaryChecker_main
 	Has an <b>ArrayList</b> for every year (12 months, <Integer> key (1 aka January, 2 February and so on...), <Salary> value))<br>
 	Has a method (monthToInt) used to convert String month names to Integers (which returns -1 if the month name is not valid), and a menù method to show all the options.<br>
 		The above methods are both static, as they are called inside the main.<br>
