@@ -14,13 +14,14 @@
 <br>
 <h2>CLASS</h2>
 <ul>
-	<li><h3>Outcome</h3>Each expense has an amount and a description.</li>
+	<li><h3>Outcome</h3>Each expense has an amount, a category, a n_ID and a description.</li>
 	<li><h3>Salary</h3>Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>It has these methods worth mentioning:
 		<ul>
 			<li><h4>printOutcomeHashMap</h4>Prints the outcomes stored in the Salary Hashmap.</li>
 			<li><h4>setSingleOutcome</h4></li>
-			<li><h4>incomeGraphics</h4>Used to better display the infos for Salary.</li>
-			<li><h4>printSalary</h4></li>
+			<li><h4>incomeGraphics</h4>Used to better display the Salary data.</li>
+			<li><h4>printSalary</h4>Displays all the infos related to a Salary, such as income, gain and expenses value, info, n_ID</li>
+			<li><h4>printOutcomesHashMapGroupCat</h4>Displays expenses grouped by category and ordered by amount.</li>
 		</ul>
 	</li>
 	<li><h3>Year</h3>It has a String year and an HashMap<Integer,Salary> for the year months.
@@ -37,6 +38,9 @@
 			<li><h4>writingFile</h4>
 			Given a YEARS ArrayList, the method iterates through it and saves all its data in a txt file, created in order to save the data and making therefore possible for the readingFile method to load the already existing data.
 			<br>Everytime it's called, it overwrites the txt file deleting the old content.</li>
+			<li><h4>backupFile</h4>
+			Given a YEARS ArrayList, the method iterates through it and saves all its data in a txt file, created in order to backup the data and making therefore possible for write.txt to have a backup. The .txt is called after the actual time when the function is called.
+			<br>Everytime it's called, it creates a new file.<br>Future rework: delete the older backups, keep a maximum number of files, where the maximum is represented by X: it can be defined by the user, by default should be a value of 5 or 10.</li>
 			<li><h4>readingFile</h4>
 			Given an already existing txt file written by the previous "writingHashMap" method, it saves the txt file data into the YEARS ArrayList.</li>
 		</ul>
