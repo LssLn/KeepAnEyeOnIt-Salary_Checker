@@ -91,48 +91,51 @@
 		<h3>MENU'</h3>
 	<br>The menù contains several options:
 				<p align="center">
-					<img src="https://i.imgur.com/S7tpSSP.png">
+					<img src="https://i.imgur.com/6CDSsgU.png">
 				</p>
 		<ul>
 			<li><b>Add Salary</b><br>
 			Given a month name (e.g. November), an amount and an Year, through the Utils.MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			<p align="center">
-					<img src="https://i.imgur.com/2sdgeWC.png">
+					<img src="https://i.imgur.com/vqnhD3J.png">
 				</p>
 			If the inserted month already exists (the place into the HashMap is already assigned), it will be resetted with the new parameters.
 			<br>In other words, if a month needs to be erased,  the add functionality can be used in order to reinitialize it.</li>
 			<li>Add Expense<br>
 			Given an amount, a description, a month and an year, the expense is added (subtracted) to the Salary which has the same month and year.
 			<p align="center">
-					<img src="https://i.imgur.com/liyaWwW.png">
+					<img src="https://i.imgur.com/ATIkRPh.png">
 				</p></li>
 			<li>Remove Expense<br>
 				Given a month name (and a Year), followed by an ID (visible in the Print), the specific expense is deleted.
-			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.</li>
+			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.
+			<p align="center">
+					<img src="https://i.imgur.com/ujqRg8n.png">
+				</p></li>
 			<li>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.
 			<p align="center">
-					<img src="https://i.imgur.com/Y5Bc4tx.png">
+					<img src="https://i.imgur.com/SmHqdSf.png">
 				</p></li>
 			<li>Print all the months for the selected year
 			<p align="center">
-					<img src="https://i.imgur.com/c6zrP7Q.png">
+					<img src="https://i.imgur.com/hE2PXzW.png">
 				</p></li>
 			<li>Load data<br>
 				Read a txt file importing all the previously saved elements.
 				<p align="center">
-					<img src="https://i.imgur.com/EJctGsW.png">
+					<img src="https://i.imgur.com/4uyujaS.png">
 				</p>
 			</li>
 			<li>Save data<br>
 			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
 				<p align="center">
-					<img src="https://i.imgur.com/Zq4UeQc.png">
+					<img src="https://i.imgur.com/wEVjkU7.png">
 				</p>
 			</li>
 			<li>Show stats for each month<br>
 			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.	
 			<p align="center">
-					<img src="https://i.imgur.com/cr9tAGY.png">
+					<img src="https://i.imgur.com/Mz4cc1c.png">
 				</p></li>
 			<li>Menù<br>
 			Prints all the available options
