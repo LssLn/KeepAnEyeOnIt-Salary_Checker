@@ -68,7 +68,7 @@
 			<li><h4>loadData</h4> 		Loads from write.txt file (overwrites actual data)</li>
 			<li><h4>saveData</h4> 		Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time</li>
 			<li><h4>showStats</h4> 		Displays stats for each month, giving a percentage representation for expenses and gains</li>
-			<li><h4>printOutcomesHashMapGroupCat</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
+			<li><h4>printByCategories</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
 		</ul>
 	</li>
 </ul>
