@@ -56,7 +56,10 @@ public class SalaryCheck_main {
 					SwitchManagerUtils.showStats(yearsList);
 					break;
 				case 9:
-					SwitchManagerUtils.printByCategories(yearsList);
+					SwitchManagerUtils.printMonthByCategories(yearsList);
+					break;
+				case 10:
+					SwitchManagerUtils.printYearsByCategories(yearsList);
 					break;
 				case 100: 
 					Utils.menu();
