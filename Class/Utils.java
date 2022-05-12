@@ -42,16 +42,17 @@ public class Utils {
 	 */
 	public static void menu() {
 		System.out.println();
-		System.out.println(Utils.ANSI_YELLOW+"	 		1]\t"+Utils.ANSI_WHITE+"  Adds a Month Salary ");
-		System.out.println(Utils.ANSI_YELLOW+"		 	2]\t"+Utils.ANSI_WHITE+"  Adds an expense to a specific Month");
-		System.out.println(Utils.ANSI_YELLOW+"		 	3]\t"+Utils.ANSI_WHITE+"  Removes an expense given its ID");
-		System.out.println(Utils.ANSI_YELLOW+"	 		4]\t"+Utils.ANSI_WHITE+"  Prints all the data related to all the Years");
-		System.out.println(Utils.ANSI_YELLOW+"		 	5]\t"+Utils.ANSI_WHITE+"  Prints all the data related to a specific Year");
-		System.out.println(Utils.ANSI_YELLOW+"		 	6]\t"+Utils.ANSI_WHITE+"  Loads from write.txt file (overwrites actual data)");
-		System.out.println(Utils.ANSI_YELLOW+"		 	7]\t"+Utils.ANSI_WHITE+"  Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time");
-		System.out.println(Utils.ANSI_YELLOW+"	 		8]\t"+Utils.ANSI_WHITE+"  Displays stats for each month, giving a percentage representation for expenses and gains");
-		System.out.println(Utils.ANSI_YELLOW+"	 		9]\t"+Utils.ANSI_WHITE+"  Displays expenses grouped by Categories, per month, ordered by amount");
-		System.out.println(Utils.ANSI_YELLOW+"	 		100]\t"+Utils.ANSI_WHITE+"  Menu'\n");
+		System.out.println(Utils.ANSI_YELLOW+"	 	1]\t"+Utils.ANSI_WHITE+"Adds a Month Salary ");
+		System.out.println(Utils.ANSI_YELLOW+"	 	2]\t"+Utils.ANSI_WHITE+"Adds an expense to a specific Month");
+		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Removes an expense given its ID");
+		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Prints all the data related to all the Years");
+		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Prints all the data related to a specific Year");
+		System.out.println(Utils.ANSI_YELLOW+"	 	6]\t"+Utils.ANSI_WHITE+"Loads from write.txt file (overwrites actual data)");
+		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time");
+		System.out.println(Utils.ANSI_YELLOW+"		8]\t"+Utils.ANSI_WHITE+"Displays stats for each month, giving a percentage representation for expenses and gains");
+		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per month, ordered by amount");
+		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per year, ordered by amount");
+		System.out.println(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'\n");
 	}
 	
 	

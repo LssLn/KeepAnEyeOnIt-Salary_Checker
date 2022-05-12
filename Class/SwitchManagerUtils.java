@@ -2,7 +2,14 @@ package SalaryChecker.Class;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class SwitchManagerUtils {
 
@@ -272,7 +279,7 @@ public class SwitchManagerUtils {
 		}
 	}
 	
-	public static void printByCategories(ArrayList<Year> yearsList) {
+	public static void printMonthByCategories(ArrayList<Year> yearsList) {
 		Double years_income = 0.00;
 		Double years_outcome = 0.00;
 		Double years_gain = 0.00;
@@ -304,6 +311,77 @@ public class SwitchManagerUtils {
 			for(Salary s: salaries) { 	
 				s.printOutcomesHashMapGroupCat(); 	
 			}
+		}
+	}
+	
+	public static void printYearsByCategories(ArrayList<Year> yearsList) {
+		Double years_income = 0.00;
+		Double years_outcome = 0.00;
+		Double years_gain = 0.00;
+		for(Year y_print : yearsList) {
+			years_income += y_print.getTotIncome();
+			years_outcome += y_print.getTotOutcome();
+		}
+		years_gain=years_income - years_outcome;
+		String s_years_income = Utils.convertDecimalFormat2(years_income);
+		String s_years_outcome = Utils.convertDecimalFormat2(years_outcome);
+		String s_years_gain= Utils.convertDecimalFormat2(years_gain);
+		
+		System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+s_years_income+"      "+Utils.ANSI_RED+s_years_outcome+Utils.ANSI_CYAN+"       ++ "+s_years_gain+Utils.ANSI_WHITE+"\n");
+		
+		for(Year y_print : yearsList) {
+			String year_income = Utils.convertDecimalFormat2(y_print.getTotIncome());
+			/*String year_outcome=null;
+			if(Double.compare(y_print.getTotOutcome(),0)==0) {
+				System.out.println("GOTCHA!");
+				year_outcome = "0";
+			}else {
+				year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
+			}*/
+			String year_outcome = Utils.convertDecimalFormat2(y_print.getTotOutcome());
+			String gain= Utils.convertDecimalFormat2(y_print.getTotIncome()-y_print.getTotOutcome());
+			System.out.print("\n # "+Utils.ANSI_YELLOW+y_print.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
+					+Utils.ANSI_GREEN+"+"+year_income+Utils.ANSI_RED+" -"+year_outcome+Utils.ANSI_CYAN+" 	++ "+gain+"\n");
+			Collection<Salary> salaries = y_print.getMonths().values();
+			
+			List<Map<String, Double>> listMonthsOrderedGroupedByCat = new ArrayList<>();
+			
+			
+			//https://stackoverflow.com/questions/72220565/how-to-merge-different-hashmaps-with-same-keys-but-different-values
+			
+			for(Salary s: salaries) { 	
+				listMonthsOrderedGroupedByCat.add(s.getOutComeHashMapGroupCategories());			
+			}
+		
+			Map<String, Double> mergedMap = new HashMap<>();
+	
+			listMonthsOrderedGroupedByCat.forEach(map -> map.forEach((k, v) -> mergedMap.merge(k, v, Double::sum)));
+			
+			// now i have to order this hashmap by value
+			
+			//ordering categoriesMap values (double)
+			Collection<Double> categoriesValues = mergedMap.values();
+			List<Double> listToOrder = new ArrayList(categoriesValues);
+			Collections.sort(listToOrder);
+			Collections.reverse(listToOrder); //order desc
+			
+			//creating an hashmap with order persistence (LinkedHashMap) to preserve order
+			//populating this hashmap keys by looking for values in categoriesMap (unordered)
+			Map<String,Double> orderedCategoriesMap = new LinkedHashMap<>();
+			for(Double d:listToOrder) {	 //values
+				for(String s:mergedMap.keySet()) { //categories
+					if(((mergedMap.get(s)).compareTo(d))==0) {
+						orderedCategoriesMap.put(s, d);
+					}
+				}
+			}
+			
+			//print
+			Collection<String> categoriesOrderedSet = orderedCategoriesMap.keySet();
+			for(String s:categoriesOrderedSet) {
+				System.out.println(" 	"+Utils.ANSI_PURPLE+s+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(orderedCategoriesMap.get(s))+Utils.ANSI_WHITE);
+			}
+			
 		}
 	}
 	
@@ -370,7 +448,7 @@ public class SwitchManagerUtils {
 					System.out.print("#");
 				}
 				
-				System.out.print(Utils.ANSI_GRASS);
+				System.out.print(Utils.ANSI_GREEN);
 				for(int i=0;i<gain;i++) {
 					System.out.print("#");
 				}
@@ -394,7 +472,8 @@ public class SwitchManagerUtils {
 				gain_perc_str = gain_perc_str + "%";
 				
 				
-				System.out.println("\n   	   			"+Utils.ANSI_RED+out_perc_str+"	   	   "+Utils.ANSI_GRASS+gain_perc_str);
+				System.out.println("\n   	   			"+Utils.ANSI_RED+out_perc_str+"	   	   "+Utils.ANSI_GREEN+gain_perc_str);
+				System.out.println();
 				
 			}
 		}
