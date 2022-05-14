@@ -91,7 +91,7 @@
 		<h3>MENU'</h3>
 	<br>The menù contains several options:
 				<p align="center">
-					<img src="https://i.imgur.com/6CDSsgU.png">
+					<img src="https://i.imgur.com/hQcPbri.png">
 				</p>
 		<ul>
 			<li><b>Add Salary</b><br>
@@ -137,7 +137,7 @@
 			<p align="center">
 					<img src="https://i.imgur.com/Mz4cc1c.png">
 				</p></li>
-			<li>Expenses per mmonth, grouped by Categories and ordered by amount<br>
+			<li>Expenses per month, grouped by Categories and ordered by amount<br>
 			Displays expenses grouped by categories ordering for amount, for each month.	
 			<p align="center">
 					<img src="https://i.imgur.com/iysaLYL.png">
