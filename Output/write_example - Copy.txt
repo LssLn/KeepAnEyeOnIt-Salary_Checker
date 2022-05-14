@@ -1,0 +1,19 @@
+2021
+2
+APRIL 1550.0 55.0
+5
+15.0 CAT1 Descrizione 1
+10.0 CAT1 Descrizione 2
+20.0 CAT2 Descrizione 3
+5.0 CAT3 Descrizione 4
+5.0 CAT1 Descrizione 5
+DECEMBER 1545.0 63.0
+2
+31.0 CAT2 Descrizione 1
+32.0 CAT4 Descrizione 2
+2022
+1
+AUGUST 1500.0 20.0
+2
+20.0 CAT1 Descrizione 1
+250.0 CAT1 Descrizione 2
