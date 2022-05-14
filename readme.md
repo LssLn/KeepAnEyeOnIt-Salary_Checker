@@ -137,10 +137,15 @@
 			<p align="center">
 					<img src="https://i.imgur.com/Mz4cc1c.png">
 				</p></li>
-			<li>Expenses grouped by Categories and ordered by amount<br>
-			Displays expenses grouped by categories ordering for amount, for each month, through the printByCategories method.	
+			<li>Expenses per mmonth, grouped by Categories and ordered by amount<br>
+			Displays expenses grouped by categories ordering for amount, for each month.	
 			<p align="center">
-					<img src="https://i.imgur.com/iysaLYL.pngg">
+					<img src="https://i.imgur.com/iysaLYL.png">
+				</p></li>
+			<li>Expenses per year, grouped by Categories and ordered by amount<br>
+			Displays expenses grouped by categories ordering for amount, for each year.	
+			<p align="center">
+					<img src="https://i.imgur.com/butBDOo.png">
 				</p></li>
 			<li>Menù<br>
 			Prints all the available options
