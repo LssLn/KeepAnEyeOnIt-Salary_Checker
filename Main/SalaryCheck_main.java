@@ -22,8 +22,8 @@ public class SalaryCheck_main {
 		int scelta=0;
 		do {
 			System.out.print(Utils.ANSI_YELLOW+"\n -> "+Utils.ANSI_WHITE);
-			Scanner scanner_scelta = new Scanner(System.in);
-			scelta=scanner_scelta.nextInt();
+			Scanner scannerSwitch = new Scanner(System.in);
+			scelta=scannerSwitch.nextInt();
 			switch(scelta) {
 				case 1:
 					SwitchManagerUtils.addSalary(yearsList);
