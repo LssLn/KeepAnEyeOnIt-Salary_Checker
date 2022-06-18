@@ -20,19 +20,19 @@ public class Salary {
 	
 	private Double income;
 	//it's the amount of all the single expenses
-	private Double total_outcome; 
+	private Double totalOutcome; 
 	private String month;
 	//double is the amount of the expense, String the description.
 	private HashMap<Integer, Outcome> outcomes = new HashMap<>();
 
-	Integer outcome_id=0;
+	Integer outcomeId=0;
 
 	//Constructor with income and month
 	//implement an Exception handler for IllegalArgumentException in the main
 	public Salary(Double income, String month) {
 		this.income = income;
 		this.month = month;
-		this.total_outcome=0.0; //init to 0
+		this.totalOutcome=0.0; //init to 0
 	}
 
 	public Salary() {
@@ -45,20 +45,20 @@ public class Salary {
 	public String getMonth() {
 		return month;
 	}
-	public Double getTotal_outcome() {
-		return total_outcome;
+	public Double getTotalOutcome() {
+		return totalOutcome;
 	}
 
 	/*
 	 * Given outcomes HashMap
-	 * Cycles it and add every outcome to the total_outcome value 
+	 * Cycles it and add every outcome to the totalOutcome value 
 	 */
 	//public void setTotal_outcome(HashMap<Double, String> outcomes) {
-	public void setTotal_outcome() {
-		Set<Integer> setkeys_outcomes = outcomes.keySet();
-		for(Integer i: setkeys_outcomes) {
-			Outcome outcome_returned = outcomes.get(i);
-			total_outcome = total_outcome+outcome_returned.getOutcome();
+	public void setTotalOutcome() {
+		Set<Integer> setkeysOutcomes = outcomes.keySet();
+		for(Integer i: setkeysOutcomes) {
+			Outcome outcomeReturned = outcomes.get(i);
+			totalOutcome = totalOutcome+outcomeReturned.getOutcome();
 		}
 		//System.out.println("\nThe total Outcome, as for now, is: "+total_outcome);
 //		this.total_outcome=total_outcome;
@@ -69,22 +69,22 @@ public class Salary {
 	 * Adds the single outcome to the outcomes HashMap
 	 */
 	//public void setSingle_outcome(HashMap<Double,String> outcomes,Double outcome,String outcome_description) {
-	public void setSingle_outcome(Double outcome_expense,String outcome_description, String category) {
-		Outcome outcome = new Outcome(outcome_expense,outcome_description,category);
-		outcome_id++; //id increment
-		outcomes.put(outcome_id, outcome);
-		total_outcome = total_outcome + outcome_expense;	
+	public void setSingleOutcome(Double outcomeExpense,String outcomeDescription, String category) {
+		Outcome outcome = new Outcome(outcomeExpense,outcomeDescription,category);
+		outcomeId++; //id increment
+		outcomes.put(outcomeId, outcome);
+		totalOutcome = totalOutcome + outcomeExpense;	
 	}
 
 	//public void printOutcomesHashMap(HashMap<Double,String> outcomes) {
 	public void printOutcomesHashMap() {
-		Set<Integer> setkeys_outcomes = outcomes.keySet();
+		Set<Integer> setkeysOutcomes = outcomes.keySet();
 		//System.out.println("\nReading all the expenses:\n");
-		for(Integer i: setkeys_outcomes) {
-			Outcome outcome_returned = outcomes.get(i);
+		for(Integer i: setkeysOutcomes) {
+			Outcome outcomeReturned = outcomes.get(i);
 //			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
 //			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcome_returned.getOutcome())+Utils.ANSI_WHITE + " 	[" +Utils.ANSI_YELLOW+outcome_returned.getCategory()+Utils.ANSI_WHITE+"]");	
-			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+Utils.ANSI_PURPLE+outcome_returned.getCategory()+Utils.ANSI_WHITE+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcome_returned.getOutcome())+"\t"+" "+Utils.ANSI_WHITE+outcome_returned.getDescription());	
+			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+Utils.ANSI_PURPLE+outcomeReturned.getCategory()+Utils.ANSI_WHITE+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcomeReturned.getOutcome())+"\t"+" "+Utils.ANSI_WHITE+outcomeReturned.getDescription());	
 		}
 	}
 	
@@ -94,28 +94,28 @@ public class Salary {
 	 * returns void
 	 */
 	public void printOutcomesHashMapGroupCat() {
-		String tot_outc_formatted=Utils.convertDecimalFormat2(total_outcome);
-		if(tot_outc_formatted.equals(",00")) {
-			tot_outc_formatted="0";
+		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
+		if(totOutcFormatted.equals(",00")) {
+			totOutcFormatted="0";
 		}
 		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_GRASS+"   > " +
 				Utils.ANSI_WHITE+month+" [ "+
 				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat2(income) + 
-				Utils.ANSI_RED+"      -   " + tot_outc_formatted + 
-				Utils.ANSI_CYAN+"     ==  " +(Utils.convertDecimalFormat2(income-total_outcome))+
+				Utils.ANSI_RED+"      -   " + totOutcFormatted + 
+				Utils.ANSI_CYAN+"     ==  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
 				Utils.ANSI_WHITE+"   ]");
 		
 		
-		Set<Integer> setkeys_outcomes = outcomes.keySet();
-		Set<Integer> setkeys_outcomes2 = outcomes.keySet();
+		Set<Integer> setkeysOutcomes = outcomes.keySet();
+		Set<Integer> setkeysOutcomes2 = outcomes.keySet();
 		
 		Set<String> categories = new HashSet<>();
 
 		//getting all the categories
-		for(Integer i: setkeys_outcomes) {
-			Outcome outcome_returned = outcomes.get(i);
+		for(Integer i: setkeysOutcomes) {
+			Outcome outcomeReturned = outcomes.get(i);
 			
-			String category = outcome_returned.getCategory();
+			String category = outcomeReturned.getCategory();
 			categories.add(category);
 			
 		}
@@ -126,10 +126,10 @@ public class Salary {
 		}
 		//hashmap populated with double value
 		for(String c: categories) {
-			for(Integer k: setkeys_outcomes2) {
-				Outcome outcome_returned2 = outcomes.get(k);
-				if(outcome_returned2.getCategory().equals(c)) {
-					categoriesMap.put(c,categoriesMap.get(c)+outcome_returned2.getOutcome()); //https://stackoverflow.com/a/4158002/8422732
+			for(Integer k: setkeysOutcomes2) {
+				Outcome outcomeReturned2 = outcomes.get(k);
+				if(outcomeReturned2.getCategory().equals(c)) {
+					categoriesMap.put(c,categoriesMap.get(c)+outcomeReturned2.getOutcome()); //https://stackoverflow.com/a/4158002/8422732
 				}
 			}
 		}
@@ -160,16 +160,16 @@ public class Salary {
 
 	
 	public Map<String, Double> getOutComeHashMapGroupCategories() {
-		Set<Integer> setkeys_outcomes = outcomes.keySet();
-		Set<Integer> setkeys_outcomes2 = outcomes.keySet();
+		Set<Integer> setkeysOutcomes = outcomes.keySet();
+		Set<Integer> setkeysOutcomes2 = outcomes.keySet();
 		
 		Set<String> categories = new HashSet<>();
 
 		//getting all the categories
-		for(Integer i: setkeys_outcomes) {
-			Outcome outcome_returned = outcomes.get(i);
+		for(Integer i: setkeysOutcomes) {
+			Outcome outcomeReturned = outcomes.get(i);
 			
-			String category = outcome_returned.getCategory();
+			String category = outcomeReturned.getCategory();
 			categories.add(category);
 			
 		}
@@ -180,10 +180,10 @@ public class Salary {
 		}
 		//hashmap populated with double value
 		for(String c: categories) {
-			for(Integer k: setkeys_outcomes2) {
-				Outcome outcome_returned2 = outcomes.get(k);
-				if(outcome_returned2.getCategory().equals(c)) {
-					categoriesMap.put(c,categoriesMap.get(c)+outcome_returned2.getOutcome()); //https://stackoverflow.com/a/4158002/8422732
+			for(Integer k: setkeysOutcomes2) {
+				Outcome outcomeReturned2 = outcomes.get(k);
+				if(outcomeReturned2.getCategory().equals(c)) {
+					categoriesMap.put(c,categoriesMap.get(c)+outcomeReturned2.getOutcome()); //https://stackoverflow.com/a/4158002/8422732
 				}
 			}
 		}
@@ -224,33 +224,33 @@ public class Salary {
 	//UNUSED
 	@Override
 	public String toString() {
-		return "Salary - "+month+"[ income= " + income + "	 total_outcome= " + total_outcome + " ]";
+		return "Salary - "+month+"[ income= " + income + "	 total outcome= " + totalOutcome + " ]";
 	}
 	
 	
 	
 	public void printSalary() {
-		String tot_outc_formatted=Utils.convertDecimalFormat2(total_outcome);
-		if(tot_outc_formatted.equals(",00")) {
-			tot_outc_formatted="0";
+		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
+		if(totOutcFormatted.equals(",00")) {
+			totOutcFormatted="0";
 		}
 		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_GRASS+"   > " +
 				Utils.ANSI_WHITE+month+" [ "+
 				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat2(income) + 
-				Utils.ANSI_RED+"      -   " + tot_outc_formatted + 
-				Utils.ANSI_CYAN+"     ==  " +(Utils.convertDecimalFormat2(income-total_outcome))+
+				Utils.ANSI_RED+"      -   " + totOutcFormatted + 
+				Utils.ANSI_CYAN+"     ==  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
 				Utils.ANSI_WHITE+"   ]");
-		incomeGraphics(income,total_outcome);
+		incomeGraphics(income,totalOutcome);
 		System.out.println();
 		printOutcomesHashMap();
 	}
 	
 	public static void incomeGraphics(Double income, Double outcome) {
 
-		Integer num_divider=20;
+		Integer numDivider=20;
 
-		Double nblocksI=(income/num_divider);
-		Double nblocksO=(outcome/num_divider);
+		Double nblocksI=(income/numDivider);
+		Double nblocksO=(outcome/numDivider);
 		System.out.print(Utils.ANSI_WHITE+"      ");
 		for(int i=0;i<nblocksI-nblocksO;i++) {
 			System.out.print(Utils.ANSI_GREEN+"+");
@@ -261,7 +261,7 @@ public class Salary {
 		System.out.print(Utils.ANSI_WHITE);
 	}
 
-	public void removeSingle_outcome(Integer id) {
+	public void removeSingleOutcome(Integer id) {
 		outcomes.remove(id);
 	}
 	

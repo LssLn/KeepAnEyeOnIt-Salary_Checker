@@ -38,15 +38,15 @@ public class FileHandler {
 
             FileWriter fw=new FileWriter(file); 
             BufferedWriter bw=new BufferedWriter(fw);  
-            for(Year y_curr : YearsList) {
-            	bw.write(y_curr.getYear()+"\n");
+            for(Year yCurrent : YearsList) {
+            	bw.write(yCurrent.getYear()+"\n");
             	HashMap<Integer,Salary> Months = new HashMap<>(12);
-            	Months=y_curr.getMonths();
+            	Months=yCurrent.getMonths();
             	bw.write(Months.size()+"\n");
             	bw.flush();
             	for (Salary s : Months.values()) {
         		    // reads all the Salaries in the hashmap
-                	bw.write(s.getMonth()+" "+s.getIncome()+" "+s.getTotal_outcome()+"\n");
+                	bw.write(s.getMonth()+" "+s.getIncome()+" "+s.getTotalOutcome()+"\n");
                 	//to write the outcomes too, i added a new method in Salary: getHashMap (returns the HashMap)
                 	
                 	HashMap<Integer, Outcome> outcomes = s.getOutcomes();
@@ -85,15 +85,15 @@ public class FileHandler {
 
             FileWriter fw=new FileWriter(file); 
             BufferedWriter bw=new BufferedWriter(fw);  
-            for(Year y_curr : YearsList) {
-            	bw.write(y_curr.getYear()+"\n");
+            for(Year yCurrent : YearsList) {
+            	bw.write(yCurrent.getYear()+"\n");
             	HashMap<Integer,Salary> Months = new HashMap<>(12);
-            	Months=y_curr.getMonths();
+            	Months=yCurrent.getMonths();
             	bw.write(Months.size()+"\n");
             	bw.flush();
             	for (Salary s : Months.values()) {
         		    // reads all the Salaries in the hashmap
-                	bw.write(s.getMonth()+" "+s.getIncome()+" "+s.getTotal_outcome()+"\n");
+                	bw.write(s.getMonth()+" "+s.getIncome()+" "+s.getTotalOutcome()+"\n");
                 	//to write the outcomes too, i added a new method in Salary: getHashMap (returns the HashMap)
                 	
                 	HashMap<Integer, Outcome> outcomes = s.getOutcomes();
@@ -126,46 +126,46 @@ public class FileHandler {
 	public ArrayList<Year> readingFile() {
 		ArrayList<Year> YearsList = new ArrayList<>();		
 
-		int ret_value=0;
+		int retValue=0;
 		try {
 			File file = new File(myFile);
 			Scanner scanner = new Scanner(file);
 			String fileContent = "";
 			while(scanner.hasNext()){ //reads the whole file
 				try {
-					String year_input = scanner.next();
-					Integer y_n_months = Integer.parseInt(scanner.next());
-					Year year = new Year(year_input);
-					System.out.println("	Year "+year_input+", loading "+y_n_months+" months ...");
-					for(int y_cont=0; y_cont<y_n_months;y_cont++) {
+					String yearInput = scanner.next();
+					Integer yNMonths = Integer.parseInt(scanner.next());
+					Year year = new Year(yearInput);
+					System.out.println("	Year "+yearInput+", loading "+yNMonths+" months ...");
+					for(int yCont=0; yCont<yNMonths;yCont++) {
 						String month = scanner.next(); 
 						System.out.println("	"+month+Utils.ANSI_GREEN+" loaded"+Utils.ANSI_WHITE);
 						month=month.toUpperCase();
-						ret_value=Utils.MonthToInt(month);
+						retValue=Utils.MonthToInt(month);
 						
 						Double income=Double.parseDouble(scanner.next());
 //						System.out.println(" - - "+income);
 						Double outcome=Double.parseDouble(scanner.next());
 //						System.out.println(" - - "+outcome);
 						
-						if(ret_value != -1) {
+						if(retValue != -1) {
 				 			Salary salary = new Salary(income,month);
-				 			year.addMonth(ret_value-1, salary); 
+				 			year.addMonth(retValue-1, salary); 
 				 			//ret_value - 1 because index start from 0 up to 11, while months from 1 to 12
 				 			//it's critical to subtract -1 from ret value now because it may broke the do while
 				 			
-				 			Integer n_s_outcomes = Integer.parseInt(scanner.next());
+				 			Integer nSOutcomes = Integer.parseInt(scanner.next());
 //							System.out.println(" - - "+n_s_outcomes);
-		                    for(int i=0;i<n_s_outcomes;i++) {
+		                    for(int i=0;i<nSOutcomes;i++) {
 //		                    	System.out.println("-:: sub element "+i+1);
 		                    	try {
-		                    		Double s_outcome = Double.parseDouble(scanner.next());
+		                    		Double sOutcome = Double.parseDouble(scanner.next());
 //			                    	System.out.println("-:: :: expense "+s_outcome);
 		                    		String category = scanner.next();
 			                        String description = scanner.nextLine();
 //			                        System.out.println(" - "+description);
 			                        description.trim();
-			                        salary.setSingle_outcome(s_outcome, description,category);
+			                        salary.setSingleOutcome(sOutcome, description,category);
 
 		                    	} catch (NumberFormatException e) {
 		                    	    e.printStackTrace();

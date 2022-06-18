@@ -53,20 +53,20 @@ public class Year implements Comparable<Year>{
 	*/
 	
 	public double getTotIncome() {
-		double tot_income=0.00;
+		double totIncome=0.00;
 		Collection<Salary> salaries = months.values();
 		for(Salary s: salaries) {
-			tot_income=tot_income+s.getIncome();
+			totIncome=totIncome+s.getIncome();
 		}
-		return tot_income;
+		return totIncome;
 	}
 	
 	public double getTotOutcome() {
-		double tot_outcome=0.00;
+		double totOutcome=0.00;
 		Collection<Salary> salaries = months.values();
 		for(Salary s: salaries) {
-			tot_outcome=tot_outcome+s.getTotal_outcome();
+			totOutcome=totOutcome+s.getTotalOutcome();
 		}
-		return tot_outcome;
+		return totOutcome;
 	}
 }
