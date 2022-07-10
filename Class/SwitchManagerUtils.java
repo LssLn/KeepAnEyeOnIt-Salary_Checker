@@ -379,7 +379,7 @@ public class SwitchManagerUtils {
 			//print
 			Collection<String> categoriesOrderedSet = orderedCategoriesMap.keySet();
 			for(String s:categoriesOrderedSet) {
-				System.out.println(" 	"+Utils.ANSI_PURPLE+s+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(orderedCategoriesMap.get(s))+Utils.ANSI_WHITE);
+				System.out.println(" 	"+Utils.ANSI_MGNT+s+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(orderedCategoriesMap.get(s))+Utils.ANSI_WHITE);
 			}
 			
 		}

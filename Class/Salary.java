@@ -84,7 +84,7 @@ public class Salary {
 			Outcome outcomeReturned = outcomes.get(i);
 //			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
 //			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcome_returned.getOutcome())+Utils.ANSI_WHITE + " 	[" +Utils.ANSI_YELLOW+outcome_returned.getCategory()+Utils.ANSI_WHITE+"]");	
-			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+Utils.ANSI_PURPLE+outcomeReturned.getCategory()+Utils.ANSI_WHITE+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcomeReturned.getOutcome())+"\t"+" "+Utils.ANSI_WHITE+outcomeReturned.getDescription());	
+			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+Utils.ANSI_MGNT+outcomeReturned.getCategory()+Utils.ANSI_WHITE+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcomeReturned.getOutcome())+"\t"+" "+Utils.ANSI_WHITE+outcomeReturned.getDescription());	
 		}
 	}
 	
@@ -154,7 +154,7 @@ public class Salary {
 		//print
 		Collection<String> categoriesOrderedSet = orderedCategoriesMap.keySet();
 		for(String s:categoriesOrderedSet) {
-			System.out.println(" 	"+Utils.ANSI_PURPLE+s+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(orderedCategoriesMap.get(s))+Utils.ANSI_WHITE);
+			System.out.println(" 	"+Utils.ANSI_MGNT+s+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(orderedCategoriesMap.get(s))+Utils.ANSI_WHITE);
 		}
 	}
 
