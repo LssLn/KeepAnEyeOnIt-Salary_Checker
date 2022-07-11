@@ -139,7 +139,7 @@ public class FileHandler {
 					System.out.println("	Year "+yearInput+", loading "+yNMonths+" months ...");
 					for(int yCont=0; yCont<yNMonths;yCont++) {
 						String month = scanner.next(); 
-						System.out.println("	"+month+Utils.ANSI_GREEN+" loaded"+Utils.ANSI_WHITE);
+						System.out.println("		"+month+Utils.ANSI_GREEN+" loaded"+Utils.ANSI_WHITE);
 						month=month.toUpperCase();
 						retValue=Utils.MonthToInt(month);
 						

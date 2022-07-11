@@ -102,7 +102,7 @@ public class Salary {
 				Utils.ANSI_WHITE+month+" [ "+
 				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat2(income) + 
 				Utils.ANSI_RED+"      -   " + totOutcFormatted + 
-				Utils.ANSI_CYAN+"     ==  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
+				Utils.ANSI_BRIGHT_YELLOW+"   ->  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
 				Utils.ANSI_WHITE+"   ]");
 		
 		
@@ -238,7 +238,7 @@ public class Salary {
 				Utils.ANSI_WHITE+month+" [ "+
 				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat2(income) + 
 				Utils.ANSI_RED+"      -   " + totOutcFormatted + 
-				Utils.ANSI_CYAN+"     ==  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
+				Utils.ANSI_BRIGHT_YELLOW+"   ->  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
 				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,totalOutcome);
 		System.out.println();

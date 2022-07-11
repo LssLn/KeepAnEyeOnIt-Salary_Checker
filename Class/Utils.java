@@ -16,27 +16,28 @@ public class Utils {
 	public static String ANSI_WHITE="\033[37m";
 	public static String ANSI_GRASS="\033[92m";
 	public static String ANSI_MGNT="\033[36m";
+	public static String ANSI_BRIGHT_YELLOW="\033[93m";
 
 //	public static String ANSI_BG_GREEN="\033[42m";
 //	public static String ANSI_BG_RED="\033[41m";
 //	public static String RESET="\033[0m";
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_BLACK = "\u001B[30m";
-	public static final String ANSI_BLUE = "\u001B[34m";
-	public static final String ANSI_PURPLE = "\u001B[35m";
-	public static final String ANSI_CYAN = "\u001B[36m";
+//	public static String ANSI_RESET = "\u001B[0m";
+//	public static String ANSI_BLACK = "\u001B[30m";
+	public static String ANSI_BLUE = "\u001B[34m";
+	public static String ANSI_PURPLE = "\u001B[35m";
+	public static String ANSI_CYAN = "\u001B[36m";
 	
 	/*
 	 * Prints the application logo
 	 */
 	public static void intro() {
-		System.out.println(Utils.ANSI_GREEN);
-		System.out.println("	 	#  #     #     #####    #####  ##### ");
-		System.out.println("	 	# #     # #    #        #      #   # ");
-		System.out.println("	 	##     #####   ##### -- #####  #     ");
-		System.out.println("	 	# #   #     #  #            #  #   # ");
-		System.out.println("	 	#  # #       # #####    #####  ##### ");
-		System.out.println(Utils.ANSI_YELLOW+"\n	 	KEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+" 	v 1.3");
+		System.out.println();
+		System.out.println(Utils.ANSI_RED+	 "	 	#  #     #     #####    #####  ##### ");
+		System.out.println(Utils.ANSI_YELLOW+"	 	# #     # #    #        #      #     ");
+		System.out.println(Utils.ANSI_GREEN+ "	 	##     #####   ##### -- #####  #     ");
+		System.out.println(Utils.ANSI_MGNT+  "	 	# #   #     #  #            #  #     ");
+		System.out.println(Utils.ANSI_PURPLE+"	 	#  # #       # #####    #####  ##### ");
+		System.out.println(Utils.ANSI_GREEN+"\n	 	KEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+" 	v 1.4.1"+"  released on 11/07/2022");
 	}
 
 	/*
@@ -50,7 +51,7 @@ public class Utils {
 		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Prints all the data related to all the Years");
 		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Prints all the data related to a specific Year");
 		System.out.println(Utils.ANSI_YELLOW+"	 	6]\t"+Utils.ANSI_WHITE+"Loads from write.txt file (overwrites actual data)");
-		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time");
+		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Saves current data into write.txt and also creates a backup file each time");
 		System.out.println(Utils.ANSI_YELLOW+"		8]\t"+Utils.ANSI_WHITE+"Displays stats for each month, giving a percentage representation for expenses and gains");
 		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per month, ordered by amount");
 		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per year, ordered by amount");
