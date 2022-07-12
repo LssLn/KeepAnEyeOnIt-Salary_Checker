@@ -43,6 +43,8 @@
 			<br>Everytime it's called, it creates a new file.<br>Future rework: delete the older backups, keep a maximum number of files, where the maximum is represented by X: it can be defined by the user, by default should be a value of 5 or 10.</li>
 			<li><h4>readingFile</h4>
 			Given an already existing txt file written by the previous "writingFile" method, it loads the data retrieved from the txt file into the YEARS ArrayList.</li>
+			<li><h4>deleteBackup</h4>
+			Given a folder with different txt files, each named in the format YYYY_MM_DD_hh_mm_ss.txt, a list is created with all the files name. <br>The list is then reverse-sorted, and with the help of the list all the files, except for the first N (most recents), are deleted.</li>
 		</ul>
 	</li>
 	<li><h3>Utils</h3>
@@ -66,7 +68,7 @@
 			<li><h4>printAll</h4>		Prints all the data related to all the Years</li>
 			<li><h4>printYear</h4>		Prints all the data related to a specific Year</li>
 			<li><h4>loadData</h4> 		Loads from write.txt file (overwrites actual data)</li>
-			<li><h4>saveData</h4> 		Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time</li>
+			<li><h4>saveData</h4> 		Saves actual data into write.txt, creates a unique backup file each time for a maximum of 5</li>
 			<li><h4>showStats</h4> 		Displays stats for each month, giving a percentage representation for expenses and gains</li>
 			<li><h4>printByCategories</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
 		</ul>
