@@ -68,7 +68,7 @@
 			<li><h4>printAll</h4>		Prints all the data related to all the Years</li>
 			<li><h4>printYear</h4>		Prints all the data related to a specific Year</li>
 			<li><h4>loadData</h4> 		Loads from write.txt file (overwrites actual data)</li>
-			<li><h4>saveData</h4> 		Saves actual data into write.txt, creates a unique backup file each time for a maximum of 5</li>
+			<li><h4>saveData</h4> 		Saves current data into write.txt, creates a unique backup file each time for a maximum of 5 files</li>
 			<li><h4>showStats</h4> 		Displays stats for each month, giving a percentage representation for expenses and gains</li>
 			<li><h4>printByCategories</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
 		</ul>
