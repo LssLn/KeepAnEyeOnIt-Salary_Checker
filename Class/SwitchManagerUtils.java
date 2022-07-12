@@ -400,8 +400,11 @@ public class SwitchManagerUtils {
 		fw.writingFile(yearsList);
 		String bkpFile = fw.backupFile(yearsList);
 		System.out.println("\n  Backup "+Utils.ANSI_GREEN+"created: "+Utils.ANSI_WHITE+bkpFile);
+		
+		//only the most 5 recents backups are kept
 		System.out.println("\n  Deleting older backup files..."+Utils.ANSI_WHITE);
 		fw.deleteBackup();
+		
 		System.out.println("\n  Data "+Utils.ANSI_GREEN+"saved."+Utils.ANSI_WHITE);
 	}
 	
