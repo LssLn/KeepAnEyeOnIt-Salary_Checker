@@ -7,9 +7,13 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 /* 
  * 	It gives persistence to the program by loading all the already saved values and 
@@ -198,5 +202,57 @@ public class FileHandler {
             e.printStackTrace();
         }
 		return YearsList;
+	}
+
+	/*
+	 * Given a folder with different txt files, each named in the format YYYY_MM_DD_hh_mm_ss.txt,
+	 * a list is created with all the files name, the list is reverse-sorted, 
+	 * and with the help of the list all the files, except for the first N (most recents) are deleted
+	 */
+	public void deleteBackup() {
+		//numbers of file that i am excluding from the delete
+		int safeNumbers = 5;
+		
+		String myDirectoryPath = System.getProperty("user.dir") + "\\src\\SalaryChecker\\Output\\";
+		List<String> fileNames = new ArrayList<>();
+		
+		File dir = new File(myDirectoryPath);
+		  File[] directoryListing = dir.listFiles();
+		  if (directoryListing != null) {
+		    for (File child : directoryListing) {
+		    	if(!(child.getName().contains("write"))) {
+			    	fileNames.add(child.getName());
+		    	}
+		    }
+		  }else {
+		    // Handle the case where dir is not really a directory.
+		 }
+		 int nFiles = fileNames.size();
+		 int i = 0;
+		 
+		 //decreasing order regarding time
+		 Collections.sort(fileNames); //from older to newer
+		 Collections.reverse(fileNames); //from newer to older
+		 
+		 System.out.println("Starting delete");
+		 
+		 System.out.println(nFiles+" files in "+myDirectoryPath);
+		 for(String s:fileNames) {
+			 if(i>safeNumbers) { //i don't delete the first N files (the most recent ones)
+				 try {
+					 File file = new File(myDirectoryPath+s);
+					 if(file.delete()) {
+						 System.out.println(s+"  deleted successfully");
+					 }else {
+						 System.out.println(s+"  could not be deleted");
+					 }
+					 i++;
+				 }catch(Exception e) {
+					 System.out.println(e);
+				 }
+			 }else {
+				 i++;
+			 }
+		 }
 	}
 }
