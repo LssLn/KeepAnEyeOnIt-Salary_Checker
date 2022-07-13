@@ -23,7 +23,7 @@ public class SwitchManagerUtils {
 			Scanner scannerIncome1 = new Scanner(System.in);
 			strIncome= scannerIncome1.next();
 	 		//income validation
-	 		if(Utils.isNumeric(strIncome) & !(Utils.hasComma(strIncome))) {
+	 		if(Utils.isNumeric(strIncome) && !(Utils.hasComma(strIncome))) {
 	 			income=Double.parseDouble(strIncome);
 	 			if(income>=0) {
 	 				//Ok
@@ -125,15 +125,32 @@ public class SwitchManagerUtils {
 	
 	public static void addExpense(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Add Expense");
-		Double expense;
+		
+		Double expense=0.0;
+		String strExpense;
+		boolean expenseValid=false;
+
 		do {
 			System.out.print("\n  >>>>>>>>> Expense:    ");
 			Scanner scannerOutcome1=new Scanner(System.in);
-			expense = scannerOutcome1.nextDouble();
-			if(expense<0) {
+			strExpense = scannerOutcome1.next();
+
+			//income validation
+	 		if(Utils.isNumeric(strExpense) && !(Utils.hasComma(strExpense))) {
+	 			expense=Double.parseDouble(strExpense);
+	 			if(expense>=0) {
+	 				//Ok
+	 				expenseValid=true;
+	 			}else{
+	 				//TODO: launch exception + log
+		 			System.out.println("	Input expense is not valid.");
+		 		}
+	 		}else{
+ 				//TODO: launch exception + log
 	 			System.out.println("	Input expense is not valid.");
-			}
-		}while(expense<=0);
+	 		}
+	 		
+		}while(expenseValid == false);
  		
 		System.out.print("  >>>>>>>>> Description:    ");
 		Scanner scannerOutcome2=new Scanner(System.in);
