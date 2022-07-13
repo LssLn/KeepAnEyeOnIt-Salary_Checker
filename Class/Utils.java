@@ -115,4 +115,33 @@ public class Utils {
 	}
 	
 	
+	/*
+	 * Given an input,
+	 * returns true if it is a number, false otherwise.
+	 * https://www.baeldung.com/java-check-string-number#plain-java
+	 */
+	public static boolean isNumeric(String strNum) {
+	    if (strNum == null) {
+	        return false;
+	    }
+	    try {
+	        double d = Double.parseDouble(strNum);
+	    } catch (NumberFormatException nfe) {
+	        return false;
+	    }
+	    return true;
+	}
+	
+	// developed to handle the situation where a decimal input is given with comma "," (exception) format and not dot "." 
+	/*
+	 * Given a number input,
+	 * returns true if it's in the format with dot separator "."
+	 */
+	public static boolean hasComma(String strNum) {
+		if(strNum.contains(",")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }

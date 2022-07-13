@@ -15,16 +15,29 @@ public class SwitchManagerUtils {
 
 	public static void addSalary(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Add Salary: ");
-		Double income;
+		String strIncome;
+		Double income=0.0;
+		boolean incomeValid=false;
 		do {
 			System.out.print("  >>>>>>>> Income:    ");
 			Scanner scannerIncome1 = new Scanner(System.in);
-	 		income= scannerIncome1.nextDouble();
-	 		if(income<0) {//launch exception !!
+			strIncome= scannerIncome1.next();
+	 		//income validation
+	 		if(Utils.isNumeric(strIncome) & !(Utils.hasComma(strIncome))) {
+	 			income=Double.parseDouble(strIncome);
+	 			if(income>=0) {
+	 				//Ok
+	 				incomeValid=true;
+	 			}else{
+	 				//TODO: launch exception + log
+		 			System.out.println("	Input income is not valid.");
+		 		}
+	 		}else{
+ 				//TODO: launch exception + log
 	 			System.out.println("	Input income is not valid.");
 	 		}
 			//scanner_income_1.close();
-		}while(income<0);
+		}while(incomeValid == false);
  		int retValue=0;
  		do {
  			System.out.print("  >>>>>>>> Month:    ");
