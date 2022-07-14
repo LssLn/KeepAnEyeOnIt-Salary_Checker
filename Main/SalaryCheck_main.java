@@ -29,10 +29,12 @@ public class SalaryCheck_main {
 					SwitchManagerUtils.addSalary(yearsList);
 					break;
 				case 2:
-					SwitchManagerUtils.addExpense(yearsList);
-					System.out.println();
-					SwitchManagerUtils.saveData(yearsList);
-					yearsList=SwitchManagerUtils.loadData(yearsList);
+					boolean expenseAddedSuccessfully = SwitchManagerUtils.addExpense(yearsList);
+					if(expenseAddedSuccessfully) {
+						System.out.println();
+						SwitchManagerUtils.saveData(yearsList);
+						yearsList=SwitchManagerUtils.loadData(yearsList);
+					}
 					break;
 				case 3:
 					SwitchManagerUtils.removeExpense(yearsList);

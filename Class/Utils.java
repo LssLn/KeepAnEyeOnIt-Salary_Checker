@@ -120,7 +120,7 @@ public class Utils {
 	 * returns true if it is a number, false otherwise.
 	 * https://www.baeldung.com/java-check-string-number#plain-java
 	 */
-	public static boolean isNumeric(String strNum) {
+	public static boolean doubleIsNumeric(String strNum) {
 	    if (strNum == null) {
 	        return false;
 	    }
@@ -132,6 +132,22 @@ public class Utils {
 	    return true;
 	}
 	
+	/*
+	 * Given an input,
+	 * returns true if it is a number (Integer), false otherwise.
+	 */
+	public static boolean integerIsNumeric(String strNum) {
+		if (strNum == null) {
+			return false;
+		}
+		try {
+			int i = Integer.parseInt(strNum);
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		return true;
+	}
+	
 	// developed to handle the situation where a decimal input is given with comma "," (exception) format and not dot "." 
 	/*
 	 * Given a number input,
@@ -139,6 +155,18 @@ public class Utils {
 	 */
 	public static boolean hasComma(String strNum) {
 		if(strNum.contains(",")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	// developed to handle the situation where a decimal input is given with comma "," (exception) format and not dot "." 
+	/*
+	 * Given a number input,
+	 * returns true if it's in the format with dot separator "."
+	 */
+	public static boolean hasDot(String strNum) {
+		if(strNum.contains(".")) {
 			return true;
 		}else {
 			return false;

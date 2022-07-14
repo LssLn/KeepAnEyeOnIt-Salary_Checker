@@ -23,7 +23,7 @@ public class SwitchManagerUtils {
 			Scanner scannerIncome1 = new Scanner(System.in);
 			strIncome= scannerIncome1.next();
 	 		//income validation
-	 		if(Utils.isNumeric(strIncome) && !(Utils.hasComma(strIncome))) {
+	 		if(Utils.doubleIsNumeric(strIncome) && !(Utils.hasComma(strIncome))) {
 	 			income=Double.parseDouble(strIncome);
 	 			if(income>=0) {
 	 				//Ok
@@ -46,9 +46,30 @@ public class SwitchManagerUtils {
 	 		month=month.toUpperCase();
 	 		retValue=Utils.MonthToInt(month);
 	 		if(retValue != -1) {
-	 			Scanner scannerIncome3 = new Scanner(System.in);
-	 			System.out.print("  >>>>>>> Year:    ");
-	 			String yearInput = scannerIncome3.nextLine();
+	 			
+	 			boolean yearValid=false;
+	 			Integer year=0;
+	 			String yearInput;
+	 			do {
+	 				System.out.print("  >>>>>>> Year:    ");
+		 			Scanner scannerIncome3 = new Scanner(System.in);
+		 			yearInput = scannerIncome3.nextLine();
+
+		 			if(Utils.integerIsNumeric(yearInput) && !Utils.hasComma(yearInput) && !Utils.hasDot(yearInput)) {
+		 				year = Integer.parseInt(yearInput);
+		 				if(year>0 && year<9999) {
+		 					yearValid=true;
+		 				}else{
+			 				//TODO: launch exception + log
+				 			System.out.println("	Year is not valid.");
+				 		}
+		 			}else{
+		 				//TODO: launch exception + log
+			 			System.out.println("	Year is not valid.");
+			 		}
+	 			}while(yearValid == false);
+	 			
+	 			
 	 			Salary salary = new Salary(income,month);
 	 			//given the year, the YearsList is cycled
 	 			Boolean yearFound=false;
@@ -123,7 +144,8 @@ public class SwitchManagerUtils {
 		
 	}
 	
-	public static void addExpense(ArrayList<Year> yearsList) {
+	public static boolean addExpense(ArrayList<Year> yearsList) {
+		boolean success=true;
 		System.out.println("\n  >>     Add Expense");
 		
 		Double expense=0.0;
@@ -136,7 +158,7 @@ public class SwitchManagerUtils {
 			strExpense = scannerOutcome1.next();
 
 			//income validation
-	 		if(Utils.isNumeric(strExpense) && !(Utils.hasComma(strExpense))) {
+	 		if(Utils.doubleIsNumeric(strExpense) && !(Utils.hasComma(strExpense))) {
 	 			expense=Double.parseDouble(strExpense);
 	 			if(expense>=0) {
 	 				//Ok
@@ -174,8 +196,27 @@ public class SwitchManagerUtils {
 	 		//System.out.println("\n @@@ month is "+month+", ret_value is "+ret_value);
 	 		if(retValue != -1) {
 	 			Scanner scannerOutcome4 = new Scanner(System.in);
-	 			System.out.print("  >>>>>>> Year:    ");
-	 			String yearInput = scannerOutcome4.nextLine();
+	 			boolean yearValid=false;
+	 			Integer year=0;
+	 			String yearInput;
+	 			do {
+	 				System.out.print("  >>>>>>> Year:    ");
+		 			yearInput = scannerOutcome4.next();
+		 			if(Utils.integerIsNumeric(yearInput) && !Utils.hasComma(yearInput) && !Utils.hasDot(yearInput)) {
+		 				year = Integer.parseInt(yearInput);
+		 				if(year>0 && year<9999) {
+		 					yearValid=true;
+		 				}else{
+			 				//TODO: launch exception + log
+				 			System.out.println("	Year is not valid.");
+				 		}
+		 			}else{
+		 				//TODO: launch exception + log
+			 			System.out.println("	Year is not valid.");
+			 		}
+	 			}while(yearValid == false);
+	 			
+	 			
 	 			
 	 			//ret_value - 1 because index start from 0 up to 11, while months from 1 to 12
 	 			
@@ -197,7 +238,7 @@ public class SwitchManagerUtils {
 	 					}else {
 	 						// add exception
 	 						System.out.println("	No month exists in this Year for this expense to be added in.\n"
-	 								+ "		Create the salary for "+month+" "+yearInput);
+	 								+ "		Create the salary for month: "+month+", year: "+yearInput);
 	 					}
 	 					
 	 				}
@@ -207,11 +248,13 @@ public class SwitchManagerUtils {
 	 				//launch Exception
 	 				System.out.println("	No Year exists for this expense to be added in, which means any month.\n"
 								+ "		Create the salary for "+month+" "+yearInput);
+	 				success=false;
 	 			}
 	 			
 	 			
 	 		}
  		}while(retValue==-1); //if error, prompt again the value
+ 		return success;
 	}
 	
 	public static void removeExpense(ArrayList<Year> yearsList) {
