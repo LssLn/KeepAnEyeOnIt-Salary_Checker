@@ -55,6 +55,10 @@
 			<li><h4>Intro</h4>KAE-SC logo, displayed on the boot-up.</li>
 			<li><h4>Menu</h4>the main's possible choices.</li>
 			<li><h4>convertDecimalFormat</h4> converts a double value to a string, cutting it to 2 or 1 decimal values</li>
+			<li><h4>doubleIsNumeric</h4>returns true if the String is a valid double, false otherwise.</li>
+			<li><h4>integerIsNumeric</h4>returns true if the String is a valid integer, false otherwise.</li>
+			<li><h4>hasComma</h4>returns true if the String contains "comma" character, false otherwise.</li>
+			<li><h4>hasDot</h4>returns true if the String contains "dot" character, false otherwise.</li>
 		</ul>
 		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
 	</li>
