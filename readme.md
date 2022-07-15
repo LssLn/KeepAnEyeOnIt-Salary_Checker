@@ -60,8 +60,6 @@
 			<li><h4>hasComma</h4>returns true if the String contains "comma" character, false otherwise.</li>
 			<li><h4>hasDot</h4>returns true if the String contains "dot" character, false otherwise.</li>
 		</ul>
-		<br>
-		It also has the <em>ANSI colour codes</em> used by either Salary and Salarycheck_main.
 	</li>
 	<li><h3>switch Manager Utils</h3>
 	This class has static methods used by the switch manager, these are the main features.
