@@ -178,11 +178,16 @@ public class SwitchManagerUtils {
 		Scanner scannerOutcome2=new Scanner(System.in);
 		String description = scannerOutcome2.nextLine();
 		
-		
-		System.out.print("  >>>>>>>>> Category:    ");
 		Scanner scannerOutcome5=new Scanner(System.in);
-		String category = scannerOutcome5.nextLine();
-		
+		boolean categoryValid=false;
+		String category="";
+		do{
+			System.out.print("  >>>>>>>>> Category:    ");
+			category = scannerOutcome5.nextLine();
+			if(Utils.checkCategories(category)) {
+				categoryValid=true;
+			}
+		}while(categoryValid==false);		
 		
 		
 		//int ret_value_month_to_pick=0;

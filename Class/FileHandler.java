@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -27,7 +28,10 @@ public class FileHandler {
 	
 	
 	private String myFile=System.getProperty("user.dir") + "\\src\\SalaryChecker\\Output\\" + "write.txt";
-	//user.dir = D:\MegaSync\Developer\Angular Spring\Spring STS\workspace-spring-tool-suite-4-4.12.0.RELEASE\Esercizio 26 SalaryChecker
+	private String CategoriesCFG=System.getProperty("user.dir") + "\\src\\SalaryChecker\\Config\\" + "CategoriesCFG.txt";
+
+	
+	
 	public String getMyFile() {
 		return myFile;
 	}
@@ -255,4 +259,65 @@ public class FileHandler {
 			 }
 		 }
 	}
+
+	
+	/*
+	 * Given a txt file CATEGORIES, which consists of entries of the type CODE(<String>) DESCR(<String>),
+	 * Returns an HashMap (key: CODE <String>, value: DESCR <String>)
+	 */
+	public HashMap<String,String> readCategories(){
+		HashMap<String,String> categoriesMap = new HashMap<String,String>();
+		try {
+			File file = new File(CategoriesCFG);
+			Scanner scanner = new Scanner(file);
+			String fileContent = "";
+			while(scanner.hasNext()){ //reads the whole file
+				try {
+					String categoryCode = scanner.next();
+					if(categoryCode.length()>6) {
+						//throw new Exception
+						//log error
+					}
+					String categoryDescr = scanner.next();
+					
+					categoriesMap.put(categoryCode,categoryDescr);
+				}catch(InputMismatchException ex){
+						ex.printStackTrace();
+				}
+			}
+		}catch (Exception e) {
+            e.printStackTrace();
+        }
+		return categoriesMap;
+	}
+
+	
+	/*
+	 * Writes CategoriesCFG file with CODE, DESCR entries.
+	 */
+	public void writeCategories() {
+		try {
+            File file = new File(myFile);
+    		file.createNewFile();
+
+            FileWriter fw=new FileWriter(file); 
+            BufferedWriter bw=new BufferedWriter(fw);  
+            
+            System.out.println("		Category Code: ");
+            Scanner scannerCategoryCode = new Scanner(System.in);
+	 		String 	categoryCode= scannerCategoryCode.next();       
+            System.out.println("		Category Description: ");
+	 	    Scanner scannerCategoryDescr = new Scanner(System.in);
+	 		String 	categoryDescr= scannerCategoryDescr.next();   
+	 		 		
+	 		bw.write(categoryCode + " " + categoryDescr + "\n");
+        	bw.flush();
+		}catch(IOException e) {
+        	//throw new FileNotFoundException("The file described is nowhere to be found.");
+			// log error
+        	System.out.println("\n	File non trovato: \n"+e.getStackTrace());
+	    }
+
+	}
+	
 }

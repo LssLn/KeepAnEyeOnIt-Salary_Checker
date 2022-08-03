@@ -1,8 +1,11 @@
 package SalaryChecker.Class;
 
+import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utils {
@@ -171,5 +174,22 @@ public class Utils {
 		}else {
 			return false;
 		}
+	}
+
+	/*
+	 * Given a category code,
+	 * returns true if categoriesMap has no equal code to categoryCode
+	 * returns false if categoriesMap has at least a code equal to categoryCode
+	 */
+	public static boolean checkCategories(String category) {
+		FileHandler fh = new FileHandler();
+		HashMap<String,String> categoriesMap = fh.readCategories();
+		for(String s:categoriesMap.keySet()) {
+			if(!(s.equals(category))) {
+				// no matches - category is new
+				return true;
+			}
+		}
+		return false;
 	}
 }
