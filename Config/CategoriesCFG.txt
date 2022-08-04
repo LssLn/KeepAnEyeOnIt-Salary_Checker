@@ -1,0 +1,5 @@
+TRVL  Expenses related to trips, holidays and travels
+CAR  Expenses related to car services and maintenance
+OFFX  Expsens related to everything which is used for work, hobbies, or office
+CDTS  Description Test
+FOOD Expenses related to dinners, lunches, market shopping and food in general
