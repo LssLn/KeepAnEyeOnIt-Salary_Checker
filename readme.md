@@ -1,6 +1,6 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
 <p align="center">
-<img src="https://i.imgur.com/9Fbddhi.png">
+<img src="https://i.imgur.com/Y4x7mPJ.png">
 </p>
 <section>Don't want to drain your salary as quick as you use to do?<br><b>Keep an Eye on It: Salary Checker</b> is a Java project developed to better manage your monthly expenses through the years.<br>
 <br>
