@@ -45,6 +45,10 @@
 			Given an already existing txt file written by the previous "writingFile" method, it loads the data retrieved from the txt file into the YEARS ArrayList.</li>
 			<li><h4>deleteBackup</h4>
 			Given a folder with different txt files, each named in the format YYYY_MM_DD_hh_mm_ss.txt, a list is created with all the files name. <br>The list is then reverse-sorted, and with the help of the list all the files, except for the first N (most recents), are deleted.</li>
+			<li><h4>writeCategoriesToTXT</h4>
+			Given HashMap<String,String> categoriesMap, writes CategoriesCFG file with CODE, DESCR entries.</li>
+			<li><h4>readCategoriesFromTXT</h4>
+			Given a txt file CATEGORIES, which consists of entries of the type CODE(<String>) DESCR(<String>). Returns an HashMap (key: CODE <String>, value: DESCR <String>)</li>
 		</ul>
 	</li>
 	<li><h3>Utils</h3>
@@ -74,6 +78,7 @@
 			<li><h4>saveData</h4> 		Saves current data into write.txt and it creates a backup file, for a maximum of 5 backups (through the FileHandler method deleteBackup)</li>
 			<li><h4>showStats</h4> 		Displays stats for each month, giving a percentage representation for expenses and gains</li>
 			<li><h4>printByCategories</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
+			<li><h4>insertCategoriesIntoMap</h4>Given an HashMap<String,String> and the input entry, returns the HashMap with the new element added</li>
 		</ul>
 	</li>
 </ul>
