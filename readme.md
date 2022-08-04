@@ -5,7 +5,8 @@
 <section>Don't want to drain your salary as quick as you use to do?<br><b>Keep an Eye on It: Salary Checker</b> is a Java project developed to better manage your monthly expenses through the years.<br>
 <br>
 <ul>
-	<li>Classes</li>
+	<li>Class</li>
+	<li>Config</li>
 	<li>Exception</li>
 	<li>Output</li>
 	<li>Main</li>
@@ -82,7 +83,10 @@
 		</ul>
 	</li>
 </ul>
-
+<h2>CONFIG</h2>
+	<ul>
+		<li><h3>CategoriesCFG.txt</h3>TXT file in which are stored the categories Code and Description</li>
+	</ul>
 <h2>EXCEPTION</h2>
 		WORK IN PROGRESS
 <ul>
@@ -94,17 +98,17 @@
 </ul>
 <h2>MAIN</h2>
 <ul>
-	<li>SalaryChecker_main
+	<li><h2>SalaryChecker_main</h2>
 	Has an <b>ArrayList</b> for every year (12 months, <Integer> key (1 aka January, 2 February and so on...), <Salary> value))<br>
 	Has a method (monthToInt) used to convert String month names to Integers (which returns -1 if the month name is not valid), and a menù method to show all the options.<br>
 		The above methods are both static, as they are called inside the main.<br>
-		<h3>MENU'</h3>
-	<br>The menù contains several options:
+		<h3>Welcome page</h3>
+		The menù contains several options:
 				<p align="center">
 					<img src="https://i.imgur.com/hQcPbri.png">
 				</p>
 		<ul>
-			<li><b>Add Salary</b><br>
+			<li>Add Salary<br>
 			Given a month name (e.g. November), an amount and an Year, through the Utils.MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			<p align="center">
 					<img src="https://i.imgur.com/vqnhD3J.png">
