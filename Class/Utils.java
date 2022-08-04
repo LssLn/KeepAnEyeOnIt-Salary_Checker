@@ -183,7 +183,7 @@ public class Utils {
 	 */
 	public static boolean checkCategories(String category) {
 		FileHandler fh = new FileHandler();
-		HashMap<String,String> categoriesMap = fh.readCategories();
+		HashMap<String,String> categoriesMap = fh.readCategoriesFromTXT();
 		for(String s:categoriesMap.keySet()) {
 			if(!(s.equals(category))) {
 				// no matches - category is new

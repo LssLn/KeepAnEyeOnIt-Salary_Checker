@@ -4,17 +4,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 
 /* 
  * 	It gives persistence to the program by loading all the already saved values and 
@@ -28,7 +26,7 @@ public class FileHandler {
 	
 	
 	private String myFile=System.getProperty("user.dir") + "\\src\\SalaryChecker\\Output\\" + "write.txt";
-	private String CategoriesCFG=System.getProperty("user.dir") + "\\src\\SalaryChecker\\Config\\" + "CategoriesCFG.txt";
+	private String categoriesCFG=System.getProperty("user.dir") + "\\src\\SalaryChecker\\Config\\" + "CategoriesCFG.txt";
 
 	
 	
@@ -265,20 +263,20 @@ public class FileHandler {
 	 * Given a txt file CATEGORIES, which consists of entries of the type CODE(<String>) DESCR(<String>),
 	 * Returns an HashMap (key: CODE <String>, value: DESCR <String>)
 	 */
-	public HashMap<String,String> readCategories(){
+	public HashMap<String,String> readCategoriesFromTXT(){
 		HashMap<String,String> categoriesMap = new HashMap<String,String>();
 		try {
-			File file = new File(CategoriesCFG);
+			File file = new File(categoriesCFG);
 			Scanner scanner = new Scanner(file);
 			String fileContent = "";
 			while(scanner.hasNext()){ //reads the whole file
 				try {
 					String categoryCode = scanner.next();
-					if(categoryCode.length()>6) {
+					if(categoryCode.contains(" ") || categoryCode.length()>6) {
 						//throw new Exception
 						//log error
 					}
-					String categoryDescr = scanner.next();
+					String categoryDescr = scanner.nextLine();
 					
 					categoriesMap.put(categoryCode,categoryDescr);
 				}catch(InputMismatchException ex){
@@ -293,25 +291,22 @@ public class FileHandler {
 
 	
 	/*
-	 * Writes CategoriesCFG file with CODE, DESCR entries.
+	 * Given HashMap<String,String> categoriesMap, 
+	 * writes CategoriesCFG file with CODE, DESCR entries.
 	 */
-	public void writeCategories() {
+	public void writeCategoriesToTXT(HashMap<String,String> categoriesMap) {
 		try {
-            File file = new File(myFile);
+            File file = new File(categoriesCFG);
     		file.createNewFile();
 
             FileWriter fw=new FileWriter(file); 
-            BufferedWriter bw=new BufferedWriter(fw);  
+            BufferedWriter bw=new BufferedWriter(fw);     
             
-            System.out.println("		Category Code: ");
-            Scanner scannerCategoryCode = new Scanner(System.in);
-	 		String 	categoryCode= scannerCategoryCode.next();       
-            System.out.println("		Category Description: ");
-	 	    Scanner scannerCategoryDescr = new Scanner(System.in);
-	 		String 	categoryDescr= scannerCategoryDescr.next();   
-	 		 		
-	 		bw.write(categoryCode + " " + categoryDescr + "\n");
-        	bw.flush();
+            for(String code : categoriesMap.keySet()) {
+            	bw.write(code+" "+categoriesMap.get(code)+"\n");
+            	bw.flush();
+            }
+        	
 		}catch(IOException e) {
         	//throw new FileNotFoundException("The file described is nowhere to be found.");
 			// log error
@@ -319,5 +314,7 @@ public class FileHandler {
 	    }
 
 	}
+	
+	
 	
 }

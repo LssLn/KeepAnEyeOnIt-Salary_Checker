@@ -561,5 +561,17 @@ public class SwitchManagerUtils {
 			}
 		}
 	}
+	
+	public static HashMap<String,String> insertCategoriesIntoMap(HashMap<String,String> categoriesMap){
+		System.out.print("		Category Code: ");
+        Scanner scannerCategoryCode = new Scanner(System.in);
+	 	String 	categoryCode= scannerCategoryCode.next();       
+        System.out.print("		Category Description: ");
+	 	Scanner scannerCategoryDescr = new Scanner(System.in);
+	 	String 	categoryDescr= scannerCategoryDescr.nextLine();
+	 	
+		categoriesMap.put(categoryCode,categoryDescr);
+		return categoriesMap;
+	}
 
 }
