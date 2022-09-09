@@ -130,6 +130,7 @@ public class FileHandler {
 	 * Given a txt file, the method fills the HashMap with the read values and returns it.
 	 */
 	public ArrayList<Year> readingFile(HashMap<String,String> categoriesMap) {
+//	public ArrayList<Year> readingFile() {
 		ArrayList<Year> YearsList = new ArrayList<>();		
 
 		int retValue=0;
@@ -247,17 +248,17 @@ public class FileHandler {
 		 Collections.sort(fileNames); //from older to newer
 		 Collections.reverse(fileNames); //from newer to older
 		 
-		 System.out.println("Starting delete");
+		 System.out.println("	Starting delete");
 		 
-		 System.out.println(nFiles+" files in "+myDirectoryPath);
+		 System.out.println("		"+nFiles+" files in "+myDirectoryPath);
 		 for(String s:fileNames) {
 			 if(i>safeNumbers) { //i don't delete the first N files (the most recent ones)
 				 try {
 					 File file = new File(myDirectoryPath+s);
 					 if(file.delete()) {
-						 System.out.println(s+"  deleted successfully");
+						 System.out.println("			"+s+"  deleted successfully");
 					 }else {
-						 System.out.println(s+"  could not be deleted");
+						 System.out.println("		X	"+s+"  could not be deleted");
 					 }
 					 i++;
 				 }catch(Exception e) {

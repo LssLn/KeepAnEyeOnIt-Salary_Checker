@@ -472,11 +472,13 @@ public class SwitchManagerUtils {
 	}
 	
 	public static ArrayList<Year> loadData(ArrayList<Year> yearsList, HashMap<String,String> categoriesMap) {
+//		public static ArrayList<Year> loadData(ArrayList<Year> yearsList) {
 		
 		FileHandler fw=new FileHandler();
 		System.out.println("  Loading file {"+fw.getMyFile()+"} ...");
 		FileHandler fr=new FileHandler();
 		yearsList = fr.readingFile(categoriesMap);
+//		yearsList = fr.readingFile();
 		System.out.println("\n  Data "+Utils.ANSI_GREEN+"loaded."+Utils.ANSI_WHITE);
 		return yearsList;
 	}
