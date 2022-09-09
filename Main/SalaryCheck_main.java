@@ -17,16 +17,20 @@ public class SalaryCheck_main {
 		
 		Utils.intro();
 		ArrayList<Year> yearsList = new ArrayList<>();		
-		HashMap<String,String> categoriesMap = new HashMap<>();
 		Utils.menu();
 		
 		FileHandler fHUtil = new FileHandler();
+		HashMap<String,String> categoriesMap = fHUtil.readCategoriesFromTXT();
+
 		
 		int scelta=0;
 		do {
 			System.out.print(Utils.ANSI_YELLOW+"\n -> "+Utils.ANSI_WHITE);
 			Scanner scannerSwitch = new Scanner(System.in);
 			scelta=scannerSwitch.nextInt();
+			
+			categoriesMap = fHUtil.readCategoriesFromTXT();
+			
 			switch(scelta) {
 				case 1:
 					SwitchManagerUtils.addSalary(yearsList);
@@ -37,6 +41,7 @@ public class SalaryCheck_main {
 						System.out.println();
 						SwitchManagerUtils.saveData(yearsList);
 						yearsList=SwitchManagerUtils.loadData(yearsList, categoriesMap);
+//						yearsList=SwitchManagerUtils.loadData(yearsList);
 					}
 					break;
 				case 3:
@@ -44,6 +49,7 @@ public class SalaryCheck_main {
 					System.out.println();
 					SwitchManagerUtils.saveData(yearsList);
 					yearsList=SwitchManagerUtils.loadData(yearsList, categoriesMap);
+//					yearsList=SwitchManagerUtils.loadData(yearsList);
 					break;
 				case 4:
 					SwitchManagerUtils.printAll(yearsList);
@@ -53,6 +59,7 @@ public class SalaryCheck_main {
 					break;
 				case 6:
 					yearsList = SwitchManagerUtils.loadData(yearsList, categoriesMap);
+//					yearsList = SwitchManagerUtils.loadData(yearsList);
 					break;
 				case 7:
 					SwitchManagerUtils.saveData(yearsList);
