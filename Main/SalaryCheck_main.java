@@ -36,14 +36,14 @@ public class SalaryCheck_main {
 					if(expenseAddedSuccessfully) {
 						System.out.println();
 						SwitchManagerUtils.saveData(yearsList);
-						yearsList=SwitchManagerUtils.loadData(yearsList);
+						yearsList=SwitchManagerUtils.loadData(yearsList, categoriesMap);
 					}
 					break;
 				case 3:
 					SwitchManagerUtils.removeExpense(yearsList);
 					System.out.println();
 					SwitchManagerUtils.saveData(yearsList);
-					yearsList=SwitchManagerUtils.loadData(yearsList);
+					yearsList=SwitchManagerUtils.loadData(yearsList, categoriesMap);
 					break;
 				case 4:
 					SwitchManagerUtils.printAll(yearsList);
@@ -52,7 +52,7 @@ public class SalaryCheck_main {
 					SwitchManagerUtils.printYear(yearsList);
 					break;
 				case 6:
-					yearsList = SwitchManagerUtils.loadData(yearsList);
+					yearsList = SwitchManagerUtils.loadData(yearsList, categoriesMap);
 					break;
 				case 7:
 					SwitchManagerUtils.saveData(yearsList);
