@@ -17,7 +17,10 @@ public class SalaryCheck_main {
 		
 		Utils.intro();
 		ArrayList<Year> yearsList = new ArrayList<>();		
+		HashMap<String,String> categoriesMap = new HashMap<>();
 		Utils.menu();
+		
+		FileHandler fHUtil = new FileHandler();
 		
 		int scelta=0;
 		do {
@@ -29,7 +32,7 @@ public class SalaryCheck_main {
 					SwitchManagerUtils.addSalary(yearsList);
 					break;
 				case 2:
-					boolean expenseAddedSuccessfully = SwitchManagerUtils.addExpense(yearsList);
+					boolean expenseAddedSuccessfully = SwitchManagerUtils.addExpense(yearsList, categoriesMap);
 					if(expenseAddedSuccessfully) {
 						System.out.println();
 						SwitchManagerUtils.saveData(yearsList);
@@ -62,6 +65,20 @@ public class SalaryCheck_main {
 					break;
 				case 10:
 					SwitchManagerUtils.printYearsByCategories(yearsList);
+					break;
+					
+				case 11:
+					System.out.println("	Adding category to Categories -- TEST\n");
+					String existentCode=null;
+					categoriesMap = SwitchManagerUtils.insertCategoriesIntoMap(categoriesMap,existentCode);
+					fHUtil.writeCategoriesToTXT(categoriesMap);
+					break;
+				case 12:
+					System.out.println("	Reading categories -- TEST\n");
+					categoriesMap = fHUtil.readCategoriesFromTXT();
+					for(String code: categoriesMap.keySet()) {
+						System.out.println("\t\t"+code+"\t"+"|"+"\t"+categoriesMap.get(code));
+					}
 					break;
 				case 100: 
 					Utils.menu();
