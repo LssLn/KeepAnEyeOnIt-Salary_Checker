@@ -129,7 +129,7 @@ public class FileHandler {
 	/*
 	 * Given a txt file, the method fills the HashMap with the read values and returns it.
 	 */
-	public ArrayList<Year> readingFile() {
+	public ArrayList<Year> readingFile(HashMap<String,String> categoriesMap) {
 		ArrayList<Year> YearsList = new ArrayList<>();		
 
 		int retValue=0;
@@ -168,6 +168,17 @@ public class FileHandler {
 		                    		Double sOutcome = Double.parseDouble(scanner.next());
 //			                    	System.out.println("-:: :: expense "+s_outcome);
 		                    		String category = scanner.next();
+		                    		
+		                    		//writing categories into the txt file and the hashmap
+		                    		if(!Utils.checkCategories(category)) {
+		                				//category found, already existing
+		                			}else {
+		                				//if the category does not exists (checkCategories returns false), adds it
+		                				categoriesMap = SwitchManagerUtils.insertCategoriesIntoMap(categoriesMap,category);
+		                				writeCategoriesToTXT(categoriesMap);
+		                			}
+		                    		
+		                    		
 			                        String description = scanner.nextLine();
 //			                        System.out.println(" - "+description);
 			                        description.trim();
