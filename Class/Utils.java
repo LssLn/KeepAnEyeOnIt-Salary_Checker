@@ -189,6 +189,10 @@ public class Utils {
 				// no matches - category is new
 				return true;
 			}
+			else {
+				//found a match
+				return false;
+			}
 		}
 		return false;
 	}

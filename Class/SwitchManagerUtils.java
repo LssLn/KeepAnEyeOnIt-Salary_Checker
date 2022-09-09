@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class SwitchManagerUtils {
+	static FileHandler fHUtil = new FileHandler();
 
 	public static void addSalary(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Add Salary: ");
@@ -144,7 +145,7 @@ public class SwitchManagerUtils {
 		
 	}
 	
-	public static boolean addExpense(ArrayList<Year> yearsList) {
+	public static boolean addExpense(ArrayList<Year> yearsList, HashMap<String,String> categoriesMap) {
 		boolean success=true;
 		System.out.println("\n  >>     Add Expense");
 		
@@ -184,7 +185,14 @@ public class SwitchManagerUtils {
 		do{
 			System.out.print("  >>>>>>>>> Category:    ");
 			category = scannerOutcome5.nextLine();
-			if(Utils.checkCategories(category)) {
+			if(!Utils.checkCategories(category)) {
+				//category found, proceeding with other fields
+				categoryValid=true;
+			}else {
+				//if the category does not exists (checkCategories returns false), the user can add it
+				System.out.println("  				Category not found. You can add it now: ");
+				categoriesMap = insertCategoriesIntoMap(categoriesMap,category);
+				fHUtil.writeCategoriesToTXT(categoriesMap);
 				categoryValid=true;
 			}
 		}while(categoryValid==false);		
@@ -562,10 +570,22 @@ public class SwitchManagerUtils {
 		}
 	}
 	
-	public static HashMap<String,String> insertCategoriesIntoMap(HashMap<String,String> categoriesMap){
-		System.out.print("		Category Code: ");
-        Scanner scannerCategoryCode = new Scanner(System.in);
-	 	String 	categoryCode= scannerCategoryCode.next();       
+	/*
+	 * Given an HashMap<String,String> and the input entry
+	 * returns the HashMap with the new element added
+	 */
+	public static HashMap<String,String> insertCategoriesIntoMap(HashMap<String,String> categoriesMap, String existentCode){
+	 	String 	categoryCode; 
+
+		if(existentCode != null) {
+			System.out.print("		Category Code (existing): "+existentCode);
+			categoryCode = existentCode;
+		}else {
+			System.out.print("		Category Code (new): ");
+	        Scanner scannerCategoryCode = new Scanner(System.in);
+	        categoryCode= scannerCategoryCode.next(); 
+		}
+		    
         System.out.print("		Category Description: ");
 	 	Scanner scannerCategoryDescr = new Scanner(System.in);
 	 	String 	categoryDescr= scannerCategoryDescr.nextLine();

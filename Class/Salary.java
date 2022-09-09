@@ -226,9 +226,7 @@ public class Salary {
 	public String toString() {
 		return "Salary - "+month+"[ income= " + income + "	 total outcome= " + totalOutcome + " ]";
 	}
-	
-	
-	
+		
 	public void printSalary() {
 		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
 		if(totOutcFormatted.equals(",00")) {
