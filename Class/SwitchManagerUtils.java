@@ -303,8 +303,7 @@ public class SwitchManagerUtils {
 	 			for(Year yCurr:yearsList) {
 	 				if(yCurr.getYear().equals(yearInput)) {
 	 					yearFound=true;
-	 					//the year  exists
-	 					//if the month exists, we remove the outcome. 
+	 					//the year  exists. If the month exists, remove the outcome. 
 	 					
 	 					Salary s = yCurr.getMonths().get(retValue-1); // aka Salary salary = Salary_2021.get(ret_value-1); 
 

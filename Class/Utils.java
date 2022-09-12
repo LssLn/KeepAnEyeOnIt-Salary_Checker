@@ -40,7 +40,7 @@ public class Utils {
 		System.out.println(Utils.ANSI_GREEN+ "	 	##     #####   ##### -- #####  #     ");
 		System.out.println(Utils.ANSI_MGNT+  "	 	# #   #     #  #            #  #     ");
 		System.out.println(Utils.ANSI_PURPLE+"	 	#  # #       # #####    #####  ##### ");
-		System.out.println(Utils.ANSI_GREEN+"\n	 	KEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+" 	v 1.4.1"+"  released on 11/07/2022");
+		System.out.println(Utils.ANSI_GREEN+"\n	 	KEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+" 	v 1.5.0"+"  released on 11/09/2022");
 	}
 
 	/*
@@ -58,7 +58,10 @@ public class Utils {
 		System.out.println(Utils.ANSI_YELLOW+"		8]\t"+Utils.ANSI_WHITE+"Displays stats for each month, giving a percentage representation for expenses and gains");
 		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per month, ordered by amount");
 		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per year, ordered by amount");
-		System.out.println(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'\n");
+		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Insert category into CategoriesCFG.txt");
+		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Displays all the categories from CategoriesCFG.txt");
+		System.out.println(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'");
+		System.out.println(Utils.ANSI_YELLOW+"	 	0]\t"+Utils.ANSI_WHITE+"Exit\n");
 	}
 	
 	
