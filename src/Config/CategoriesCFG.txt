@@ -1,4 +1,0 @@
-CAT1 CAT1 Description
-CAT2 CAT2 Description
-CAT3 CAT3 Description
-CAT4 CAT4 Description
