@@ -1,0 +1,1 @@
+If you are running the executable, you may want to enable colors to cmd. <br>This feature can be enabled by changing a registry entry value (the above .bat file contains the required command), as explained in the linked article https://www.codeproject.com/Tips/5255355/How-to-Put-Color-on-Windows-Console
