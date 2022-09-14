@@ -64,6 +64,7 @@
 			<li><h4>integerIsNumeric</h4>returns true if the String is a valid integer, false otherwise.</li>
 			<li><h4>hasComma</h4>returns true if the String contains "comma" character, false otherwise.</li>
 			<li><h4>hasDot</h4>returns true if the String contains "dot" character, false otherwise.</li>
+			<li><h4>checkCategories</h4> Given a category code, returns true if categoriesMap has no equal code to categoryCode, or returns false if categoriesMap has at least a code equal to categoryCode</li>
 		</ul>
 	</li>
 	<li><h3>switch Manager Utils</h3>
