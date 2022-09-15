@@ -342,7 +342,15 @@ public class SwitchManagerUtils {
 		String sYearsOutcome = Utils.convertDecimalFormat2(yearsOutcome);
 		String sYearsGain= Utils.convertDecimalFormat2(yearsGain);
 		
-		System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+sYearsIncome+"      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_YELLOW+"       => "+sYearsGain+Utils.ANSI_WHITE+"\n");
+		/*
+		 * Adding warning if gain is negative
+		 */
+		String warning="";
+		if(yearsGain<0) {
+			warning = " 	[WARNING]";
+		}
+		
+		System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+sYearsIncome+"      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_YELLOW+"       => "+sYearsGain+Utils.ANSI_RED+warning+Utils.ANSI_WHITE+"\n");
 		
 		for(Year yPrint : yearsList) {
 			String yearIncome = Utils.convertDecimalFormat2(yPrint.getTotIncome());
@@ -354,9 +362,19 @@ public class SwitchManagerUtils {
 				year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
 			}*/
 			String yearOutcome = Utils.convertDecimalFormat2(yPrint.getTotOutcome());
-			String gain= Utils.convertDecimalFormat2(yPrint.getTotIncome()-yPrint.getTotOutcome());
+			Double yearGain = yPrint.getTotIncome()-yPrint.getTotOutcome();
+			String gain= Utils.convertDecimalFormat2(yearGain);
+			
+			/*
+			 * Adding warning if gain is negative
+			 */
+			String warningYear="";
+			if(yearGain<0) {
+				warningYear = " 	[WARNING]";
+			}
+			
 			System.out.print("\n # "+Utils.ANSI_YELLOW+yPrint.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
-					+Utils.ANSI_GREEN+"+"+yearIncome+Utils.ANSI_RED+" -"+yearOutcome+Utils.ANSI_YELLOW+" 	=> "+gain+"\n");
+					+Utils.ANSI_GREEN+"+"+yearIncome+Utils.ANSI_RED+" -"+yearOutcome+Utils.ANSI_YELLOW+" 	=> "+gain+Utils.ANSI_RED+warningYear+"\n");
 			Collection<Salary> salaries = yPrint.getMonths().values();
 			for(Salary s: salaries) { 	
 				s.printSalary(); 	

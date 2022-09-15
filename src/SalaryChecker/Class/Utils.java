@@ -48,6 +48,8 @@ public class Utils {
 	 */
 	public static void menu() {
 		System.out.println();
+		System.out.print(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'");
+		System.out.println(Utils.ANSI_RED+"\t\t\t\t\t\t\t0]  "+Utils.ANSI_WHITE+"Exit");
 		System.out.println(Utils.ANSI_YELLOW+"	 	1]\t"+Utils.ANSI_WHITE+"Adds a Month Salary ");
 		System.out.println(Utils.ANSI_YELLOW+"	 	2]\t"+Utils.ANSI_WHITE+"Adds an expense to a specific Month");
 		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Removes an expense given its ID");
@@ -58,10 +60,10 @@ public class Utils {
 		System.out.println(Utils.ANSI_YELLOW+"		8]\t"+Utils.ANSI_WHITE+"Displays stats for each month, giving a percentage representation for expenses and gains");
 		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per month, ordered by amount");
 		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per year, ordered by amount");
-		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Insert category into CategoriesCFG.txt");
-		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Displays all the categories from CategoriesCFG.txt");
-		System.out.println(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'");
-		System.out.println(Utils.ANSI_YELLOW+"	 	0]\t"+Utils.ANSI_WHITE+"Exit\n");
+		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Insert category into CategoriesCFG.txt\t\t\t[Test env]");
+		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Displays all the categories from CategoriesCFG.txt\t[Test env]");
+//		System.out.print(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'");
+//		System.out.println(Utils.ANSI_RED+"\t\t\t\t\t\t\t	 	0]\t"+Utils.ANSI_WHITE+"Exit\n");
 	}
 	
 	

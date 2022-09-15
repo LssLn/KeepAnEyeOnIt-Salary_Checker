@@ -229,14 +229,22 @@ public class Salary {
 		
 	public void printSalary() {
 		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
-		if(totOutcFormatted.equals(",00")) {
+		if(totOutcFormatted.equals(",00") || totOutcFormatted.equals(".00")) {
 			totOutcFormatted="0";
+		}
+		/*
+		 * Adding warning if gain is negative
+		 */
+		String warningMonth="";
+		if((income-totalOutcome)<0) {
+			warningMonth = " 	[WARNING]";
 		}
 		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_GRASS+"   > " +
 				Utils.ANSI_WHITE+month+" [ "+
 				Utils.ANSI_GREEN+  "  +  " + Utils.convertDecimalFormat2(income) + 
 				Utils.ANSI_RED+"      -   " + totOutcFormatted + 
 				Utils.ANSI_BRIGHT_YELLOW+"   ->  " +(Utils.convertDecimalFormat2(income-totalOutcome))+
+				Utils.ANSI_RED+warningMonth+
 				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,totalOutcome);
 		System.out.println();
