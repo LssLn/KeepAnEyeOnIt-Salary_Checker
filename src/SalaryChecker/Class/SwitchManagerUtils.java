@@ -603,7 +603,8 @@ public class SwitchManagerUtils {
 	 * returns the HashMap with the new element added
 	 */
 	public static HashMap<String,String> insertCategoriesIntoMap(HashMap<String,String> categoriesMap, String existentCode){
-	 	String 	categoryCode; 
+		System.out.println("	Adding category to Categories\n");
+		String 	categoryCode; 
 
 		if(existentCode != null) {
 			System.out.print("		Category Code (existing): "+existentCode);
@@ -620,6 +621,14 @@ public class SwitchManagerUtils {
 	 	
 		categoriesMap.put(categoryCode,categoryDescr);
 		return categoriesMap;
+	}
+
+	public static void readCategories(HashMap<String, String> categoriesMap) {
+		System.out.println("	Reading categories\n");
+		categoriesMap = fHUtil.readCategoriesFromTXT();
+		for(String code: categoriesMap.keySet()) {
+			System.out.println("\t\t"+code+"\t"+"|"+"\t"+categoriesMap.get(code));
+		}
 	}
 
 }
