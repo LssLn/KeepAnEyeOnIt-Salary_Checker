@@ -627,7 +627,7 @@ public class SwitchManagerUtils {
 		System.out.println("	Reading categories\n");
 		categoriesMap = fHUtil.readCategoriesFromTXT();
 		for(String code: categoriesMap.keySet()) {
-			System.out.println("\t\t"+code+"\t"+"|"+"\t"+categoriesMap.get(code));
+			System.out.println("\t\t"+Utils.ANSI_MGNT+code+"\t"+"|"+"\t"+categoriesMap.get(code));
 		}
 	}
 
