@@ -329,6 +329,10 @@ public class SwitchManagerUtils {
  		}while(retValue==-1); //if error, prompt again the value
 	}
 	
+	/*
+	 * Given an ArrayList<String>,
+	 * displays all the data related to all the Years.
+	 */
 	public static void printAll(ArrayList<Year> yearsList) {
 		Double yearsIncome = 0.00;
 		Double yearsOutcome = 0.00;
@@ -514,6 +518,10 @@ public class SwitchManagerUtils {
 		System.out.println("\n  Data "+Utils.ANSI_GREEN+"saved."+Utils.ANSI_WHITE);
 	}
 	
+	/*
+	 * Given an ArrayList<String>,
+	 * displays all the data related to the input Year.
+	 */
 	public static void printYear(ArrayList<Year> yearsList) {
 		System.out.print("  >>>>>>> Year:    ");
 		Scanner scanner = new Scanner(System.in);
@@ -555,6 +563,10 @@ public class SwitchManagerUtils {
 			}
 	}
 
+	/*
+	 * Given an ArrayList<Year>,
+	 * displays stats for each month, giving a percentage representation for expenses and gains.
+	 */
 	public static void showStats(ArrayList<Year> yearsList) {
 		for(Year y : yearsList) {
 			Collection<Salary> salaries = y.getMonths().values();
@@ -623,6 +635,10 @@ public class SwitchManagerUtils {
 		return categoriesMap;
 	}
 
+	/*
+	 * Given an HashMap<String,String), which is populated by reading CategoriesCFG.txt,
+	 * all the entries CODE | DESCRIPTION are displayed.
+	 */
 	public static void readCategories(HashMap<String, String> categoriesMap) {
 		System.out.println("	Reading categories\n");
 		categoriesMap = fHUtil.readCategoriesFromTXT();
