@@ -531,7 +531,15 @@ public class SwitchManagerUtils {
 					String sYearsOutcome = Utils.convertDecimalFormat2(yearsOutcome);
 					String sYearsGain= Utils.convertDecimalFormat2(yearsGain);
 					
-					System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+sYearsIncome+"      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_YELLOW+"       => "+sYearsGain+Utils.ANSI_WHITE+"\n");
+					/*
+					 * Adding warning if gain is negative
+					 */
+					String warningYear="";
+					if(yearsGain<0) {
+						warningYear = " 	[WARNING]";
+					}
+					
+					System.out.println(" 	--> 	$   	"+Utils.ANSI_GREEN+sYearsIncome+"      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_YELLOW+"       => "+sYearsGain+Utils.ANSI_RED+warningYear+Utils.ANSI_WHITE+"\n");
 					
 					//print this year
 					System.out.print("\n # "+Utils.ANSI_YELLOW+yCurr.getYear()+
