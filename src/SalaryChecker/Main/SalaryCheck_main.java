@@ -75,17 +75,12 @@ public class SalaryCheck_main {
 					break;
 					
 				case 11:
-					System.out.println("	Adding category to Categories -- TEST\n");
 					String existentCode=null;
 					categoriesMap = SwitchManagerUtils.insertCategoriesIntoMap(categoriesMap,existentCode);
 					fHUtil.writeCategoriesToTXT(categoriesMap);
 					break;
 				case 12:
-					System.out.println("	Reading categories -- TEST\n");
-					categoriesMap = fHUtil.readCategoriesFromTXT();
-					for(String code: categoriesMap.keySet()) {
-						System.out.println("\t\t"+code+"\t"+"|"+"\t"+categoriesMap.get(code));
-					}
+					SwitchManagerUtils.readCategories(categoriesMap);
 					break;
 				case 100: 
 					Utils.menu();
