@@ -229,6 +229,7 @@ public class Salary {
 		
 	public void printSalary() {
 		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
+//		if(totOutcFormatted.equals(",00")) {
 		if(totOutcFormatted.equals(",00") || totOutcFormatted.equals(".00")) {
 			totOutcFormatted="0";
 		}
