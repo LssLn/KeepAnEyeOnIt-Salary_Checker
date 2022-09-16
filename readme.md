@@ -127,11 +127,11 @@
 			<p align="center">
 					<img src="https://i.imgur.com/ujqRg8n.png">
 				</p></li>
-			<li>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.
+			<li>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.<br>If a month or a year has a negative ingain, a warning is displayed.
 			<p align="center">
 					<img src="https://i.imgur.com/SmHqdSf.png">
 				</p></li>
-			<li>Print all the months for the selected year
+			<li>Print all the months for the selected year.<br>If a month or the year has a negative ingain, a warning is displayed. 
 			<p align="center">
 					<img src="https://i.imgur.com/hE2PXzW.png">
 				</p></li>
@@ -141,8 +141,8 @@
 					<img src="https://i.imgur.com/4uyujaS.png">
 				</p>
 			</li>
-			<li>Saves actual data into write.txt (overwritten each time) and also creates a unique backup file each time<br>
-			Writes all the data in a txt file, in order to retrieve those through the readingFile method.<br>Also creates a backup file each time
+			<li>Saves actual data into write.txt (overwritten each time) and also creates a unique <b>backup</b> file each time, to minimize data loss risk.<br>When saving the backup, it also checks if there are already more than seven backups: if that's the case, the older are deleted.<br>
+			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
 				<p align="center">
 					<img src="https://i.imgur.com/wEVjkU7.png">
 				</p>
