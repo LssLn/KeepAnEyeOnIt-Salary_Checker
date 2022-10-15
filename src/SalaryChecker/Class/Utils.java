@@ -20,12 +20,6 @@ public class Utils {
 	public static String ANSI_GRASS="\033[92m";
 	public static String ANSI_MGNT="\033[36m";
 	public static String ANSI_BRIGHT_YELLOW="\033[93m";
-
-//	public static String ANSI_BG_GREEN="\033[42m";
-//	public static String ANSI_BG_RED="\033[41m";
-//	public static String RESET="\033[0m";
-//	public static String ANSI_RESET = "\u001B[0m";
-//	public static String ANSI_BLACK = "\u001B[30m";
 	public static String ANSI_BLUE = "\u001B[34m";
 	public static String ANSI_PURPLE = "\u001B[35m";
 	public static String ANSI_CYAN = "\u001B[36m";

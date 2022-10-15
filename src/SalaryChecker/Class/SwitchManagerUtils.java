@@ -647,4 +647,212 @@ public class SwitchManagerUtils {
 		}
 	}
 
+	public static void modifySalary(ArrayList<Year> yearsList) {
+		System.out.println("\n  >>     Edit a month salary:");
+		int retValue=0;
+		Boolean yearFound=false;
+		do {
+			Scanner scannerOutcome4 = new Scanner(System.in);
+			System.out.print("  >>>>>>> Year:    ");
+			String yearInput = scannerOutcome4.nextLine();
+			
+ 			for(Year yCurr:yearsList) {
+ 				if(yCurr.getYear().equals(yearInput)) {
+ 					yearFound=true;
+ 					//the year  exists. If the month exists, remove the outcome. 
+ 					
+ 					//month input
+ 					do {
+ 			 			System.out.print("  >>>>>>>> Month:    ");
+ 						Scanner scannerOutcome3 = new Scanner(System.in);
+ 				 		String month= scannerOutcome3.nextLine();
+ 				 		month=month.toUpperCase();
+ 				 		retValue=Utils.MonthToInt(month);
+	 					Salary s = yCurr.getMonths().get(retValue-1); // aka Salary salary = Salary_2021.get(ret_value-1); 
+	
+	 					if(s!=null) {
+	 						//month exists
+	 						
+	 						//new value
+	 						System.out.println("\n  >>     new Salary value: ");
+	 						String strIncome;
+	 						Double income=0.0;
+	 						boolean incomeValid=false;
+	 						do {
+	 							System.out.print("  >>>>>>>> Income:    ");
+	 							Scanner scannerIncome1 = new Scanner(System.in);
+	 							strIncome= scannerIncome1.next();
+	 					 		//income validation
+	 					 		if(Utils.doubleIsNumeric(strIncome) && !(Utils.hasComma(strIncome))) {
+	 					 			income=Double.parseDouble(strIncome);
+	 					 			if(income>=0) {
+	 					 				//Ok
+	 					 				incomeValid=true;
+	 					 				s.editSalary(income);
+	 					 			}else{
+	 					 				//TODO: launch exception + log
+	 						 			System.out.println("	Input income is not valid.");
+	 						 		}
+	 					 		}else{
+	 				 				//TODO: launch exception + log
+	 					 			System.out.println("	Input income is not valid.");
+	 					 		}
+	 							//scanner_income_1.close();
+	 						}while(incomeValid == false);
+		 					
+	 					}else {
+	 						// add exception
+	 						System.out.println("	No month exist in this Year for the expense.");
+	 					}
+ 					}while(retValue==-1);
+ 				}
+ 			}
+ 			if(yearFound == false) {
+ 				// year was not found. This means no month exists for that Year.
+ 				//launch Exception
+ 				System.out.println("	This Year doesn't exist.");
+ 			}
+		}while(yearFound==false);
+	}
+	
+	
+	public static void modifyExpense(ArrayList<Year> yearsList,HashMap<String,String> categoriesMap) {
+			System.out.println("\n  >>     Edit an expense:");
+			Integer id;
+			do {
+				System.out.print("  >>>>>>>>> Expense ID:    ");
+				Scanner scannerOutcome1=new Scanner(System.in);
+				id = Integer.parseInt(scannerOutcome1.next());
+				if(id<0) {
+		 			System.out.println("	Input expense is not valid.");
+				}
+			}while(id<=0);
+	 		
+			//int ret_value_month_to_pick=0;
+			int retValue=0;
+	 		do {
+	 			System.out.print("  >>>>>>>> Month:    ");
+				Scanner scannerOutcome3 = new Scanner(System.in);
+		 		String month= scannerOutcome3.nextLine();
+		 		month=month.toUpperCase();
+		 		retValue=Utils.MonthToInt(month);
+		 		//System.out.println("\n @@@ month is "+month+", ret_value is "+ret_value);
+		 		if(retValue != -1) {
+		 			Scanner scannerOutcome4 = new Scanner(System.in);
+		 			System.out.print("  >>>>>>> Year:    ");
+		 			String yearInput = scannerOutcome4.nextLine();
+		 			
+		 			//ret_value - 1 because index start from 0 up to 11, while months from 1 to 12
+		 			
+		 			//given the year, the YearsList is cycled
+		 			Boolean yearFound=false;
+		 			for(Year yCurr:yearsList) {
+		 				if(yCurr.getYear().equals(yearInput)) {
+		 					yearFound=true;
+		 					//the year  exists. If the month exists, remove the outcome. 
+		 					
+		 					Salary s = yCurr.getMonths().get(retValue-1); // aka Salary salary = Salary_2021.get(ret_value-1); 
+
+		 					if(s!=null) {
+		 						//months exists
+		 						
+		 						//switch for the expense operation
+		 						Scanner scannerOutcome5 = new Scanner(System.in);
+		 			 			System.out.println("  >>>>>>> What do you want to do with this expense?");
+		 			 			System.out.println("			"+Utils.ANSI_WHITE+"\t"+Utils.ANSI_BLUE+s.getOutcomes().get(id).getCategory()+"\t"+Utils.ANSI_RED+s.getOutcomes().get(id).getOutcome()+"\t"+Utils.ANSI_WHITE+s.getOutcomes().get(id).getDescription());
+		 			 			Integer operationChoice;
+		 			 			do {
+		 			 				System.out.println("				"+Utils.ANSI_YELLOW+"1"+Utils.ANSI_WHITE+" Edit expense outcome		"+Utils.ANSI_YELLOW+"2"+Utils.ANSI_WHITE+" Edit expense description	"+Utils.ANSI_YELLOW+"3"+Utils.ANSI_WHITE+" Edit expense category	"+Utils.ANSI_YELLOW+"4"+Utils.ANSI_WHITE+" Remove expense		"+Utils.ANSI_YELLOW+"0"+Utils.ANSI_WHITE+" Exit");
+			 			 			operationChoice = scannerOutcome5.nextInt();
+			 			 			switch(operationChoice) {
+				 			 			case 1:
+				 			 				Double expense=0.0;
+				 			 				String strExpense;
+				 			 				boolean expenseValid=false;
+	
+				 			 				do {
+				 			 					System.out.print("\n  >>>>>>>>> New Expense:    ");
+				 			 					Scanner scannerOutcome51=new Scanner(System.in);
+				 			 					strExpense = scannerOutcome51.next();
+	
+				 			 					//income validation
+				 			 			 		if(Utils.doubleIsNumeric(strExpense) && !(Utils.hasComma(strExpense))) {
+				 			 			 			expense=Double.parseDouble(strExpense);
+				 			 			 			if(expense>=0) {
+				 			 			 				//Ok
+				 			 			 				expenseValid=true;
+				 			 			 			}else{
+				 			 			 				//TODO: launch exception + log
+				 			 				 			System.out.println("	Input expense is not valid.");
+				 			 				 		}
+				 			 			 		}else{
+				 			 		 				//TODO: launch exception + log
+				 			 			 			System.out.println("	Input expense is not valid.");
+				 			 			 		}
+				 			 			 		
+				 			 				}while(expenseValid == false);
+				 			 				s.editSingleOutcome(id, expense);
+				 			 				System.out.println("			Edited expense outcome successfully");
+				 			 				break;
+				 			 			case 2:
+				 			 				String description;	
+				 			 				System.out.print("\n  >>>>>>>>> New Description:    ");
+				 			 				Scanner scannerOutcome52=new Scanner(System.in);
+				 			 				description = scannerOutcome52.nextLine();
+				 			 				if(description!=null) {
+					 			 				s.editSingleOutcomeDescription(id, description);
+					 			 				System.out.println("			Edited expense description successfully");
+				 			 				}else {
+					 			 				System.out.println("			Edit expense description failed");
+				 			 				}
+				 			 				break;
+				 			 			case 3:
+				 			 				boolean categoryValid=false;
+				 			 				String category="";
+				 			 				do{
+				 			 					System.out.print("  >>>>>>>>> New Category:    ");
+					 			 				Scanner scannerOutcome53=new Scanner(System.in);
+				 			 					category = scannerOutcome53.nextLine();
+				 			 					if(!Utils.checkCategories(category)) {
+				 			 						//category found, proceeding with other fields
+				 			 						categoryValid=true;
+				 			 					}else {
+				 			 						//if the category does not exists (checkCategories returns false), the user can add it
+				 			 						System.out.println("  				Category not found. You can add it now: ");
+				 			 						categoriesMap = insertCategoriesIntoMap(categoriesMap,category);
+				 			 						fHUtil.writeCategoriesToTXT(categoriesMap);
+				 			 						categoryValid=true;
+				 			 					}
+				 			 				}while(categoryValid==false);
+				 			 				s.editSingleOutComeCategory(id, category);
+				 			 				System.out.println("			Edited expense category successfully");	
+				 			 				break;
+				 			 			case 4:
+					 						s.removeSingleOutcome(id);
+				 			 				System.out.println("			Removed expense successfully");	
+					 						break;
+				 			 			case 0:
+				 			 				break;
+				 			 			default:
+				 			 				break;
+			 			 			}
+		 			 			}while(operationChoice!=0);
+		 			 						 					
+		 					}else {
+		 						// add exception
+		 						System.out.println("	No month exist in this Year for the expense.");
+		 					}
+		 					
+		 				}
+		 			}
+		 			if(yearFound == false) {
+		 				// year was not found. This means no month exists for that Year.
+		 				//launch Exception
+		 				System.out.println("	This Year doesn't exist.");
+		 			}
+		 			
+		 			
+		 		}
+	 		}while(retValue==-1); //if error, prompt again the value
+		}
 }

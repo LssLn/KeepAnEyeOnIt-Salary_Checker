@@ -272,4 +272,20 @@ public class Salary {
 		outcomes.remove(id);
 	}
 	
+	public void editSingleOutcomeDescription(Integer id, String newDescription) {
+		outcomes.get(id).setDescription(newDescription);
+	}
+	
+	public void editSingleOutcome(Integer id, Double newOutcome) {
+		outcomes.get(id).setOutcome(newOutcome);
+	}
+	
+	public void editSingleOutComeCategory(Integer id, String newCategory) {
+		outcomes.get(id).setCategory(newCategory);
+	}
+
+	public void editSalary(Double newIncome) {
+		this.income=newIncome;
+	}
+	
 }
