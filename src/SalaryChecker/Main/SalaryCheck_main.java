@@ -69,8 +69,7 @@ public class SalaryCheck_main {
 					break;
 				case 10:
 					SwitchManagerUtils.printYearsByCategories(yearsList);
-					break;
-					
+					break;	
 				case 11:
 					String existentCode=null;
 					categoriesMap = SwitchManagerUtils.insertCategoriesIntoMap(categoriesMap,existentCode);
@@ -78,6 +77,12 @@ public class SalaryCheck_main {
 					break;
 				case 12:
 					SwitchManagerUtils.readCategories(categoriesMap);
+					break;
+				case 13:
+					SwitchManagerUtils.modifySalary(yearsList);
+					break;
+				case 14:
+					SwitchManagerUtils.modifyExpense(yearsList,categoriesMap);
 					break;
 				case 100: 
 					Utils.menu();
