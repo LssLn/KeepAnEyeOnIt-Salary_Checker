@@ -99,6 +99,78 @@ public class SwitchManagerUtils {
 		
 	}
 	
+	/*
+	 * Given the year and the month,
+	 * edits a salary income with a new value
+	 */
+	public static void modifySalary(ArrayList<Year> yearsList) {
+		System.out.println("\n  >>     Edit a month salary:");
+		int retValue=0;
+		Boolean yearFound=false;
+		do {
+			Scanner scannerOutcome4 = new Scanner(System.in);
+			System.out.print("  >>>>>>> Year:    ");
+			String yearInput = scannerOutcome4.nextLine();
+			
+ 			for(Year yCurr:yearsList) {
+ 				if(yCurr.getYear().equals(yearInput)) {
+ 					yearFound=true;
+ 					//the year  exists. If the month exists, remove the outcome. 
+ 					
+ 					//month input
+ 					do {
+ 			 			System.out.print("  >>>>>>>> Month:    ");
+ 						Scanner scannerOutcome3 = new Scanner(System.in);
+ 				 		String month= scannerOutcome3.nextLine();
+ 				 		month=month.toUpperCase();
+ 				 		retValue=Utils.MonthToInt(month);
+	 					Salary s = yCurr.getMonths().get(retValue-1); // aka Salary salary = Salary_2021.get(ret_value-1); 
+	
+	 					if(s!=null) {
+	 						//month exists
+	 						
+	 						//new value
+	 						System.out.println("\n  >>     new Salary value: ");
+	 						String strIncome;
+	 						Double income=0.0;
+	 						boolean incomeValid=false;
+	 						do {
+	 							System.out.print("  >>>>>>>> Income:    ");
+	 							Scanner scannerIncome1 = new Scanner(System.in);
+	 							strIncome= scannerIncome1.next();
+	 					 		//income validation
+	 					 		if(Utils.doubleIsNumeric(strIncome) && !(Utils.hasComma(strIncome))) {
+	 					 			income=Double.parseDouble(strIncome);
+	 					 			if(income>=0) {
+	 					 				//Ok
+	 					 				incomeValid=true;
+	 					 				s.editSalary(income);
+	 					 			}else{
+	 					 				//TODO: launch exception + log
+	 						 			System.out.println("	Input income is not valid.");
+	 						 		}
+	 					 		}else{
+	 				 				//TODO: launch exception + log
+	 					 			System.out.println("	Input income is not valid.");
+	 					 		}
+	 							//scanner_income_1.close();
+	 						}while(incomeValid == false);
+		 					
+	 					}else {
+	 						// add exception
+	 						System.out.println("	No month exist in this Year for the expense.");
+	 					}
+ 					}while(retValue==-1);
+ 				}
+ 			}
+ 			if(yearFound == false) {
+ 				// year was not found. This means no month exists for that Year.
+ 				//launch Exception
+ 				System.out.println("	This Year doesn't exist.");
+ 			}
+		}while(yearFound==false);
+	}
+	
 	public static void removeSalary(ArrayList<Year> yearsList) {
 		//I check if the year exists, if then Year.remove(ret_value). 
 		//Then we check the array_existing_months (Yet to be implemented)
@@ -270,6 +342,7 @@ public class SwitchManagerUtils {
  		return success;
 	}
 	
+	//INTEGRATED IN modifyExpense
 	public static void removeExpense(ArrayList<Year> yearsList) {
 		System.out.println("\n  >>     Remove an expense:");
 		Integer id;
@@ -358,13 +431,6 @@ public class SwitchManagerUtils {
 		
 		for(Year yPrint : yearsList) {
 			String yearIncome = Utils.convertDecimalFormat2(yPrint.getTotIncome());
-			/*String year_outcome=null;
-			if(Double.compare(y_print.getTotOutcome(),0)==0) {
-				System.out.println("GOTCHA!");
-				year_outcome = "0";
-			}else {
-				year_outcome = Utils.convertDecimalFormat(y_print.getTotOutcome());
-			}*/
 			String yearOutcome = Utils.convertDecimalFormat2(yPrint.getTotOutcome());
 			Double yearGain = yPrint.getTotIncome()-yPrint.getTotOutcome();
 			String gain= Utils.convertDecimalFormat2(yearGain);
@@ -568,6 +634,7 @@ public class SwitchManagerUtils {
 	 * displays stats for each month, giving a percentage representation for expenses and gains.
 	 */
 	public static void showStats(ArrayList<Year> yearsList) {
+		System.out.println(Utils.ANSI_RED+"\t\t\t\t\tEXPENSES"+Utils.ANSI_GREEN+"\t\tGAINS\n");
 		for(Year y : yearsList) {
 			Collection<Salary> salaries = y.getMonths().values();
 			for(Salary s: salaries) { 	
@@ -636,7 +703,7 @@ public class SwitchManagerUtils {
 	}
 
 	/*
-	 * Given an HashMap<String,String), which is populated by reading CategoriesCFG.txt,
+	 * Given an HashMap<String,String>, which is populated by reading CategoriesCFG.txt,
 	 * all the entries CODE | DESCRIPTION are displayed.
 	 */
 	public static void readCategories(HashMap<String, String> categoriesMap) {
@@ -646,76 +713,15 @@ public class SwitchManagerUtils {
 			System.out.println("\t\t"+Utils.ANSI_MGNT+code+"\t"+"|"+"\t"+categoriesMap.get(code));
 		}
 	}
-
-	public static void modifySalary(ArrayList<Year> yearsList) {
-		System.out.println("\n  >>     Edit a month salary:");
-		int retValue=0;
-		Boolean yearFound=false;
-		do {
-			Scanner scannerOutcome4 = new Scanner(System.in);
-			System.out.print("  >>>>>>> Year:    ");
-			String yearInput = scannerOutcome4.nextLine();
-			
- 			for(Year yCurr:yearsList) {
- 				if(yCurr.getYear().equals(yearInput)) {
- 					yearFound=true;
- 					//the year  exists. If the month exists, remove the outcome. 
- 					
- 					//month input
- 					do {
- 			 			System.out.print("  >>>>>>>> Month:    ");
- 						Scanner scannerOutcome3 = new Scanner(System.in);
- 				 		String month= scannerOutcome3.nextLine();
- 				 		month=month.toUpperCase();
- 				 		retValue=Utils.MonthToInt(month);
-	 					Salary s = yCurr.getMonths().get(retValue-1); // aka Salary salary = Salary_2021.get(ret_value-1); 
 	
-	 					if(s!=null) {
-	 						//month exists
-	 						
-	 						//new value
-	 						System.out.println("\n  >>     new Salary value: ");
-	 						String strIncome;
-	 						Double income=0.0;
-	 						boolean incomeValid=false;
-	 						do {
-	 							System.out.print("  >>>>>>>> Income:    ");
-	 							Scanner scannerIncome1 = new Scanner(System.in);
-	 							strIncome= scannerIncome1.next();
-	 					 		//income validation
-	 					 		if(Utils.doubleIsNumeric(strIncome) && !(Utils.hasComma(strIncome))) {
-	 					 			income=Double.parseDouble(strIncome);
-	 					 			if(income>=0) {
-	 					 				//Ok
-	 					 				incomeValid=true;
-	 					 				s.editSalary(income);
-	 					 			}else{
-	 					 				//TODO: launch exception + log
-	 						 			System.out.println("	Input income is not valid.");
-	 						 		}
-	 					 		}else{
-	 				 				//TODO: launch exception + log
-	 					 			System.out.println("	Input income is not valid.");
-	 					 		}
-	 							//scanner_income_1.close();
-	 						}while(incomeValid == false);
-		 					
-	 					}else {
-	 						// add exception
-	 						System.out.println("	No month exist in this Year for the expense.");
-	 					}
- 					}while(retValue==-1);
- 				}
- 			}
- 			if(yearFound == false) {
- 				// year was not found. This means no month exists for that Year.
- 				//launch Exception
- 				System.out.println("	This Year doesn't exist.");
- 			}
-		}while(yearFound==false);
-	}
-	
-	
+	/*
+	 * Given the expense id, the year and the month,
+	 * edits an expense with several options: 
+	 * 	1	Edit expense outcome
+	 * 	2	Edit expense description
+	 *  3	Edit expense category
+	 *  4	Remove expense
+	 */
 	public static void modifyExpense(ArrayList<Year> yearsList,HashMap<String,String> categoriesMap) {
 			System.out.println("\n  >>     Edit an expense:");
 			Integer id;
@@ -728,7 +734,6 @@ public class SwitchManagerUtils {
 				}
 			}while(id<=0);
 	 		
-			//int ret_value_month_to_pick=0;
 			int retValue=0;
 	 		do {
 	 			System.out.print("  >>>>>>>> Month:    ");
@@ -736,7 +741,6 @@ public class SwitchManagerUtils {
 		 		String month= scannerOutcome3.nextLine();
 		 		month=month.toUpperCase();
 		 		retValue=Utils.MonthToInt(month);
-		 		//System.out.println("\n @@@ month is "+month+", ret_value is "+ret_value);
 		 		if(retValue != -1) {
 		 			Scanner scannerOutcome4 = new Scanner(System.in);
 		 			System.out.print("  >>>>>>> Year:    ");
@@ -759,11 +763,12 @@ public class SwitchManagerUtils {
 		 						//switch for the expense operation
 		 						Scanner scannerOutcome5 = new Scanner(System.in);
 		 			 			System.out.println("  >>>>>>> What do you want to do with this expense?");
-		 			 			System.out.println("			"+Utils.ANSI_WHITE+"\t"+Utils.ANSI_BLUE+s.getOutcomes().get(id).getCategory()+"\t"+Utils.ANSI_RED+s.getOutcomes().get(id).getOutcome()+"\t"+Utils.ANSI_WHITE+s.getOutcomes().get(id).getDescription());
+		 			 			System.out.println("			"+Utils.ANSI_WHITE+"\t"+Utils.ANSI_CYAN+s.getOutcomes().get(id).getCategory()+"\t"+Utils.ANSI_RED+s.getOutcomes().get(id).getOutcome()+"\t"+Utils.ANSI_WHITE+s.getOutcomes().get(id).getDescription());
 		 			 			Integer operationChoice;
 		 			 			do {
-		 			 				System.out.println("				"+Utils.ANSI_YELLOW+"1"+Utils.ANSI_WHITE+" Edit expense outcome		"+Utils.ANSI_YELLOW+"2"+Utils.ANSI_WHITE+" Edit expense description	"+Utils.ANSI_YELLOW+"3"+Utils.ANSI_WHITE+" Edit expense category	"+Utils.ANSI_YELLOW+"4"+Utils.ANSI_WHITE+" Remove expense		"+Utils.ANSI_YELLOW+"0"+Utils.ANSI_WHITE+" Exit");
-			 			 			operationChoice = scannerOutcome5.nextInt();
+		 			 				System.out.println("\t\t\t\t"+Utils.ANSI_YELLOW+"1"+Utils.ANSI_WHITE+" Edit expense outcome\t\t"+Utils.ANSI_YELLOW+"2"+Utils.ANSI_WHITE+" Edit expense description	\n\t\t\t\t"+Utils.ANSI_YELLOW+"3"+Utils.ANSI_WHITE+" Edit expense category"+"\t\t"+Utils.ANSI_YELLOW+"4"+Utils.ANSI_WHITE+" Remove expense\t\t"+Utils.ANSI_YELLOW+"0"+Utils.ANSI_WHITE+" Exit");
+		 			 				System.out.print(Utils.ANSI_YELLOW+"\n -> "+Utils.ANSI_WHITE);
+		 			 				operationChoice = scannerOutcome5.nextInt();
 			 			 			switch(operationChoice) {
 				 			 			case 1:
 				 			 				Double expense=0.0;

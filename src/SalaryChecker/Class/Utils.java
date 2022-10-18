@@ -29,12 +29,12 @@ public class Utils {
 	 */
 	public static void intro() {
 		System.out.println();
-		System.out.println(Utils.ANSI_RED+	 "	 	#  #     #     #####    #####  ##### ");
-		System.out.println(Utils.ANSI_YELLOW+"	 	# #     # #    #        #      #     ");
-		System.out.println(Utils.ANSI_GREEN+ "	 	##     #####   ##### -- #####  #     ");
-		System.out.println(Utils.ANSI_MGNT+  "	 	# #   #     #  #            #  #     ");
-		System.out.println(Utils.ANSI_PURPLE+"	 	#  # #       # #####    #####  ##### ");
-		System.out.println(Utils.ANSI_GREEN+"\n	 	KEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+" 	v 1.5.0"+"  released on 11/09/2022");
+		System.out.println(Utils.ANSI_RED+	 "	 	##  ##     ##     #####    #####  ##### ");
+		System.out.println(Utils.ANSI_YELLOW+"	 	## ##     ## #    ##       ##     ##    ");
+		System.out.println(Utils.ANSI_GREEN+ "	 	###      ######   ##### -- #####  ##    ");
+		System.out.println(Utils.ANSI_MGNT+  "	 	## ##   ##    ##  ##          ##  ##    ");
+		System.out.println(Utils.ANSI_PURPLE+"	 	##  ## ##      ## #####    #####  ##### ");
+		System.out.println(Utils.ANSI_GREEN+"\n\tKEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+"\t\t"+"v"+Utils.ANSI_MGNT+" [1.5.1]"+Utils.ANSI_WHITE+"  released on "+Utils.ANSI_MGNT+"16/10/2022");
 	}
 
 	/*
@@ -42,22 +42,21 @@ public class Utils {
 	 */
 	public static void menu() {
 		System.out.println();
-		System.out.print(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'");
-		System.out.println(Utils.ANSI_RED+"\t\t\t\t\t\t\t0]  "+Utils.ANSI_WHITE+"Exit");
-		System.out.println(Utils.ANSI_YELLOW+"	 	1]\t"+Utils.ANSI_WHITE+"Adds a Month Salary ");
-		System.out.println(Utils.ANSI_YELLOW+"	 	2]\t"+Utils.ANSI_WHITE+"Adds an expense to a specific Month");
-		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Removes an expense given its ID");
-		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Prints all the data related to all the Years");
-		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Prints all the data related to a specific Year");
-		System.out.println(Utils.ANSI_YELLOW+"	 	6]\t"+Utils.ANSI_WHITE+"Loads from write.txt file (overwrites actual data)");
-		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Saves current data into write.txt and also creates a backup file each time");
-		System.out.println(Utils.ANSI_YELLOW+"		8]\t"+Utils.ANSI_WHITE+"Displays stats for each month, giving a percentage representation for expenses and gains");
-		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per month, ordered by amount");
-		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Displays expenses grouped by Categories, per year, ordered by amount");
-		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Insert category into CategoriesCFG.txt\t\t\t[Test env]");
-		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Displays all the categories from CategoriesCFG.txt\t[Test env]");
-//		System.out.print(Utils.ANSI_YELLOW+"	 	100]\t"+Utils.ANSI_WHITE+"Menu'");
-//		System.out.println(Utils.ANSI_RED+"\t\t\t\t\t\t\t	 	0]\t"+Utils.ANSI_WHITE+"Exit\n");
+		System.out.print(Utils.ANSI_BRIGHT_YELLOW+"	 	M]\t"+Utils.ANSI_WHITE+"Menu'");
+		System.out.println(Utils.ANSI_RED+"\t\t\t\t\t\t0]  "+Utils.ANSI_WHITE+"Exit");
+		System.out.println(Utils.ANSI_YELLOW+"	 	1]\t"+Utils.ANSI_WHITE+"Add a Month Salary ");
+		System.out.println(Utils.ANSI_YELLOW+"	 	2]\t"+Utils.ANSI_WHITE+"Edit a Month Salary ");
+		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Add an expense");
+		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Edit an expense");
+		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Print all the Years");
+		System.out.println(Utils.ANSI_YELLOW+"	 	6]\t"+Utils.ANSI_WHITE+"Print a Year");
+		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Load data (overwrites current data)");
+		System.out.println(Utils.ANSI_YELLOW+"	 	8]\t"+Utils.ANSI_WHITE+"Save current data");
+		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Display statistics");
+		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Group months by Categories");
+		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Group years by Categories");
+		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Insert category");
+		System.out.println(Utils.ANSI_YELLOW+"		13]\t"+Utils.ANSI_WHITE+"Display all the categories");
 	}
 	
 	
