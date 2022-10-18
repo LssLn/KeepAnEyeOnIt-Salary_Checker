@@ -20,6 +20,7 @@
 		<ul>
 			<li><h4>printOutcomeHashMap</h4>Prints the outcomes stored in the Salary Hashmap.</li>
 			<li><h4>setSingleOutcome</h4></li>
+            <li><h4>editSingleOutcome</h4>Several methods to edit a single expense description, outcome or category</li>
 			<li><h4>incomeGraphics</h4>Used to better display the Salary data.</li>
 			<li><h4>printSalary</h4>Displays all the infos related to a Salary, such as income, gain and expenses value, info, n_ID</li>
 			<li><h4>printOutcomesHashMapGroupCat</h4>Displays expenses grouped by category and ordered by amount.</li>
@@ -71,9 +72,9 @@
 	This class has static methods used by the switch manager, these are the main features.
 		<ul>
 			<li><h4>addSalary</h4></li> 	Adds a Month Salary 
-			<li><h4>removeSalary</h4></li> 	Removes a Month Salary //Unused
+            <li><h4>modifySalary</h4>Given the year and the month, edits a salary income with a new value</li>
 			<li><h4>addExpense</h4></li> 	Adds an expense to a specific Month
-			<li><h4>removeExpense</h4>	Removes an expense given its ID</li>
+			<li><h4>modifyExpense</h4>	Given the year and the month, edits a salary income with a new value</li>
 			<li><h4>printAll</h4>		Prints all the data related to all the Years</li>
 			<li><h4>printYear</h4>		Prints all the data related to a specific Year</li>
 			<li><h4>loadData</h4> 		Loads from write.txt file (overwrites actual data)</li>
@@ -81,6 +82,7 @@
 			<li><h4>showStats</h4> 		Displays stats for each month, giving a percentage representation for expenses and gains</li>
 			<li><h4>printByCategories</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
 			<li><h4>insertCategoriesIntoMap</h4>Given an HashMap<String,String> and the input entry, returns the HashMap with the new element added</li>
+            <li><h4>readCategories</h4>Given an HashMap<String,String>, which is populated by reading CategoriesCFG.txt, all the entries CODE DESCRIPTION are displayed.</li>
 		</ul>
 	</li>
 </ul>
