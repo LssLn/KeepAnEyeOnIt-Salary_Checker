@@ -27,7 +27,7 @@ public class Utils {
 	/*
 	 * Prints the application logo
 	 */
-	public static void intro() {
+	public static void oldIntro() {
 		System.out.println();
 		System.out.println(Utils.ANSI_RED+	 "	 	##  ##     ##     #####    #####  ##### ");
 		System.out.println(Utils.ANSI_YELLOW+"	 	## ##     ## #    ##       ##     ##    ");
@@ -36,6 +36,21 @@ public class Utils {
 		System.out.println(Utils.ANSI_PURPLE+"	 	##  ## ##      ## #####    #####  ##### ");
 		System.out.println(Utils.ANSI_GREEN+"\n\tKEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+"\t\t"+"v"+Utils.ANSI_MGNT+" [1.5.1]"+Utils.ANSI_WHITE+"  released on "+Utils.ANSI_MGNT+"16/10/2022");
 	}
+	
+	/*
+	 * Prints the application logo
+	 */	public static void intro() {
+			System.out.println();
+			System.out.println(Utils.ANSI_RED+	 	"      __   __                       ");
+			System.out.println(Utils.ANSI_RED+		"     |  | /  /   ___    ______    _____      ________           ");
+			System.out.println(Utils.ANSI_YELLOW+	"     |  |/  /   /   \\  |   ___' /  ____'    /   _____)   "+Utils.ANSI_GREEN+"       || ");
+			System.out.println(Utils.ANSI_YELLOW+ 	"     |     /   / / \\ \\ |  |___ |  |___     /   /	       "+Utils.ANSI_GREEN+" || ");
+			System.out.println(Utils.ANSI_MGNT+  	"     |     \\  | |___| ||   ___' \\___   \\  (   (        "+Utils.ANSI_GREEN+"    ||   || ");
+			System.out.println(Utils.ANSI_MGNT	+	"     |  |\\  \\ |  ___  ||  |___    ___)  )  \\   \\_____ "+Utils.ANSI_GREEN+"    |||  |||| ");
+			System.out.println(Utils.ANSI_PURPLE+	"     |  | \\  \\|_|   |_||______)  \\_____/    \\________)"+Utils.ANSI_GREEN+"   |||||||||| ||");
+			System.out.println(Utils.ANSI_PURPLE+	"     |__|  \\__\\"+Utils.ANSI_GREEN+"|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+			System.out.println(Utils.ANSI_GREEN+ 	"     KEEP AN EYE ON IT: SALARY CHECKER"+Utils.ANSI_WHITE+"\t\t"+"v"+Utils.ANSI_MGNT+" [1.5.1]"+Utils.ANSI_WHITE+"  released on "+Utils.ANSI_MGNT+"16/10/2022");
+		}
 
 	/*
 	 * Prints the menu' options
