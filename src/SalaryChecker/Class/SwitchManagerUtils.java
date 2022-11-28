@@ -257,6 +257,7 @@ public class SwitchManagerUtils {
 		do{
 			System.out.print("  >>>>>>>>> Category:    ");
 			category = scannerOutcome5.nextLine();
+			category=category.toUpperCase();
 			if(!Utils.checkCategories(category)) {
 				//category found, proceeding with other fields
 				categoryValid=true;
@@ -388,7 +389,6 @@ public class SwitchManagerUtils {
 	 						// add exception
 	 						System.out.println("	No month exist in this Year for the expense.");
 	 					}
-	 					
 	 				}
 	 			}
 	 			if(yearFound == false) {
@@ -396,8 +396,6 @@ public class SwitchManagerUtils {
 	 				//launch Exception
 	 				System.out.println("	This Year doesn't exist.");
 	 			}
-	 			
-	 			
 	 		}
  		}while(retValue==-1); //if error, prompt again the value
 	}
@@ -835,7 +833,8 @@ public class SwitchManagerUtils {
 				 			 			case 4:
 					 						s.removeSingleOutcome(id);
 				 			 				System.out.println("			Removed expense successfully");	
-					 						break;
+				 			 				//after removing, it exits the loop
+//					 						break; 
 				 			 			case 0:
 				 			 				break;
 				 			 			default:

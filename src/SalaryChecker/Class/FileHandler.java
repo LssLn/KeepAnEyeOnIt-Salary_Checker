@@ -286,7 +286,9 @@ public class FileHandler {
 					String categoryCode = scanner.next();
 					if(categoryCode.contains(" ") || categoryCode.length()>6) {
 						//throw new Exception
-						//log error
+//						System.out.print("trimming code "+categoryCode+" to ");
+//						categoryCode = categoryCode.substring(0, 5);
+						//log warning
 					}
 					String categoryDescr = scanner.nextLine();
 					
