@@ -763,6 +763,7 @@ public class SwitchManagerUtils {
 		 			 			System.out.println("  >>>>>>> What do you want to do with this expense?");
 		 			 			System.out.println("			"+Utils.ANSI_WHITE+"\t"+Utils.ANSI_CYAN+s.getOutcomes().get(id).getCategory()+"\t"+Utils.ANSI_RED+s.getOutcomes().get(id).getOutcome()+"\t"+Utils.ANSI_WHITE+s.getOutcomes().get(id).getDescription());
 		 			 			Integer operationChoice;
+		 			 			boolean rmFlag = false;
 		 			 			do {
 		 			 				System.out.println("\t\t\t\t"+Utils.ANSI_YELLOW+"1"+Utils.ANSI_WHITE+" Edit expense outcome\t\t"+Utils.ANSI_YELLOW+"2"+Utils.ANSI_WHITE+" Edit expense description	\n\t\t\t\t"+Utils.ANSI_YELLOW+"3"+Utils.ANSI_WHITE+" Edit expense category"+"\t\t"+Utils.ANSI_YELLOW+"4"+Utils.ANSI_WHITE+" Remove expense\t\t"+Utils.ANSI_YELLOW+"0"+Utils.ANSI_WHITE+" Exit");
 		 			 				System.out.print(Utils.ANSI_YELLOW+"\n -> "+Utils.ANSI_WHITE);
@@ -833,14 +834,14 @@ public class SwitchManagerUtils {
 				 			 			case 4:
 					 						s.removeSingleOutcome(id);
 				 			 				System.out.println("			Removed expense successfully");	
-				 			 				//after removing, it exits the loop
-//					 						break; 
+				 			 				rmFlag = true;
+				 			 				break;
 				 			 			case 0:
 				 			 				break;
 				 			 			default:
 				 			 				break;
 			 			 			}
-		 			 			}while(operationChoice!=0);
+		 			 			}while(operationChoice!=0 && rmFlag == false);
 		 			 						 					
 		 					}else {
 		 						// add exception
