@@ -897,7 +897,8 @@ public class SwitchManagerUtils {
 					HashMap<Integer, Outcome> outcomes = month.getOutcomes();
 					Set<Integer> outcomesKeys = outcomes.keySet();
 					monthFiltered = new Salary(0.0,month.getMonth());
-					int retValue = Utils.MonthToInt(month.getMonth());
+					monthFiltered.setTotalOutcomeByParam(month.getTotalOutcome());
+					monthFiltered.setIncome(month.getIncome());
 					//for each expense
 					for(Integer outcomeKey:outcomesKeys) {
 						Outcome outcome = outcomes.get(outcomeKey);

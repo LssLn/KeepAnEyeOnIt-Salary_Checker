@@ -87,7 +87,8 @@ public class KAE_SC {
 				case "14":
 					Scanner scanCategory = new Scanner(System.in);
 					System.out.print(Utils.ANSI_WHITE+"\n  Category to filter: "+Utils.ANSI_WHITE);
-					String category = scanCategory.nextLine().trim();
+					String category = scanCategory.nextLine().trim().toUpperCase();
+					System.out.println("\n");
 					SwitchManagerUtils.printAll(SwitchManagerUtils.filterByCategories(yearsList,category));
 				case "m":
 				case "M": 

@@ -61,8 +61,14 @@ public class Salary implements Serializable{
 			Outcome outcomeReturned = outcomes.get(i);
 			totalOutcome = totalOutcome+outcomeReturned.getOutcome();
 		}
-		//System.out.println("\nThe total Outcome, as for now, is: "+total_outcome);
-//		this.total_outcome=total_outcome;
+	}
+	
+	public void setTotalOutcomeByParam(Double totalOutcome) {
+		this.totalOutcome=totalOutcome;
+	}
+	
+	public void setIncome(Double income) {
+		this.income=income;
 	}
 	
 	/* 
