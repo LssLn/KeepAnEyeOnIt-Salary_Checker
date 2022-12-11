@@ -84,6 +84,11 @@ public class KAE_SC {
 				case "13":
 					SwitchManagerUtils.readCategories(categoriesMap);
 					break;
+				case "14":
+					Scanner scanCategory = new Scanner(System.in);
+					System.out.print(Utils.ANSI_WHITE+"\n  Category to filter: "+Utils.ANSI_WHITE);
+					String category = scanCategory.nextLine().trim();
+					SwitchManagerUtils.printAll(SwitchManagerUtils.filterByCategories(yearsList,category));
 				case "m":
 				case "M": 
 					Utils.menu();
