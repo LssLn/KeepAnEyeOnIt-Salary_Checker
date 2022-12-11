@@ -867,7 +867,7 @@ public class SwitchManagerUtils {
 	 * given the total year hashmaps, and a category in input,
 	 * returns the same hashmaps but filtering only by expenses with the selected category
 	 */
-	public ArrayList<Year> filterByCategories(ArrayList<Year> yearsList, String categoryCode){
+	public static ArrayList<Year> filterByCategories(ArrayList<Year> yearsList, String categoryCode){
 //		ArrayList<Year> yearsListCloned = SerializationUtils.clone(yearsList);
 		ArrayList<Year> yearsListFiltered = new ArrayList<>();
 		
@@ -910,7 +910,6 @@ public class SwitchManagerUtils {
 				yearsListFiltered.add(yearFiltered);
 			}
 		}
-		
-		return null;
+		return yearsListFiltered;
 	}
 }
