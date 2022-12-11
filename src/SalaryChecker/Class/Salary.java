@@ -1,5 +1,6 @@
 package SalaryChecker.Class;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -15,8 +16,8 @@ import java.util.Set;
  * getHashMap returns the expenses hashmap;
  * print and incomeGraphics are to print the Salary.
  */
-public class Salary {
-
+public class Salary implements Serializable{
+	private static final long serialVersionUID = -3341892028820186658L;
 	
 	private Double income;
 	//it's the amount of all the single expenses

@@ -1,10 +1,13 @@
 package SalaryChecker.Class;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Year implements Comparable<Year>{
+public class Year implements Comparable<Year>, Serializable{
+	private static final long serialVersionUID = -3788424423352246845L;
+	
 	private String year;
 	private HashMap<Integer,Salary> months = new HashMap<>(12);
 	

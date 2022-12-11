@@ -7,9 +7,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale.Category;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+//import org.apache.commons.lang3.SerializationUtils; //https://commons.apache.org/proper/commons-fileupload/
 
 public class SwitchManagerUtils {
 	static FileHandler fHUtil = new FileHandler();
@@ -860,4 +862,55 @@ public class SwitchManagerUtils {
 		 		}
 	 		}while(retValue==-1); //if error, prompt again the value
 		}
+	
+	/*
+	 * given the total year hashmaps, and a category in input,
+	 * returns the same hashmaps but filtering only by expenses with the selected category
+	 */
+	public ArrayList<Year> filterByCategories(ArrayList<Year> yearsList, String categoryCode){
+//		ArrayList<Year> yearsListCloned = SerializationUtils.clone(yearsList);
+		ArrayList<Year> yearsListFiltered = new ArrayList<>();
+		
+		//checking if in input category exists
+		boolean validatedCategory=false;
+		HashMap<String, String> categoriesMap = fHUtil.readCategoriesFromTXT();
+		for(String code: categoriesMap.keySet()) {
+			if(categoryCode!=null) {
+				if(categoryCode.equals(code)) {
+					validatedCategory=true;
+					//logger.info("category {} is valid",categoryCode);
+				}
+			}
+		}
+		
+		if(validatedCategory) {
+			//for each year
+			Year yearFiltered;
+			for(Year year:yearsList) {
+				yearFiltered=new Year(year.getYear());
+				HashMap<Integer, Salary> months = year.getMonths();
+				Set<Integer> monthsKeys = months.keySet();
+				//for each month			
+				Salary monthFiltered;
+				for(Integer monthKey: monthsKeys) {
+					Salary month = months.get(monthKey);
+					HashMap<Integer, Outcome> outcomes = month.getOutcomes();
+					Set<Integer> outcomesKeys = outcomes.keySet();
+					monthFiltered = new Salary(0.0,month.getMonth());
+					int retValue = Utils.MonthToInt(month.getMonth());
+					//for each expense
+					for(Integer outcomeKey:outcomesKeys) {
+						Outcome outcome = outcomes.get(outcomeKey);
+						if(categoryCode.equals(outcome.getCategory())) {
+							monthFiltered.setSingleOutcome(outcome.getOutcome(), outcome.getDescription(), outcome.getCategory());
+						}
+					}
+					yearFiltered.addMonth(monthKey, monthFiltered); 
+				}
+				yearsListFiltered.add(yearFiltered);
+			}
+		}
+		
+		return null;
+	}
 }

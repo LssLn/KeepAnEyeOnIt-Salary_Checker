@@ -1,9 +1,10 @@
 package SalaryChecker.Class;
 
-public class Outcome {
-	/*
-	 * It's used as value for the Outcomes Hashmap.
-	 * */
+import java.io.Serializable;
+
+public class Outcome implements Serializable{
+	private static final long serialVersionUID = -7392453123307708141L;
+
 	private Double outcome;
 	private String description;
 	private String category;
