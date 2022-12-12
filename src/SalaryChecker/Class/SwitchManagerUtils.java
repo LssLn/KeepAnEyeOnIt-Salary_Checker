@@ -864,8 +864,8 @@ public class SwitchManagerUtils {
 		}
 	
 	/*
-	 * given the total year hashmaps, and a category in input,
-	 * returns the same hashmaps but filtering only by expenses with the selected category
+	 * given the year arraylist and a category in input,
+	 * returns the same collection but filtered by expenses with the selected category
 	 */
 	public static ArrayList<Year> filterByCategories(ArrayList<Year> yearsList, String categoryCode){
 //		ArrayList<Year> yearsListCloned = SerializationUtils.clone(yearsList);
@@ -912,5 +912,74 @@ public class SwitchManagerUtils {
 			}
 		}
 		return yearsListFiltered;
+	}
+	
+	
+	/*
+	 * given the year arraylist and a description in input,
+	 * returns the same collection but filtered by expenses which contains the description in input in their descriptions
+	 */
+	public static ArrayList<Year> filterByDescr(ArrayList<Year> yearsList, String description){
+		ArrayList<Year> yearsListFiltered = new ArrayList<>();
+
+		//check if description is not null
+		if(description!=null) {
+			//for each year
+			Year yearFiltered;
+			for(Year year:yearsList) {
+				yearFiltered=new Year(year.getYear());
+				HashMap<Integer, Salary> months = year.getMonths();
+				Set<Integer> monthsKeys = months.keySet();
+				//for each month			
+				Salary monthFiltered;
+				for(Integer monthKey: monthsKeys) {
+					Salary month = months.get(monthKey);
+					HashMap<Integer, Outcome> outcomes = month.getOutcomes();
+					Set<Integer> outcomesKeys = outcomes.keySet();
+					monthFiltered = new Salary(0.0,month.getMonth());
+					monthFiltered.setTotalOutcomeByParam(month.getTotalOutcome());
+					monthFiltered.setIncome(month.getIncome());
+					//for each expense
+					for(Integer outcomeKey:outcomesKeys) {
+						Outcome outcome = outcomes.get(outcomeKey);
+						if(outcome.getDescription().contains(description)) {
+							monthFiltered.setSingleOutcome(outcome.getOutcome(), outcome.getDescription(), outcome.getCategory());
+						}
+					}
+					yearFiltered.addMonth(monthKey, monthFiltered); 
+				}
+				yearsListFiltered.add(yearFiltered);
+			}
+		}
+		
+		return yearsListFiltered;
+	}
+	
+	/*
+	 * Given an ArrayList<String>,
+	 * displays all the data related to all the Years.
+	 */
+	public static void printAllFilters(ArrayList<Year> yearsList) {
+		Double yearsOutcome = 0.00;
+		for(Year yPrint : yearsList) {
+			yearsOutcome += yPrint.getTotOutcome();
+		}
+		String sYearsOutcome = Utils.convertDecimalFormat2(yearsOutcome);
+		
+//		System.out.println(" 	Total expenses      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_WHITE+"\n");
+		
+		for(Year yPrint : yearsList) {
+			String yearOutcome = Utils.convertDecimalFormat2(yPrint.getTotOutcome());
+			
+			System.out.print("\n # "+Utils.ANSI_YELLOW+yPrint.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "+"\n");
+			Collection<Salary> salaries = yPrint.getMonths().values();
+			for(Salary s: salaries) { 	
+				s.printSalaryFiltered(); 	
+				//TODO: don't print months with empty records
+//				for(Integer outcomesKey : s.getOutcomes().keySet()) {
+//					s.getOutcomes().get(outcomesKey);
+//				}
+			}
+		}
 	}
 }

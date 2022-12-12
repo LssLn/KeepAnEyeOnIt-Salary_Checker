@@ -86,7 +86,6 @@ public class Salary implements Serializable{
 	//public void printOutcomesHashMap(HashMap<Double,String> outcomes) {
 	public void printOutcomesHashMap() {
 		Set<Integer> setkeysOutcomes = outcomes.keySet();
-		//System.out.println("\nReading all the expenses:\n");
 		for(Integer i: setkeysOutcomes) {
 			Outcome outcomeReturned = outcomes.get(i);
 //			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
@@ -165,6 +164,7 @@ public class Salary implements Serializable{
 		}
 	}
 
+	
 	
 	public Map<String, Double> getOutComeHashMapGroupCategories() {
 		Set<Integer> setkeysOutcomes = outcomes.keySet();
@@ -256,6 +256,22 @@ public class Salary implements Serializable{
 				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,totalOutcome);
 		System.out.println();
+		printOutcomesHashMap();
+	}
+	
+	public void printSalaryFiltered() {
+//		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
+//		if(totOutcFormatted.equals(",00") || totOutcFormatted.equals(".00")) {
+//			totOutcFormatted="0";
+//		}
+//		
+		System.out.println(Utils.ANSI_WHITE+ "\n"+Utils.ANSI_GRASS+"   > " +
+				Utils.ANSI_WHITE+month
+//				+ " [ "+
+//				Utils.ANSI_RED+"      -   " + totOutcFormatted + 
+//				Utils.ANSI_WHITE+"   ]"
+				);
+//		System.out.println();
 		printOutcomesHashMap();
 	}
 	

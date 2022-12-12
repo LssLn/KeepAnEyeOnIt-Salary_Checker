@@ -89,7 +89,15 @@ public class KAE_SC {
 					System.out.print(Utils.ANSI_WHITE+"\n  Category to filter: "+Utils.ANSI_WHITE);
 					String category = scanCategory.nextLine().trim().toUpperCase();
 					System.out.println("\n");
-					SwitchManagerUtils.printAll(SwitchManagerUtils.filterByCategories(yearsList,category));
+					SwitchManagerUtils.printAllFilters(SwitchManagerUtils.filterByCategories(yearsList,category));
+					break;
+				case "15":
+					Scanner scanDescription = new Scanner(System.in);
+					System.out.print(Utils.ANSI_WHITE+"\n  Keyword to look for in outcomes descriptions: "+Utils.ANSI_WHITE);
+					String description = scanDescription.nextLine().trim().toUpperCase();
+					System.out.println("\n");
+					SwitchManagerUtils.printAllFilters(SwitchManagerUtils.filterByDescr(yearsList,description));
+					break;
 				case "m":
 				case "M": 
 					Utils.menu();
