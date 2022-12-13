@@ -35,13 +35,13 @@ public class KAE_SC {
 				case "1":
 					SwitchManagerUtils.addSalary(yearsList);
 					break;
-				case "2":
+				case "1E":
 					SwitchManagerUtils.modifySalary(yearsList);
 					System.out.println();
 					SwitchManagerUtils.saveData(yearsList);
 					yearsList=SwitchManagerUtils.loadData(yearsList, categoriesMap);
 					break;
-				case "3":
+				case "2":
 					boolean expenseAddedSuccessfully = SwitchManagerUtils.addExpense(yearsList, categoriesMap);
 					if(expenseAddedSuccessfully) {
 						System.out.println();
@@ -49,7 +49,7 @@ public class KAE_SC {
 						yearsList=SwitchManagerUtils.loadData(yearsList, categoriesMap);
 					}
 					break;
-				case "4":
+				case "2E":
 					SwitchManagerUtils.modifyExpense(yearsList,categoriesMap);
 					System.out.println();
 					SwitchManagerUtils.saveData(yearsList);
@@ -58,30 +58,30 @@ public class KAE_SC {
 				case "5":
 					SwitchManagerUtils.printAll(yearsList);
 					break;
-				case "6":
+				case "5Y":
 					SwitchManagerUtils.printYear(yearsList);
 					break;
-				case "7":
+				case "3":
 					yearsList = SwitchManagerUtils.loadData(yearsList, categoriesMap);
 					break;
-				case "8":
+				case "4":
 					SwitchManagerUtils.saveData(yearsList);
 					break;
-				case "9":
+				case "5S":
 					SwitchManagerUtils.showStats(yearsList);
 					break;
-				case "10":
+				case "6M":
 					SwitchManagerUtils.printMonthByCategories(yearsList);
 					break;
-				case "11":
+				case "6Y":
 					SwitchManagerUtils.printYearsByCategories(yearsList);
 					break;	
-				case "12":
+				case "7I":
 					String existentCode=null;
 					categoriesMap = SwitchManagerUtils.insertCategoriesIntoMap(categoriesMap,existentCode);
 					fHUtil.writeCategoriesToTXT(categoriesMap);
 					break;
-				case "13":
+				case "7":
 					SwitchManagerUtils.readCategories(categoriesMap);
 					break;
 				case "5C":

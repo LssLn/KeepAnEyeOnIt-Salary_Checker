@@ -60,20 +60,20 @@ public class Utils {
 		System.out.print(Utils.ANSI_BRIGHT_YELLOW+"	 	M]\t"+Utils.ANSI_WHITE+"Menu'");
 		System.out.println(Utils.ANSI_RED+"\t\t\t\t\t\t0]  "+Utils.ANSI_WHITE+"Exit");
 		System.out.println(Utils.ANSI_YELLOW+"	 	1]\t"+Utils.ANSI_WHITE+"Add a Month Salary ");
-		System.out.println(Utils.ANSI_YELLOW+"	 	2]\t"+Utils.ANSI_WHITE+"Edit a Month Salary ");
-		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Add an expense");
-		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Edit an expense");
+		System.out.println(Utils.ANSI_YELLOW+"	 	1E]\t"+Utils.ANSI_WHITE+"Edit a Month Salary ");
+		System.out.println(Utils.ANSI_YELLOW+"	 	2]\t"+Utils.ANSI_WHITE+"Add an expense");
+		System.out.println(Utils.ANSI_YELLOW+"	 	2E]\t"+Utils.ANSI_WHITE+"Edit an expense");
+		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Load data (overwrites current data)");
+		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Save current data");
 		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Print all the Years");
 		System.out.println(Utils.ANSI_YELLOW+"		5C]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by a category");
 		System.out.println(Utils.ANSI_YELLOW+"		5D]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by searching a description");
-		System.out.println(Utils.ANSI_YELLOW+"	 	6]\t"+Utils.ANSI_WHITE+"Print a Year");
-		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Load data (overwrites current data)");
-		System.out.println(Utils.ANSI_YELLOW+"	 	8]\t"+Utils.ANSI_WHITE+"Save current data");
-		System.out.println(Utils.ANSI_YELLOW+"		9]\t"+Utils.ANSI_WHITE+"Display statistics");
-		System.out.println(Utils.ANSI_YELLOW+"		10]\t"+Utils.ANSI_WHITE+"Group months by Categories");
-		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Group years by Categories");
-		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Insert category");
-		System.out.println(Utils.ANSI_YELLOW+"		13]\t"+Utils.ANSI_WHITE+"Display all the categories");
+		System.out.println(Utils.ANSI_YELLOW+"	 	5Y]\t"+Utils.ANSI_WHITE+"Print a Year");
+		System.out.println(Utils.ANSI_YELLOW+"		5S]\t"+Utils.ANSI_WHITE+"Display statistics");
+		System.out.println(Utils.ANSI_YELLOW+"		6M]\t"+Utils.ANSI_WHITE+"Group months by Categories");
+		System.out.println(Utils.ANSI_YELLOW+"		6Y]\t"+Utils.ANSI_WHITE+"Group years by Categories");
+		System.out.println(Utils.ANSI_YELLOW+"		7]\t"+Utils.ANSI_WHITE+"Display all the categories");
+		System.out.println(Utils.ANSI_YELLOW+"		7I]\t"+Utils.ANSI_WHITE+"Insert category");
 	}
 	
 	
