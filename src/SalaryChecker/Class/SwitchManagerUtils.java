@@ -969,17 +969,27 @@ public class SwitchManagerUtils {
 //		System.out.println(" 	Total expenses      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_WHITE+"\n");
 		
 		for(Year yPrint : yearsList) {
-			String yearOutcome = Utils.convertDecimalFormat2(yPrint.getTotOutcome());
-			
-			System.out.print("\n # "+Utils.ANSI_YELLOW+yPrint.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "+"\n");
-			Collection<Salary> salaries = yPrint.getMonths().values();
-			for(Salary s: salaries) { 	
-				s.printSalaryFiltered(); 	
-				//TODO: don't print months with empty records
-//				for(Integer outcomesKey : s.getOutcomes().keySet()) {
-//					s.getOutcomes().get(outcomesKey);
-//				}
+			//check if the year months are all empty
+			Collection<Salary> salariesF = yPrint.getMonths().values();
+			boolean emptyYearFlag=true;
+			for(Salary s:salariesF) {
+				if(s.getOutcomes().keySet().size()!=0)
+					emptyYearFlag=false;
 			}
+
+			//if the year is empty, don't print it
+			if(!emptyYearFlag) {
+				String yearOutcome = Utils.convertDecimalFormat2(yPrint.getTotOutcome());
+				System.out.print("\n # "+Utils.ANSI_YELLOW+yPrint.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "+"\n");
+				Collection<Salary> salaries = yPrint.getMonths().values();
+				for(Salary s: salaries) { 	
+					//don't print months with empty records
+					if(s.getOutcomes().keySet().size()!=0) {
+						s.printSalaryFiltered(); 	
+					}
+				}
+			}
+			
 		}
 	}
 }

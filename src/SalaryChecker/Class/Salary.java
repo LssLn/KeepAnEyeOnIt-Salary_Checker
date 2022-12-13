@@ -83,7 +83,6 @@ public class Salary implements Serializable{
 		totalOutcome = totalOutcome + outcomeExpense;	
 	}
 
-	//public void printOutcomesHashMap(HashMap<Double,String> outcomes) {
 	public void printOutcomesHashMap() {
 		Set<Integer> setkeysOutcomes = outcomes.keySet();
 		for(Integer i: setkeysOutcomes) {
@@ -91,6 +90,16 @@ public class Salary implements Serializable{
 //			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
 //			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcome_returned.getOutcome())+Utils.ANSI_WHITE + " 	[" +Utils.ANSI_YELLOW+outcome_returned.getCategory()+Utils.ANSI_WHITE+"]");	
 			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+Utils.ANSI_MGNT+outcomeReturned.getCategory()+Utils.ANSI_WHITE+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcomeReturned.getOutcome())+"\t"+" "+Utils.ANSI_WHITE+outcomeReturned.getDescription());	
+		}
+	}
+	
+	public void printOutcomesHashMapFilter() {
+		Set<Integer> setkeysOutcomes = outcomes.keySet();
+		for(Integer i: setkeysOutcomes) {
+			Outcome outcomeReturned = outcomes.get(i);
+//			System.out.println(ANSI_WHITE+"	  Expense: "+" "+i+"	- "+ANSI_RED+outcome_returned.getOutcome()+ANSI_WHITE+"			"+ANSI_WHITE+outcome_returned.getDescription()+"");	
+//			System.out.println(Utils.ANSI_WHITE+"		"+i+"\t"+outcome_returned.getDescription()+" -- "+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcome_returned.getOutcome())+Utils.ANSI_WHITE + " 	[" +Utils.ANSI_YELLOW+outcome_returned.getCategory()+Utils.ANSI_WHITE+"]");	
+			System.out.println(Utils.ANSI_WHITE+"		"+Utils.ANSI_MGNT+outcomeReturned.getCategory()+Utils.ANSI_WHITE+"\t\t"+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcomeReturned.getOutcome())+"\t"+" "+Utils.ANSI_WHITE+outcomeReturned.getDescription());	
 		}
 	}
 	
@@ -272,7 +281,7 @@ public class Salary implements Serializable{
 //				Utils.ANSI_WHITE+"   ]"
 				);
 //		System.out.println();
-		printOutcomesHashMap();
+		printOutcomesHashMapFilter();
 	}
 	
 	public static void incomeGraphics(Double income, Double outcome) {
