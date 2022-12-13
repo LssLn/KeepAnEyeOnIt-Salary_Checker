@@ -64,6 +64,8 @@ public class Utils {
 		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Add an expense");
 		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Edit an expense");
 		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Print all the Years");
+		System.out.println(Utils.ANSI_YELLOW+"		5C]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by a category");
+		System.out.println(Utils.ANSI_YELLOW+"		5D]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by searching a description");
 		System.out.println(Utils.ANSI_YELLOW+"	 	6]\t"+Utils.ANSI_WHITE+"Print a Year");
 		System.out.println(Utils.ANSI_YELLOW+"	 	7]\t"+Utils.ANSI_WHITE+"Load data (overwrites current data)");
 		System.out.println(Utils.ANSI_YELLOW+"	 	8]\t"+Utils.ANSI_WHITE+"Save current data");
@@ -72,8 +74,6 @@ public class Utils {
 		System.out.println(Utils.ANSI_YELLOW+"		11]\t"+Utils.ANSI_WHITE+"Group years by Categories");
 		System.out.println(Utils.ANSI_YELLOW+"		12]\t"+Utils.ANSI_WHITE+"Insert category");
 		System.out.println(Utils.ANSI_YELLOW+"		13]\t"+Utils.ANSI_WHITE+"Display all the categories");
-		System.out.println(Utils.ANSI_YELLOW+"		14]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by a category");
-		System.out.println(Utils.ANSI_YELLOW+"		15]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by searching a description");
 	}
 	
 	

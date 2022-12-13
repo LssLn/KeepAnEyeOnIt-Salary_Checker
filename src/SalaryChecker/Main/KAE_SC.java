@@ -27,7 +27,7 @@ public class KAE_SC {
 		do {
 			System.out.print(Utils.ANSI_YELLOW+"\n -> "+Utils.ANSI_WHITE);
 			Scanner scannerSwitch = new Scanner(System.in);
-			scelta=scannerSwitch.next();
+			scelta=scannerSwitch.next().toUpperCase();
 			
 			categoriesMap = fHUtil.readCategoriesFromTXT();
 			
@@ -84,14 +84,14 @@ public class KAE_SC {
 				case "13":
 					SwitchManagerUtils.readCategories(categoriesMap);
 					break;
-				case "14":
+				case "5C":
 					Scanner scanCategory = new Scanner(System.in);
 					System.out.print(Utils.ANSI_WHITE+"\n  Category to filter: "+Utils.ANSI_WHITE);
 					String category = scanCategory.nextLine().trim().toUpperCase();
 					System.out.println("\n");
 					SwitchManagerUtils.printAllFilters(SwitchManagerUtils.filterByCategories(yearsList,category));
 					break;
-				case "15":
+				case "5D":
 					Scanner scanDescription = new Scanner(System.in);
 					System.out.print(Utils.ANSI_WHITE+"\n  Keyword to look for in outcomes descriptions: "+Utils.ANSI_WHITE);
 					String description = scanDescription.nextLine().trim().toUpperCase();
