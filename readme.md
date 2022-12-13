@@ -15,7 +15,7 @@
 <br>
 <h2>CLASS</h2>
 <ul>
-	<li><h3>Outcome</h3>Each expense has an amount, a category, a n_ID and a description.</li>
+	<li><h3>Outcome</h3>Each expense has an amount, a category, an id and a description.</li>
 	<li><h3>Salary</h3>Each Salary has a single income, and several outcomes.<br>All the outcomes are stored in an HashMap with key: Integer (auto incrementing id) and a value (outcome).<br>It has these methods worth mentioning:
 		<ul>
 			<li><h4>printOutcomeHashMap</h4>Prints the outcomes stored in the Salary Hashmap.</li>
@@ -137,6 +137,16 @@
 			<li><h4>Print all the Years</h4>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.<br>If a month or a year has a negative ingain, a warning is displayed.
 			<p align="center">
 					<img src="https://i.imgur.com/YtlRCz2.png">
+				</p></li>
+				</p></li>
+			<li><h4>Print all the Years, filtering by Category</h4>Print all the months for all the registered years, filtering by the input Category.
+			<p align="center">
+					<img src="">
+				</p></li>
+				</p></li>
+			<li><h4>Print all the Years, filtering by description</h4>Print all the months for all the registered years, filtering by the given words: each expense which contains the input in the description is displayed.
+			<p align="center">
+					<img src="">
 				</p></li>
 			<li><h4>Print a Year</h4>Print all the months for the selected year.<br>If a month or the year has a negative ingain, a warning is displayed. 
 			<p align="center">
