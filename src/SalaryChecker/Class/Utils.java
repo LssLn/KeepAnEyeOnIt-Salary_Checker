@@ -216,4 +216,37 @@ public class Utils {
 		}
 		return false;
 	}
+	
+	/*
+	 * Given a string,
+	 * returns the string with the first letter capitalized
+	 */
+	public static String capitalizeFirstLetter(String str) {
+		String strFirstLetterCapitalized = str.substring(0,1).toUpperCase();
+		String strAfterFirstLetter = str.substring(1);
+		return strFirstLetterCapitalized + strAfterFirstLetter;		
+	}
+	
+	/*
+	 * Given a string,
+	 * returns the string with the first letter capitalized after lower case
+	 */
+	public static String capitalizeFirstLetterAfterLowerCase(String str) {
+		return capitalizeFirstLetter(str.toLowerCase());
+	}
+
+	/*
+	 * prints the cursor for the menu input choice
+	 */
+	public static void cursor() {
+		System.out.print(
+				Utils.ANSI_WHITE+"\n ("
+				+Utils.ANSI_MGNT+">"
+				+Utils.ANSI_YELLOW+" ^"
+				+Utils.ANSI_RED+"_"
+				+Utils.ANSI_YELLOW+"^"
+				+Utils.ANSI_WHITE+")"
+				+Utils.ANSI_MGNT+"> "
+				+Utils.ANSI_WHITE);
+	}
 }
