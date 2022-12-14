@@ -173,21 +173,18 @@
 				</p></li>
 			<li><h4>Load data</h4>Loads from write.txt file (overwrites actual data)<br>
 				Read a txt file importing all the previously saved elements.
-				<p align="center">
-					<img src="https://i.imgur.com/EwCX3QE.png">
-				</p>
-			</li>
-			<li>Saves actual data into write.txt (overwritten each time) and also creates a unique <b>backup</b> file each time, to minimize data loss risk.<br>When saving the backup, it also checks if there are already more than seven backups: if that's the case, the older are deleted.<br>
+			<br>Saves actual data into write.txt (overwritten each time) and also creates a unique <b>backup</b> file each time, to minimize data loss risk.<br>When saving the backup, it also checks if there are already more than seven backups: if that's the case, the older are deleted.<br>
 			Writes all the data in a txt file, in order to retrieve those through the readingFile method.
 				<p align="center">
-					<img src="https://i.imgur.com/wEVjkU7.png">
+					<img src="https://i.imgur.com/y0L7kEK.png">
 				</p>
 			</li>
 			<li><h4>Save current data</h4>Show stats for each month, giving a percentage representation for expenses and gains<br>
 			Displays the percentages associated with each month, in terms of gain and expenses, through the showStats method.	
-			<p align="center">
-					<img src="https://i.imgur.com/DcQtdQi.png">
-				</p></li>
+				<p align="center">
+					<img src="https://i.imgur.com/hZC9Oe8.png">
+				</p>
+			</li>
 			<li><h4>Display statistics</h4>Displays stats for each month, giving a percentage representation for expenses and gains.	
 			<p align="center">
 					<img src="https://i.imgur.com/1HKFJjv.png">
