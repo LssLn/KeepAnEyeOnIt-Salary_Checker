@@ -22,7 +22,9 @@
 			<li><h4>setSingleOutcome</h4></li>
             <li><h4>editSingleOutcome</h4>Several methods to edit a single expense description, outcome or category</li>
 			<li><h4>incomeGraphics</h4>Used to better display the Salary data.</li>
-			<li><h4>printSalary</h4>Displays all the infos related to a Salary, such as income, gain and expenses value, info, n_ID</li>
+			<li><h4>printSalary</h4>Displays all the infos related to a Salary, such as income, gain and expenses value, description, n_ID, category</li>
+			<li><h4>printSalaryFiltered</h4>Displays all the infos related to a Salary, such as expenses value, description, category</li>
+			<li><h4>printOutcomesHashMapFilter</h4>Displays all the infos related to the outcome</li>
 			<li><h4>printOutcomesHashMapGroupCat</h4>Displays expenses grouped by category and ordered by amount.</li>
 		</ul>
 	</li>
@@ -66,6 +68,9 @@
 			<li><h4>hasComma</h4>returns true if the String contains "comma" character, false otherwise.</li>
 			<li><h4>hasDot</h4>returns true if the String contains "dot" character, false otherwise.</li>
 			<li><h4>checkCategories</h4> Given a category code, returns true if categoriesMap has no equal code to categoryCode, or returns false if categoriesMap has at least a code equal to categoryCode</li>
+			<li><h4>capitalizeFirstLetter</h4>returns the string with the first letter capitalized</li>
+			<li><h4>capitalizeFirstLetterAfterLowerCase</h4>returns the string with the first letter capitalized after lower case</li>
+			<li><h4>cursor</h4>prints the cursor for the menu input choice (unused as of now)</li>
 		</ul>
 	</li>
 	<li><h3>switch Manager Utils</h3>
@@ -83,6 +88,17 @@
 			<li><h4>printByCategories</h4>	Displays expenses grouped by Categories, per month, ordered by amount</li>
 			<li><h4>insertCategoriesIntoMap</h4>Given an HashMap<String,String> and the input entry, returns the HashMap with the new element added</li>
             <li><h4>readCategories</h4>Given an HashMap<String,String>, which is populated by reading CategoriesCFG.txt, all the entries CODE DESCRIPTION are displayed.</li>
+			<li><h4>modifyExpense</h4>		Given the expense id, the year and the month, edits an expense with several options: 
+				<ol>
+					<li>Edit expense outcome</li>
+					<li>Edit expense description</li>
+					<li>Edit expense category</li>
+					<li>Remove expense</li>
+				</ol>
+			</li>
+			<li><h4>filterByCategories</h4>		Given the year arraylist and a category in input,returns the same collection but filtered by expenses with the selected category.</li>
+			<li><h4>filterByDescription</h4>	Given the year arraylist and a description in input, returns the same collection but filtered by expenses which contains the description in input in their descriptions.</li>
+			<li><h4>printAllFilters</h4>		Given an ArrayList<String>, displays all the data related to all the Years but with a different format from printAll</li>
 		</ul>
 	</li>
 </ul>
