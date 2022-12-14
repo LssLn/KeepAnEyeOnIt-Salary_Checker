@@ -939,10 +939,16 @@ public class SwitchManagerUtils {
 					monthFiltered = new Salary(0.0,month.getMonth());
 					monthFiltered.setTotalOutcomeByParam(month.getTotalOutcome());
 					monthFiltered.setIncome(month.getIncome());
+					
 					//for each expense
 					for(Integer outcomeKey:outcomesKeys) {
 						Outcome outcome = outcomes.get(outcomeKey);
-						if(outcome.getDescription().contains(description)) {
+						//lowercase, upper case, firstLetterCapitalized, firstLetterCapitalized after lower case
+						if(outcome.getDescription().contains(description) 
+								|| outcome.getDescription().contains(description.toLowerCase())
+								|| outcome.getDescription().contains(description.toUpperCase())
+								|| outcome.getDescription().contains(Utils.capitalizeFirstLetter(description))
+								|| outcome.getDescription().contains(Utils.capitalizeFirstLetterAfterLowerCase(description))) {
 							monthFiltered.setSingleOutcome(outcome.getOutcome(), outcome.getDescription(), outcome.getCategory());
 						}
 					}
@@ -957,7 +963,7 @@ public class SwitchManagerUtils {
 	
 	/*
 	 * Given an ArrayList<String>,
-	 * displays all the data related to all the Years.
+	 * displays all the data related to all the Years but with a different format from printAll
 	 */
 	public static void printAllFilters(ArrayList<Year> yearsList) {
 		Double yearsOutcome = 0.00;
