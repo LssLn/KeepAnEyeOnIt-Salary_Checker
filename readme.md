@@ -1,7 +1,10 @@
 <h1>Keep an Eye on It: SALARY CHECKER</h1>
 <p align="center">
 <img src="https://i.imgur.com/Y4x7mPJ.png">
+
+<img src="https://i.imgur.com/c7N21W6.png">
 </p>
+
 <section>Don't want to drain your salary as quick as you use to do?<br><b>Keep an Eye on It: Salary Checker</b> is a Java project developed to better manage your monthly expenses through the years.<br>
 <br>
 <ul>
@@ -124,49 +127,49 @@
 		<h3>Welcome page</h3>
 		The menù contains several options:
 				<p align="center">
-					<img src="https://i.imgur.com/0kbvgft.png">
+					<img src="https://i.imgur.com/FtTyszs.png">
 				</p>
 		<ul>
 			<li>Add Salary<br>
 			Given a month name (e.g. November), an amount and an Year, through the Utils.MonthToInt method, the main allocates the Salary in its position in the HashMap(e.g. November = 11):
 			    <p align="center">
-					<img src="https://i.imgur.com/Jpovuk5.png">
+					<img src="https://i.imgur.com/0WD0A4C.png">
 				</p>
 			If the inserted month already exists (the place into the HashMap is already assigned), it will be resetted with the new parameters.
 			<br>In other words, if a month needs to be erased,  this functionality can be used in order to reinitialize it.</li>
             <li>Edit Salary<br>
 			Given a month and an year, the income is updated with the new value.
 			    <p align="center">
-					<img src="https://i.imgur.com/BnCe2UA.png">
+					<img src="https://i.imgur.com/w3eqE27.png">
 				</p></li>
 			<li>Add Expense<br>
 			Given an amount, a description,, a category, a month and an year, the expense is added to the Salary which has the same month and year.
 			    <p align="center">
-					<img src="https://i.imgur.com/uKZe6Od.png">
+					<img src="https://i.imgur.com/UXSmzOB.png">
 				</p></li>
 			<li>Edit Expense<br>
 				Given a month name (and a Year), followed by an ID (visible in the Print), the specific expense can be edited or deleted.
 			<br>To snchronize all the data, after the remove it follows a write into the file, to save the occured changes.
 			<p align="center">
-					<img src="https://i.imgur.com/3WwFgob.png">
+					<img src="https://i.imgur.com/el6orQC.png">
 				</p></li>
 			<li><h4>Print all the Years</h4>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.<br>If a month or a year has a negative ingain, a warning is displayed.
 			<p align="center">
-					<img src="https://i.imgur.com/YtlRCz2.png">
+					<img src="https://i.imgur.com/TpmHKyr.png">
 				</p></li>
 				</p></li>
 			<li><h4>Print all the Years, filtering by Category</h4>Print all the months for all the registered years, filtering by the input Category.
 			<p align="center">
-					<img src="">
+					<img src="https://i.imgur.com/IVNeUaa.png">
 				</p></li>
 				</p></li>
 			<li><h4>Print all the Years, filtering by description</h4>Print all the months for all the registered years, filtering by the given words: each expense which contains the input in the description is displayed.
 			<p align="center">
-					<img src="">
+					<img src="https://i.imgur.com/Hal8K5R.png">
 				</p></li>
 			<li><h4>Print a Year</h4>Print all the months for the selected year.<br>If a month or the year has a negative ingain, a warning is displayed. 
 			<p align="center">
-					<img src="https://i.imgur.com/BCEPMN8.png">
+					<img src="https://i.imgur.com/RYGm3KU.png">
 				</p></li>
 			<li><h4>Load data</h4>Loads from write.txt file (overwrites actual data)<br>
 				Read a txt file importing all the previously saved elements.
@@ -187,24 +190,20 @@
 				</p></li>
 			<li><h4>Display statistics</h4>Displays stats for each month, giving a percentage representation for expenses and gains.	
 			<p align="center">
-					<img src="https://i.imgur.com/jPEoesI.png">
+					<img src="https://i.imgur.com/1HKFJjv.png">
 				</p></li>
             <li><h4>Group months by Categories</h4>Expenses per month, grouped by Categories and ordered by amount<br>
 			Displays expenses grouped by categories ordering for amount, for each month.	
 			<p align="center">
-					<img src="https://i.imgur.com/2RDar71.png">
+					<img src="https://i.imgur.com/cUccNla.png">
+				</p></li>
+			<li><h4>Group years by Categories</h4>Expenses per month, grouped by Categories and ordered by amount<br>
+			Displays expenses grouped by categories ordering for amount, for each year.	
+			<p align="center">
+					<img src="https://i.imgur.com/aq39imF.png">
 				</p></li>
 			<li><h4>Insert category</h4>Adds a category to the CategoriesCFG.txt file, which is used to store the categories.	
-			<p align="center">
-					<img src="https://i.imgur.com/8s8Usam.png">
-				</p></li>
-            <li><h4>Display all the categories</h4>Display all the categories stores in the CategoriesCFG.txt file.	
-			<p align="center">
-					<img src="https://i.imgur.com/8s8Usam.png">
-				</p></li>
-			<li>Menù<br>
-			Prints all the available options.
-			</li>
+            <li><h4>Display all the categories</h4>Display all the categories stored in the CategoriesCFG.txt file.	
 		</ul>
 	</li>
 </ul>
