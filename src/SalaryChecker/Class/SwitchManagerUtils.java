@@ -974,6 +974,7 @@ public class SwitchManagerUtils {
 		
 //		System.out.println(" 	Total expenses      "+Utils.ANSI_RED+sYearsOutcome+Utils.ANSI_WHITE+"\n");
 		
+		Double outcomeTotal = 0.0;
 		for(Year yPrint : yearsList) {
 			//check if the year months are all empty
 			Collection<Salary> salariesF = yPrint.getMonths().values();
@@ -983,6 +984,7 @@ public class SwitchManagerUtils {
 					emptyYearFlag=false;
 			}
 
+			Double outcomeTotalMonth = 0.0;
 			//if the year is empty, don't print it
 			if(!emptyYearFlag) {
 				String yearOutcome = Utils.convertDecimalFormat2(yPrint.getTotOutcome());
@@ -991,11 +993,16 @@ public class SwitchManagerUtils {
 				for(Salary s: salaries) { 	
 					//don't print months with empty records
 					if(s.getOutcomes().keySet().size()!=0) {
+						for(Integer outcomeKey : s.getOutcomes().keySet()) {
+							outcomeTotalMonth +=s.getOutcomes().get(outcomeKey).getOutcome();
+						}
 						s.printSalaryFiltered(); 	
 					}
 				}
+				System.out.print("\n  -> "+Utils.ANSI_YELLOW+yPrint.getYear()+Utils.ANSI_WHITE+" OUTCOME: "+Utils.ANSI_RED+outcomeTotalMonth+Utils.ANSI_WHITE+"\n");
 			}
-			
+			outcomeTotal += outcomeTotalMonth;
 		}
+		System.out.print("\n TOTAL OUTCOME "+Utils.ANSI_RED+Utils.convertDecimalFormat2(outcomeTotal)+Utils.ANSI_WHITE+"\n");
 	}
 }
