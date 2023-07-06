@@ -83,7 +83,7 @@
             <li><h4>modifySalary</h4>Given the year and the month, edits a salary income with a new value</li>
 			<li><h4>addExpense</h4></li> 	Adds an expense to a specific Month
 			<li><h4>modifyExpense</h4>	Given the year and the month, edits a salary income with a new value</li>
-			<li><h4>printAll</h4>		Prints all the data related to all the Years</li>
+			<li><h4>printAll</h4>		Prints the data related to all the Years. Depending on the flag 'detailsFlag', details about expenses will also be printed.</li>
 			<li><h4>printYear</h4>		Prints all the data related to a specific Year</li>
 			<li><h4>loadData</h4> 		Loads from write.txt file (overwrites actual data)</li>
 			<li><h4>saveData</h4> 		Saves current data into write.txt and it creates a backup file, for a maximum of 5 backups (through the FileHandler method deleteBackup)</li>
@@ -153,10 +153,10 @@
 			<p align="center">
 					<img src="https://i.imgur.com/el6orQC.png">
 				</p></li>
+			<li><h4>Print all the Years</h4>Print all the months for all the registered years, just listing gains in total and for each year.<br>If a month or a year has a negative ingain, a warning is displayed.
 			<li><h4>Print all the Years</h4>Print all the months for all the registered years, also giving data for expenses and gains in total and for each year.<br>If a month or a year has a negative ingain, a warning is displayed.
 			<p align="center">
-					<img src="https://i.imgur.com/TpmHKyr.png">
-				</p></li>
+					<img src="https://i.imgur.com/el6orQC.png">
 				</p></li>
 			<li><h4>Print all the Years, filtering by Category</h4>Print all the months for all the registered years, filtering by the input Category.
 			<p align="center">
