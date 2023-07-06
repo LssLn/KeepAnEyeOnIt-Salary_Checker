@@ -449,11 +449,10 @@ public class SwitchManagerUtils {
 			/*
 			 * added 5X) Print without details
 			 */
-			if(detailsFlag) {
-				for(Salary s: salaries) { 	
-					s.printSalary(); 	
-				}				
-			}
+
+			for(Salary s: salaries) { 	
+				s.printSalary(detailsFlag); 	
+			}				
 		}
 	}
 	
@@ -625,7 +624,8 @@ public class SwitchManagerUtils {
 							Utils.ANSI_WHITE+" \\________________________________________________________________________\n");
 					Collection<Salary> salaries = yCurr.getMonths().values();
 					for(Salary s: salaries) { 	
-						s.printSalary(); 	
+						//detailsFlag is set to true bydefault for PrintYear
+						s.printSalary(true); 	
 					}
 				}
 			}

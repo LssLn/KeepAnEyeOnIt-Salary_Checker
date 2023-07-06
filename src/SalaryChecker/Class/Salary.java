@@ -243,7 +243,7 @@ public class Salary implements Serializable{
 		return "Salary - "+month+"[ income= " + income + "	 total outcome= " + totalOutcome + " ]";
 	}
 		
-	public void printSalary() {
+	public void printSalary(boolean detailsFlag) {
 		String totOutcFormatted=Utils.convertDecimalFormat2(totalOutcome);
 //		if(totOutcFormatted.equals(",00")) {
 		if(totOutcFormatted.equals(",00") || totOutcFormatted.equals(".00")) {
@@ -265,7 +265,9 @@ public class Salary implements Serializable{
 				Utils.ANSI_WHITE+"   ]");
 		incomeGraphics(income,totalOutcome);
 		System.out.println();
-		printOutcomesHashMap();
+		if(detailsFlag) {
+			printOutcomesHashMap();
+		}
 	}
 	
 	public void printSalaryFiltered() {

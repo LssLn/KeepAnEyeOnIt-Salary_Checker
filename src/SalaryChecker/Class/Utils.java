@@ -66,6 +66,7 @@ public class Utils {
 		System.out.println(Utils.ANSI_YELLOW+"	 	3]\t"+Utils.ANSI_WHITE+"Load data (overwrites current data)");
 		System.out.println(Utils.ANSI_YELLOW+"	 	4]\t"+Utils.ANSI_WHITE+"Save current data");
 		System.out.println(Utils.ANSI_YELLOW+"	 	5]\t"+Utils.ANSI_WHITE+"Print all the Years");
+		System.out.println(Utils.ANSI_YELLOW+"	 	5X]\t"+Utils.ANSI_WHITE+"Print all the Years without details");
 		System.out.println(Utils.ANSI_YELLOW+"		5C]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by a category");
 		System.out.println(Utils.ANSI_YELLOW+"		5D]\t"+Utils.ANSI_WHITE+"Print all the Years filtering by searching a description");
 		System.out.println(Utils.ANSI_YELLOW+"	 	5Y]\t"+Utils.ANSI_WHITE+"Print a Year");
