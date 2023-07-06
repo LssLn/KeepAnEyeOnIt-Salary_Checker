@@ -406,7 +406,7 @@ public class SwitchManagerUtils {
 	 * Given an ArrayList<String>,
 	 * displays all the data related to all the Years.
 	 */
-	public static void printAll(ArrayList<Year> yearsList) {
+	public static void printAll(ArrayList<Year> yearsList, boolean detailsFlag) {
 		Double yearsIncome = 0.00;
 		Double yearsOutcome = 0.00;
 		Double yearsGain = 0.00;
@@ -446,8 +446,13 @@ public class SwitchManagerUtils {
 			System.out.print("\n # "+Utils.ANSI_YELLOW+yPrint.getYear()+Utils.ANSI_WHITE+" \\________________________________________________________________________ "
 					+Utils.ANSI_GREEN+"+"+yearIncome+Utils.ANSI_RED+" -"+yearOutcome+Utils.ANSI_YELLOW+" 	=> "+gain+Utils.ANSI_RED+warningYear+"\n");
 			Collection<Salary> salaries = yPrint.getMonths().values();
-			for(Salary s: salaries) { 	
-				s.printSalary(); 	
+			/*
+			 * added 5X) Print without details
+			 */
+			if(detailsFlag) {
+				for(Salary s: salaries) { 	
+					s.printSalary(); 	
+				}				
 			}
 		}
 	}

@@ -57,7 +57,7 @@ public class KAE_SC {
 					break;
 				case "5":
 					System.out.println();
-					SwitchManagerUtils.printAll(yearsList);
+					SwitchManagerUtils.printAll(yearsList, true);
 					break;
 				case "5Y":
 					System.out.println();
@@ -104,6 +104,10 @@ public class KAE_SC {
 					String description = scanDescription.nextLine().trim();
 					System.out.println("\n");
 					SwitchManagerUtils.printAllFilters(SwitchManagerUtils.filterByDescr(yearsList,description));
+					break;
+				case "5X":
+					System.out.println();
+					SwitchManagerUtils.printAll(yearsList,false);
 					break;
 				case "m":
 				case "M": 
